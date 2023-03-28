@@ -9,11 +9,11 @@
 ### OPTIONS          ###
 ########################
 
-TARGET_NAME	=	my_paint
-SOURCE_DIR	=	program
-OBJECT_DIR	=	ressources
+TARGET_NAME	=	my_rpg
+SOURCE_DIR	=	src
+OBJECT_DIR	=	img
 LIBRARY_DIR	=	lib
-HEADER_DIR	=	program
+HEADER_DIR	=	include
 
 vpath %.c $(SOURCE_DIR)
 
@@ -38,26 +38,8 @@ LFLAGS	=	 -lcsfml-graphics -lcsfml-window -lcsfml-system \
 ########################
 
 SOURCES_FILES	=	program/main.c \
-					program/init.c \
-					program/sheet.c	\
-					program/draw_elements.c \
-					program/events/event.c \
-					program/events/menu_bar_event.c \
-					program/events/sheet_events.c \
-					program/buttons/button.c \
-					program/buttons/menu_bar.c \
-					program/buttons/drop_menu.c \
-					program/buttons/drop_menu_options.c \
-					program/pencil.c \
-					program/game.c	\
 
-LIBRARY		=	lib/my_getnbr.c \
-				lib/my_putchar.c \
-				lib/my_putstr.c \
-				lib/my_strlen.c \
-				lib/my_putnbr.c \
-				lib/my_strcpy.c \
-				lib/my_strcmp.c \
+LIBRARY		=	\
 
 ########################
 ### OBJECT FILES     ###
