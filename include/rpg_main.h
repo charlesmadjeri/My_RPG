@@ -27,8 +27,8 @@
 
 // Macros :
 
-    #define WINDOW_WIDTH 800
-    #define WINDOW_HEIGHT 600
+    #define WINDOW_WIDTH 1920
+    #define WINDOW_HEIGHT 1080
 
     enum e_gui_button_state {
         IS_CLICKED = 1,
@@ -72,26 +72,14 @@
         sfBool is_hover;
     };
 
-    struct sheet_s{
+    struct map_s{
         sfImage *image;
         sfSprite *sprite;
         sfTexture *texture;
     };
 
-    struct pencil_s{
-        sfColor color;
-        sfVector2i size;
-    };
-
-    struct trace_s {
-        sfSprite *sprite;
-        sfTexture *texture;
-    };
-
     struct game_s {
-        struct pencil_s *pencil;
-        struct trace_s *trace;
-        struct sheet_s *sheet;
+        struct map_s *map;
         bool mouse_pressed;
     };
 
