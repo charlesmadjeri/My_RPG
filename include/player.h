@@ -11,6 +11,7 @@
 
     #include "inventory.h"
 
+// Structures :
     typedef struct player {
         char name[64];
         int level;
@@ -20,5 +21,9 @@
         int strength;
         inventory_t inventory;
     } player_t;
+
+// Fonctions:
+    player_t *init_player(void);
+    void destroy_player(player_t *player);
 
 #endif /* !PLAYER_H_ */

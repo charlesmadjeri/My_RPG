@@ -9,6 +9,7 @@
     #define ENEMY_H_
     #pragma once
 
+// Structures :
     typedef struct enemy {
         char name[64];
         int level;
@@ -16,5 +17,9 @@
         int max_health;
         int strength;
     } enemy_t;
+
+// Fonctions:
+    enemy_t *init_enemy(void);
+    void destroy_enemy(enemy_t *enemy);
 
 #endif /* !ENEMY_H_ */

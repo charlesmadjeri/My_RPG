@@ -15,18 +15,23 @@
     #include "enemy.h"
     #include "pnjs.h"
     #include "inventory.h"
+    #include "camera.h"
 
 // Structures :
     typedef struct game {
-        map_t map;
-        player_t player;
+        map_t *map;
+        player_t *player;
         enemy_t *enemies;
         int num_enemies;
         pnjs_t *pnjs;
         int num_pnjs;
+        sfClock *clock;
+        camera_t *camera;
     } game_t;
 
 // Fonctions:
     game_t *init_game(void);
+    void save_game(game_t *game);
+    void destroy_game(game_t *game);
 
 #endif /* !GAME_H_ */

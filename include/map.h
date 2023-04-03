@@ -26,8 +26,8 @@
     } map_t;
 
 // Fonctions:
-    void load_map(map_t *map, const char *filename);
-    void unload_map(map_t *map);
+    map_t *init_map(void);
+    void save_map(map_t *map);
     void render_map(map_t *map);
 
 #endif /* !MAP_H_ */
