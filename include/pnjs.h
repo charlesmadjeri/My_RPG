@@ -9,5 +9,9 @@
     #define PNJS_H_
     #pragma once
 
+    typedef struct pnjs {
+        char name[64];
+        char dialog[256];
+    } pnjs_t;
 
 #endif /* !PNJS_H_ */

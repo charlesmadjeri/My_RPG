@@ -8,7 +8,7 @@
 #include "../../include/main.h"
 #include "../../include/game.h"
 
-void mouse_moved(sfRenderWindow *window, sfEvent *event, struct game_s *game)
+void mouse_moved(sfRenderWindow *window, sfEvent *event, game_t *game)
 {
     return;
 }
@@ -19,7 +19,7 @@ sfEvent *event, struct game_s *game)
     return;
 }
 
-void analyse_event(sfRenderWindow *window, sfEvent *event,struct game_s *game)
+void analyse_event(sfRenderWindow *window, sfEvent *event, game_t *game)
 {
     if (event->type == sfEvtClosed)
         sfRenderWindow_close(window);
@@ -28,7 +28,7 @@ void analyse_event(sfRenderWindow *window, sfEvent *event,struct game_s *game)
         mouse_moved(window, event, game);
     if (event->type == sfEvtMouseButtonPressed)
         mouse_button_pressed(window, event, game);
-    */
     if (event->type == sfEvtMouseButtonReleased)
         game->mouse_pressed = sfFalse;
+    */
 }

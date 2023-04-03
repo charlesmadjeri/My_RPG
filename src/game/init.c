@@ -6,9 +6,10 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/game.h"
 
-struct game_s *init_game(void)
+game_t *init_game(void)
 {
-    struct game_s *game = malloc(sizeof(struct game_s *));
+    game_t *game = malloc(sizeof(game_t));
     return game;
 }

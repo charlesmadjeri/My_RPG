@@ -19,20 +19,21 @@ void disp_help(char *argv1)
     }
 }
 
-int paint(void)
+int launch(void)
 {
     sfEvent event;
     sfRenderWindow *window = init_window();
-    struct game_s *game = init_game();
+    game_t *game = init_game();
 
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
         while (sfRenderWindow_pollEvent(window, &event))
             analyse_event(window, &event, game);
-        //display_game(window, game);
+        display(window, game);
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);
+    free(game);
     return 0;
 }
 
@@ -42,9 +43,9 @@ int main(int argc, char **argv)
         disp_help(argv[1]);
         return EXIT_SUCCESS;
     } else {
-        int status = paint();
+        int status = launch();
         if (status == 1)
-            return EXIT_FAILURE;
+            return 84;
         else
             return EXIT_SUCCESS;
     }

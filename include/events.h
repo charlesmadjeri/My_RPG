@@ -10,9 +10,10 @@
     #pragma once
 
     #include <SFML/Graphics.h>
+    #include "game.h"
 
 // Fonctions:
     void analyse_event(sfRenderWindow *window,
-    sfEvent *event,struct game_s *game);
+    sfEvent *event, game_t *game);
 
 #endif /* !EVENT_H_ */

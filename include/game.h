@@ -10,14 +10,23 @@
     #pragma once
 
     #include <SFML/Graphics.h>
+    #include "map.h"
+    #include "player.h"
+    #include "enemy.h"
+    #include "pnjs.h"
+    #include "inventory.h"
 
 // Structures :
-    struct game_s {
-        struct map_s *map;
-        sfBool mouse_pressed;
-    };
+    typedef struct game {
+        map_t map;
+        player_t player;
+        enemy_t *enemies;
+        int num_enemies;
+        pnjs_t *pnjs;
+        int num_pnjs;
+    } game_t;
 
 // Fonctions:
-    struct game_s *init_game(void);
+    game_t *init_game(void);
 
 #endif /* !GAME_H_ */

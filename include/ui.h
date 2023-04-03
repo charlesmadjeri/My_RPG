@@ -10,6 +10,7 @@
     #pragma once
 
     #include <SFML/Graphics.h>
+    #include "game.h"
 
 // Macros :
     #define WINDOW_WIDTH 1920
@@ -38,6 +39,6 @@
     sfRenderWindow *init_window(void);
     struct button_s *init_button(sfVector2f position,
     sfVector2f size, char *text);
-    void display_game(sfRenderWindow *window, struct game_s *game);
+    void display(sfRenderWindow *window, game_t *game);
 
 #endif /* !UI_H_ */
