@@ -23,19 +23,21 @@
         struct s_gui_object *next;
     };
 
-    struct button_s {
+    typedef struct button_t {
         sfRectangleShape *rect;
         sfVector2f position;
         sfVector2f size;
-        sfColor default_color;
-        sfColor hover_color;
-        sfColor pressed_color;
+        sfColor color;
         sfText *text;
         enum e_gui_button_state state;
         sfBool is_hover;
-    };
+    } button;
 
 // Functions :
-    void center_button_text(struct button_s *button);
+    button_t *init_button(sfVector2f position, sfVector2f size, sfColor color, char *text);
+    void press_button(button_t *button);
+    void center_button_text(button_t *button);
+    void display_button(sfRenderWindow *window, button_t *button);
+    void destroy_button(button_t *button);
 
 #endif /* !BUTTON_H_ */

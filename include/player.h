@@ -9,6 +9,7 @@
     #define PLAYER_H_
     #pragma once
 
+    #include <SFML/Graphics.h>
     #include "inventory.h"
 
 // Structures :
@@ -24,6 +25,7 @@
 
 // Fonctions:
     player_t *init_player(void);
+    void display_player(sfRenderWindow *window, player_t *player);
     void destroy_player(player_t *player);
 
 #endif /* !PLAYER_H_ */

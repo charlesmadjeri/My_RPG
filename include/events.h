@@ -15,5 +15,6 @@
 // Fonctions:
     void analyse_event(sfRenderWindow *window,
     sfEvent *event, game_t *game);
+    
 
 #endif /* !EVENT_H_ */

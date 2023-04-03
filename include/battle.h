@@ -9,5 +9,19 @@
     #define BATTLE_H_
     #pragma once
 
+    #include <SFML/Graphics.h>
+
+// Structures :
+    typedef struct battle {
+        sfSprite *background;
+        sfTexture *texture;
+        sfVector2f position;
+        sfIntRect rect;
+    } battle_t;
+
+// Functions :
+    battle_t *init_battle(void);
+    void display_battle(sfRenderWindow *window, battle_t *battle);
+    void destroy_battle(battle_t *battle);
 
 #endif /* !BATTLE_H_ */

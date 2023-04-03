@@ -9,6 +9,8 @@
     #define ENEMY_H_
     #pragma once
 
+    #include <SFML/Graphics.h>
+
 // Structures :
     typedef struct enemy {
         char name[64];
@@ -20,6 +22,7 @@
 
 // Fonctions:
     enemy_t *init_enemy(void);
+    void display_enemy(sfRenderWindow *window, enemy_t *enemy);
     void destroy_enemy(enemy_t *enemy);
 
 #endif /* !ENEMY_H_ */

@@ -28,6 +28,6 @@
 // Fonctions:
     map_t *init_map(void);
     void save_map(map_t *map);
-    void render_map(map_t *map);
+    void display_map(sfRenderWindow *window, map_t *map);
 
 #endif /* !MAP_H_ */
