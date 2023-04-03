@@ -6,88 +6,105 @@
 ##
 
 ########################
-### OPTIONS          ###
-########################
-
-TARGET_NAME	=	my_rpg
-SOURCE_DIR	=	src
-OBJECT_DIR	=	img
-LIBRARY_DIR	=	lib
-HEADER_DIR	=	include
-
-vpath %.c $(SOURCE_DIR)
-
-########################
 ### COMPILER OPTIONS ###
 ########################
 
-CC	=	gcc
-CFLAGS	=	-W -Wall -Wextra \
-		-I$(HEADER_DIR) \
-		-Wno-unused-variable \
-		-Wno-unused-parameter \
-		-Wno-unused-but-set-variable \
-		-Wno-unused-but-set-parameter \
-		-g3 \
-		$(C_FLAGS_INPUT)
-LFLAGS	=	 -lcsfml-graphics -lcsfml-window -lcsfml-system \
-		$(L_FLAGS_INPUT)
+CC = gcc
+CFLAGS = -Wall -Wextra -pedantic -std=c11 -g3
+LIBS = -lcsfml-graphics -lcsfml-window -lcsfml-system
+
+########################
+### OPTIONS          ###
+########################
+
+BUILD_DIR = .
+SRC_DIR = src
+INC_DIR = include
+RES_DIR = ressources
+BONUS_DIR = bonus
+LIB_DIR = lib
+
+TARGET = my_rpg
 
 ########################
 ### SOURCES FILES    ###
 ########################
 
-SOURCES_FILES	=	program/main.c \
-
-LIBRARY		=	\
-
-########################
-### OBJECT FILES     ###
-########################
-
-OBJECTS	=	$(SOURCES_FILES:.c=.o) $(LIBRARY:.c=.o)
+SRCS := $(wildcard $(SRC_DIR)/**/*.c $(SRC_DIR)/*.c)
+OBJS := $(SRCS:%.c=$(BUILD_DIR)/%.o)
+DEPS := $(OBJS:%.o=%.d)
 
 ########################
-### RECIPES          ###
+### LIBRARY FILES    ###
 ########################
 
-.PHONY: all directories re clean fclean
+LIB_SRCS := $(wildcard $(LIB_DIR)/*.c)
+LIB_OBJS := $(LIB_SRCS:%.c=$(BUILD_DIR)/%.o)
+LIB_DEPS := $(LIB_OBJS:%.o=%.d)
 
-all: directories $(TARGET_NAME)
+########################
+### BONUS FILES      ###
+########################
 
-directories: $(SOURCE_DIR) $(LIBRARY_DIR)
+BONUS_SRCS := $(wildcard $(BONUS_DIR)/tests/*.c)
+BONUS_OBJS := $(BONUS_SRCS:%.c=$(BUILD_DIR)/%.o)
+BONUS_DEPS := $(BONUS_OBJS:%.o=%.d)
 
-re:	clean all
+########################
+### INCLUDE FILES    ###
+########################
 
-clean:
-	rm -f $(SOURCE_DIR)/*.o
-	rm -rf $(SOURCE_DIR)/*/*.o
-
-fclean:	clean
-	rm -f $(LIBRARY_DIR)/*.o
-	rm -f $(TARGET_NAME)
+INC_DIRS := $(INC_DIR) $(shell find $(INC_DIR) -type d)
+INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 ########################
 ### FILE GENERATORS  ###
 ########################
 
-$(TARGET_NAME): $(OBJECTS)
-	@$(CC) -o $(TARGET_NAME) $^ $(LFLAGS)
-	@echo -e "-- BUILD SUCCESSFUL --"
+.PHONY: all bonus clean fclean re
 
-$(LIBRARY):
-	$(LIBRARY:.c=.o) --no-print-directory
+all: $(TARGET)
+	@echo "Compilation of $(TARGET) succeeded."
 
-$(OBJECT_DIR):
-	@mkdir -p $@
+bonus: $(BUILD_DIR)/tests
+	@echo "Compilation of bonus tests succeeded."
 
-$(SOURCE_DIR):
-	@echo "-- Error: source folder not found ! --"
+$(TARGET): $(OBJS) $(LIB_OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIB_OBJS) $(LIBS) -o $@
+	@echo "Linking $(TARGET) succeeded."
+
+$(BUILD_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INC_FLAGS) -MMD -c $< -o $@
+	@echo "Compilation of $< succeeded."
+
+$(BUILD_DIR)/tests: $(BONUS_OBJS) $(LIB_OBJS)
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIB_OBJS) $(LIBS) -o $@
+	@echo "Linking bonus tests succeeded."
+
+$(BUILD_DIR)/bonus/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INC_FLAGS) -MMD -c $< -o $@
+	@echo "Compilation of $< succeeded."
+
+$(BUILD_DIR)/%.o: $(LIB_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INC_FLAGS) -MMD -c $< -o $@
+	@echo "Compilation of $< succeeded."
 
 ########################
-### IMPLICITS REDEFS ###
+### MAKE RULES       ###
 ########################
 
-$(OBJECT_DIR)/%.o : %.c
-	@$(CC) -c -o $@ $< $(CFLAGS)
-	@echo -e "-- $@ successfully compiled --"
+clean:
+	$(RM) -r $(OBJS) $(DEPS) $(BONUS_OBJS) $(BONUS_DEPS) $(LIB_OBJS) $(LIB_DEPS)
+	@echo "Cleaned up the build directory."
+
+fclean: clean
+	$(RM) $(TARGET) $(BUILD_DIR)/tests
+	@echo "Removed $(TARGET) and bonus tests."
+
+re: fclean all
+
+-include $(DEPS) $(BONUS_DEPS)

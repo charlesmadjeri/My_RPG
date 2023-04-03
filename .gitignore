@@ -71,3 +71,4 @@ pkg/
 coding-style*
 .git
 .vscode
+.vgcore*

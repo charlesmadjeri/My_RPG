@@ -5,7 +5,11 @@
 ** main
 */
 
-#include "../include/rpg_main.h"
+#include "../include/main.h"
+#include "../include/ui.h"
+#include "../include/game.h"
+#include "../include/lib.h"
+#include "../include/events.h"
 
 void disp_help(char *argv1)
 {
@@ -19,14 +23,13 @@ int paint(void)
 {
     sfEvent event;
     sfRenderWindow *window = init_window();
-    struct s_gui_menu_bar *menu_bar = init_menu_bar();
     struct game_s *game = init_game();
+
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
         while (sfRenderWindow_pollEvent(window, &event))
-            analyse_event(window, &event, game, menu_bar);
-        display_game(window, game);
-        draw_menu_bar(window, menu_bar);
+            analyse_event(window, &event, game);
+        //display_game(window, game);
         sfRenderWindow_display(window);
     }
     sfRenderWindow_destroy(window);
