@@ -13,9 +13,13 @@
     #include "enemy.h"
     #include "pnjs.h"
 
+// Macros:
+    #define MAP_WIDTH 100
+    #define MAP_HEIGHT 100
+
 // Structures :
     typedef struct map {
-        char name[64];
+        char *name;
         int width;
         int height;
         char **tiles;

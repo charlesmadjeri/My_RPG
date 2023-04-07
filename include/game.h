@@ -21,8 +21,6 @@
     typedef struct game {
         map_t *map;
         player_t *player;
-        enemy_t *enemies;
-        int num_enemies;
         pnjs_t *pnjs;
         int num_pnjs;
         sfClock *clock;
