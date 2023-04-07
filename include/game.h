@@ -11,8 +11,10 @@
     #include "map.h"
     #include "player.h"
     #include "pnjs.h"
-    #include "camera.h"
     #pragma once
+
+// Macros:
+    #define CONFIG_PATH "ressources/config/config.txt"
 
 // Structures :
     typedef struct game_t {
@@ -21,7 +23,6 @@
         pnjs *pnjs;
         int num_pnjs;
         sfClock *clock;
-        camera *camera;
     } game;
 
 // Fonctions:

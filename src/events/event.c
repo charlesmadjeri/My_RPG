@@ -13,7 +13,7 @@ void mouse_moved(sfRenderWindow *window, sfEvent *event, game *game)
 }
 
 void mouse_button_pressed(sfRenderWindow *window,
-sfEvent *event, struct game *game)
+sfEvent *event, game *game)
 {
     return;
 }

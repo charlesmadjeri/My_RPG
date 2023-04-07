@@ -26,3 +26,14 @@ items *init_items(char **config_buf)
     items->shield = init_item(config_buf);
     return items;
 }
+
+item *init_item(char **config_buf)
+{
+    item *item = malloc(sizeof(*item));
+    /* use getenv fork to get key values config...
+    item->name = get_item_name(config_buf);
+    item->description = get_item_description(config_buf);
+    item->type = get_item_type(config_buf);
+    item->value = get_item_value(config_buf); */
+    return item;
+}

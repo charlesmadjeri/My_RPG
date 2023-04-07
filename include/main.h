@@ -25,7 +25,6 @@
     #include "splash_screen.h"
     #include "pnjs.h"
     #include "inventory.h"
-    #include "camera.h"
     #include "map.h"
     #include "player.h"
     #include "enemy.h"

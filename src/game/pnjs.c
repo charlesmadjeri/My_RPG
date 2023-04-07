@@ -7,5 +7,10 @@
 
 #include "../../include/main.h"
 
-pnjs *init_pnjs(void);
+pnjs *init_pnjs(void)
+{
+    pnjs *pnjs = malloc(sizeof(*pnjs));
+    return pnjs;
+}
+
 void destroy_pnjs(pnjs *pnjs);

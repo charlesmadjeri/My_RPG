@@ -14,6 +14,7 @@
 // Macros:
     #define MAP_WIDTH 100
     #define MAP_HEIGHT 100
+    #define MAP_PATH "ressources/maps/map.png"
 
 // Structures :
     typedef struct map_t {
