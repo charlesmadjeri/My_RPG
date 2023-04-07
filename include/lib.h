@@ -9,7 +9,6 @@
     #define LIB_H_
     #pragma once
 
-
 // Lib/*.c
     void my_putstr(char const *str);
     int my_putchar(char c);

@@ -7,10 +7,9 @@
 
 #ifndef UI_H_
     #define UI_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
     #include "game.h"
+    #pragma once
 
 // Macros :
     #define WINDOW_WIDTH 1920

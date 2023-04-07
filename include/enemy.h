@@ -7,9 +7,8 @@
 
 #ifndef ENEMY_H_
     #define ENEMY_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
+    #pragma once
 
 // Structures :
     typedef struct enemy {

@@ -21,4 +21,21 @@
     #include <SFML/Config.h>
     #include <SFML/System.h>
 
+    #include "game.h"
+    #include "splash_screen.h"
+    #include "pnjs.h"
+    #include "inventory.h"
+    #include "camera.h"
+    #include "map.h"
+    #include "player.h"
+    #include "enemy.h"
+    #include "text.h"
+    #include "button.h"
+    #include "events.h"
+    #include "battle.h"
+    #include "lib.h"
+    #include "ui.h"
+
+
+
 #endif /* !MAIN_H_ */

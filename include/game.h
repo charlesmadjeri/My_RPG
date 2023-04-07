@@ -7,22 +7,17 @@
 
 #ifndef GAME_H_
     #define GAME_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
     #include "map.h"
     #include "player.h"
-    #include "enemy.h"
     #include "pnjs.h"
-    #include "inventory.h"
     #include "camera.h"
+    #pragma once
 
 // Structures :
     typedef struct game {
         map_t *map;
         player_t *player;
-        enemy_t *enemies;
-        int num_enemies;
         pnjs_t *pnjs;
         int num_pnjs;
         sfClock *clock;
