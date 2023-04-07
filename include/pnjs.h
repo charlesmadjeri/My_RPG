@@ -7,14 +7,13 @@
 
 #ifndef PNJS_H_
     #define PNJS_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
+    #pragma once
 
 // Structures :
     typedef struct pnjs {
-        char name[64];
-        char dialog[256];
+        char *name;
+        char **dialog;
     } pnjs_t;
 
 // Fonctions:

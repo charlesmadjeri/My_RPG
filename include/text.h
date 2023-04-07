@@ -7,9 +7,8 @@
 
 #ifndef TEXT_H_
     #define TEXT_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
+    #pragma once
 
 // Structures :
     typedef struct text {

@@ -7,7 +7,12 @@
 
 #include "../../include/main.h"
 #include "../../include/game.h"
+#include "../../include/map.h"
+#include "../../include/player.h"
+#include "../../include/inventory.h"
+#include "../../include/pnjs.h"
 #include <SFML/System/Clock.h>
+#include <stdbool.h>
 
 game_t *init_game(void)
 {
@@ -36,14 +41,18 @@ map_t *init_map(void)
 player_t *init_player(void)
 {
     player_t *player = malloc(sizeof(player_t));
-    player->pos.x = 0;
-    player->pos.y = 0;
-    player->pos.z = 0;
-    player->speed = 0.1;
-    player->direction = 0;
+
+    player->pos = (sfVector2f){PLAYER_START_POS_X, PLAYER_START_POS_Y};
+    player->level = 1;
+    player->xp = 0;
+    player->health = 100;
+    player->max_health = 100;
+    player->strength = 20;
+    player->inventory = init_inventory();
     player->sprite = sfSprite_create();
-    player->texture = sfTexture_createFromFile("assets/player.png", NULL);
-    sfSprite_setTexture(player->sprite, player->texture, sfTrue);
+    sfTexture *player_texture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
+    NULL);
+    sfSprite_setTexture(player->sprite, player_texture, sfTrue);
     sfSprite_setPosition(player->sprite, player->pos);
     return player;
 }

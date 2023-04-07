@@ -7,11 +7,9 @@
 
 #ifndef MAP_H_
     #define MAP_H_
-    #pragma once
-
-    #include <SFML/Graphics.h>
     #include "enemy.h"
     #include "pnjs.h"
+    #pragma once
 
 // Macros:
     #define MAP_WIDTH 100

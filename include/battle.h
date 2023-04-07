@@ -7,9 +7,8 @@
 
 #ifndef BATTLE_H_
     #define BATTLE_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
+    #pragma once
 
 // Structures :
     typedef struct battle {

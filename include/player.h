@@ -7,20 +7,26 @@
 
 #ifndef PLAYER_H_
     #define PLAYER_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
     #include "inventory.h"
+    #pragma once
+
+// Macros:
+    #define PLAYER_START_POS_X 0
+    #define PLAYER_START_POS_Y 0
+    #define PLAYER_TEXTURE_PATH "ressources/player.png"
 
 // Structures :
     typedef struct player {
-        char name[64];
+        char *name;
         int level;
-        int experience;
+        int xp;
         int health;
         int max_health;
         int strength;
-        inventory_t inventory;
+        inventory_t *inventory;
+        sfVector2f pos;
+        sfSprite *sprite;
     } player_t;
 
 // Fonctions:

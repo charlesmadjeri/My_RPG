@@ -7,9 +7,8 @@
 
 #ifndef CAMERA_H_
     #define CAMERA_H_
-    #pragma once
-
     #include <SFML/Graphics.h>
+    #pragma once
 
 // Structures :
     typedef struct camera {

@@ -7,22 +7,39 @@
 
 #ifndef INVENTORY_H_
     #define INVENTORY_H_
+    #include <SFML/Graphics.h>
     #pragma once
+
+// Macros:
+    #define NUM_ITEMS 4
+    #define MAX_ITEMS 10
 
 // Structures :
     typedef struct item {
-        char name[64];
+        sfBool is_consumable;
         int quantity;
+        int health_factor;
+        int strength_factor;
+        int shield_factor;
     } item_t;
 
+    typedef struct items {
+        struct item *sword;
+        struct item *shield;
+        struct item *potion;
+        struct item *key;
+    } items_t;
+
     typedef struct inventory {
-        item_t items[32];
+        items_t *items;
         int num_items;
     } inventory_t;
 
 // Fonctions:
-    inventory_t *init_inventory(void);
-    void add_item(inventory_t *inventory, char *name, int quantity);
-    void remove_item(inventory_t *inventory, char *name, int quantity);
+    inventory_t *init_inventory(char **config_buf);
+    items_t *init_items(char **config_buf);
+    item_t *init_item(char **config_buf);
+    void add_item(inventory_t *inventory, char *name);
+    void remove_item(inventory_t *inventory, char *name);
 
 #endif /* !INVENTORY_H_ */

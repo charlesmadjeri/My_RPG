@@ -6,7 +6,6 @@
 */
 
 #include "../../include/main.h"
-#include "../../include/button.h"
 
 void center_button_text(struct button_s *button)
 {
@@ -17,7 +16,8 @@ void center_button_text(struct button_s *button)
     sfText_setPosition(button->text, text_position);
 }
 
-struct button_s *init_button(sfVector2f position, sfVector2f size, sfColor color, char *text)
+struct button_s *init_button(sfVector2f position,
+sfVector2f size, sfColor color, char *text)
 {
     struct button_s *button = malloc(sizeof(struct button_s));
     button->position = position;
