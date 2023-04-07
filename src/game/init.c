@@ -17,8 +17,9 @@
 game_t *init_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
+    char **config_buf = parse_config_file();
     game->map = init_map();
-    game->player = init_player();
+    game->player = init_player(config_buf);
     game->camera = init_camera();
     game->clock = sfClock_create();
     game->pnjs = init_pnjs();
@@ -38,7 +39,7 @@ map_t *init_map(void)
     map->num_pnjs = 0;
 }
 
-player_t *init_player(void)
+player_t *init_player(char **config_buf)
 {
     player_t *player = malloc(sizeof(player_t));
 
@@ -48,7 +49,7 @@ player_t *init_player(void)
     player->health = 100;
     player->max_health = 100;
     player->strength = 20;
-    player->inventory = init_inventory();
+    player->inventory = init_inventory(config_buf);
     player->sprite = sfSprite_create();
     sfTexture *player_texture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
     NULL);

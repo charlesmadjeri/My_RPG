@@ -17,11 +17,6 @@
         IS_RELEASED = 3
     };
 
-    struct s_gui_object {
-        struct button_s *button;
-        struct s_gui_object *next;
-    };
-
     typedef struct button_t {
         sfRectangleShape *rect;
         sfVector2f position;
@@ -32,7 +27,13 @@
         sfBool is_hover;
     } button;
 
+    typedef struct buttons_t {
+        struct button_t *button;
+        struct s_gui_object *next;
+    } buttons;
+
 // Functions :
+    buttons_t *init_buttons(void);
     button_t *init_button(sfVector2f position, sfVector2f size,
     sfColor color, char *text);
     void press_button(button_t *button);

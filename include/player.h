@@ -30,7 +30,7 @@
     } player_t;
 
 // Fonctions:
-    player_t *init_player(void);
+    player_t *init_player(char **config_buf);
     void display_player(sfRenderWindow *window, player_t *player);
     void destroy_player(player_t *player);
 

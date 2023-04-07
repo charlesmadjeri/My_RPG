@@ -7,7 +7,7 @@
 
 #include "../../include/main.h"
 
-void center_button_text(struct button_s *button)
+void center_button_text(struct button_t *button)
 {
     sfFloatRect text_bounds = sfText_getLocalBounds(button->text);
     sfVector2f text_position =
@@ -16,10 +16,10 @@ void center_button_text(struct button_s *button)
     sfText_setPosition(button->text, text_position);
 }
 
-struct button_s *init_button(sfVector2f position,
+struct button_t *init_button(sfVector2f position,
 sfVector2f size, sfColor color, char *text)
 {
-    struct button_s *button = malloc(sizeof(struct button_s));
+    struct button_t *button = malloc(sizeof(struct button_t));
     button->position = position;
     button->size = size;
     button->color = color;

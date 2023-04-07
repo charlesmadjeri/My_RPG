@@ -25,6 +25,8 @@
     } game_t;
 
 // Fonctions:
+    char **parse_config_file(void);
+
     game_t *init_game(void);
     void save_game(game_t *game);
     void destroy_game(game_t *game);
