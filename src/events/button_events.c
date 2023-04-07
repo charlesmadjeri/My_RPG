@@ -6,10 +6,8 @@
 */
 
 #include "../../include/main.h"
-#include "../../include/game.h"
 
-void button_events(sfRenderWindow *window, sfEvent event,
-struct game_s *game)
+void button_events(sfRenderWindow *window, sfEvent event, game *game)
 {
     return;
 }

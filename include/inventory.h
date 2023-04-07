@@ -15,31 +15,31 @@
     #define MAX_ITEMS 10
 
 // Structures :
-    typedef struct item {
+    typedef struct item_t {
         sfBool is_consumable;
         int quantity;
         int health_factor;
         int strength_factor;
         int shield_factor;
-    } item_t;
+    } item;
 
-    typedef struct items {
-        struct item *sword;
-        struct item *shield;
-        struct item *potion;
-        struct item *key;
-    } items_t;
+    typedef struct items_t {
+        item *sword;
+        item *shield;
+        item *potion;
+        item *key;
+    } items;
 
-    typedef struct inventory {
-        items_t *items;
+    typedef struct inventory_t {
+        items *items;
         int num_items;
-    } inventory_t;
+    } inventory;
 
 // Fonctions:
-    inventory_t *init_inventory(char **config_buf);
-    items_t *init_items(char **config_buf);
-    item_t *init_item(char **config_buf);
-    void add_item(inventory_t *inventory, char *name);
-    void remove_item(inventory_t *inventory, char *name);
+    inventory *init_inventory(char **config_buf);
+    items *init_items(char **config_buf);
+    item *init_item(char **config_buf);
+    void add_item(inventory *inventory, char *name);
+    void remove_item(inventory *inventory, char *name);
 
 #endif /* !INVENTORY_H_ */

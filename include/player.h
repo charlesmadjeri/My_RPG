@@ -17,21 +17,21 @@
     #define PLAYER_TEXTURE_PATH "ressources/player.png"
 
 // Structures :
-    typedef struct player {
+    typedef struct player_t {
         char *name;
         int level;
         int xp;
         int health;
         int max_health;
         int strength;
-        inventory_t *inventory;
+        inventory *inventory;
         sfVector2f pos;
         sfSprite *sprite;
-    } player_t;
+    } player;
 
 // Fonctions:
-    player_t *init_player(char **config_buf);
-    void display_player(sfRenderWindow *window, player_t *player);
-    void destroy_player(player_t *player);
+    player *init_player(char **config_buf);
+    void display_player(sfRenderWindow *window, player *player);
+    void destroy_player(player *player);
 
 #endif /* !PLAYER_H_ */

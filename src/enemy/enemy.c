@@ -5,7 +5,7 @@
 ** enemy
 */
 
-#include "../../include/enemy.h"
+#include "../../include/main.h"
 
-enemy_t *init_enemy(void);
-void destroy_enemy(enemy_t *enemy);
+enemy *init_enemy(void);
+void destroy_enemy(enemy *enemy);

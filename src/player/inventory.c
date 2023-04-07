@@ -5,24 +5,24 @@
 ** inventory
 */
 
-#include "../../include/inventory.h"
+#include "../../include/main.h"
 
-inventory_t *init_inventory(void)
+inventory *init_inventory(char **config_buf)
 {
-    inventory_t *inventory = malloc(sizeof(inventory_t));
+    inventory *inventory = malloc(sizeof(*inventory));
 
-    inventory->items = init_items();
+    inventory->items = init_items(config_buf);
     inventory->num_items = NUM_ITEMS;
     return inventory;
 }
 
-items_t *init_items(void)
+items *init_items(char **config_buf)
 {
-    items_t *items = malloc(sizeof(items_t));
+    items *items = malloc(sizeof(*items));
 
-    items->key = init_item("key", false, 0, 0, 0, 0);
-    items->potion = init_item("potion", true, 0, 20, 0, 0);
-    items->sword = init_item("sword", false, 0, 0, 100, 0);
-    items->shield = init_item("shield", false, 0, 0, 100, 50);
+    items->key = init_item(config_buf);
+    items->potion = init_item(config_buf);
+    items->sword = init_item(config_buf);
+    items->shield = init_item(config_buf);
     return items;
 }

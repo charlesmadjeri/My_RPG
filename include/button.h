@@ -28,17 +28,16 @@
     } button;
 
     typedef struct buttons_t {
-        struct button_t *button;
+        button *button;
         struct s_gui_object *next;
     } buttons;
 
 // Functions :
-    buttons_t *init_buttons(void);
-    button_t *init_button(sfVector2f position, sfVector2f size,
-    sfColor color, char *text);
-    void press_button(button_t *button);
-    void center_button_text(button_t *button);
-    void display_button(sfRenderWindow *window, button_t *button);
-    void destroy_button(button_t *button);
+    buttons *init_buttons(void);
+    button *init_button(sfVector2f position, sfVector2f size, char *text);
+    void press_button(button *button);
+    void center_button_text(button *button);
+    void display_button(sfRenderWindow *window, button *button);
+    void destroy_button(button *button);
 
 #endif /* !BUTTON_H_ */

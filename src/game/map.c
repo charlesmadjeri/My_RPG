@@ -5,8 +5,8 @@
 ** map
 */
 
-#include "../../include/map.h"
+#include "../../include/main.h"
 
-void load_map(map_t *map, const char *filename);
-void unload_map(map_t *map);
-void render_map(map_t *map);
+void load_map(map *map, const char *filename);
+void unload_map(map *map);
+void render_map(map *map);

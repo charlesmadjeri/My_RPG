@@ -5,4 +5,4 @@
 ** splash_screen
 */
 
-#include "../../../include/splash_screen.h"
+#include "../../../include/main.h"

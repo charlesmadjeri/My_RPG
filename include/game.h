@@ -15,20 +15,20 @@
     #pragma once
 
 // Structures :
-    typedef struct game {
-        map_t *map;
-        player_t *player;
-        pnjs_t *pnjs;
+    typedef struct game_t {
+        map *map;
+        player *player;
+        pnjs *pnjs;
         int num_pnjs;
         sfClock *clock;
-        camera_t *camera;
-    } game_t;
+        camera *camera;
+    } game;
 
 // Fonctions:
     char **parse_config_file(void);
 
-    game_t *init_game(void);
-    void save_game(game_t *game);
-    void destroy_game(game_t *game);
+    game *init_game(void);
+    void save_game(game *game);
+    void destroy_game(game *game);
 
 #endif /* !GAME_H_ */

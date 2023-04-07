@@ -16,20 +16,20 @@
     #define MAP_HEIGHT 100
 
 // Structures :
-    typedef struct map {
+    typedef struct map_t {
         char *name;
         int width;
         int height;
         char **tiles;
-        enemy_t *enemies;
+        enemy *enemies;
         int num_enemies;
-        pnjs_t *pnjs;
+        pnjs *pnjs;
         int num_pnjs;
-    } map_t;
+    } map;
 
 // Fonctions:
-    map_t *init_map(void);
-    void save_map(map_t *map);
-    void display_map(sfRenderWindow *window, map_t *map);
+    map *init_map(void);
+    void save_map(map *map);
+    void display_map(sfRenderWindow *window, map *map);
 
 #endif /* !MAP_H_ */

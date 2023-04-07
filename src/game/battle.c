@@ -5,8 +5,8 @@
 ** battle
 */
 
-#include "../../include/battle.h"
+#include "../../include/main.h"
 
-battle_t *init_battle(void);
-void display_battle(sfRenderWindow *window, battle_t *battle);
-void destroy_battle(battle_t *battle);
+battle *init_battle(void);
+void display_battle(sfRenderWindow *window, battle *battle);
+void destroy_battle(battle *battle);

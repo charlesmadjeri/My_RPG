@@ -6,20 +6,19 @@
 */
 
 #include "../../include/main.h"
-#include "../../include/game.h"
 
-void mouse_moved(sfRenderWindow *window, sfEvent *event, game_t *game)
+void mouse_moved(sfRenderWindow *window, sfEvent *event, game *game)
 {
     return;
 }
 
 void mouse_button_pressed(sfRenderWindow *window,
-sfEvent *event, struct game_s *game)
+sfEvent *event, struct game *game)
 {
     return;
 }
 
-void analyse_event(sfRenderWindow *window, sfEvent *event, game_t *game)
+void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
     if (event->type == sfEvtClosed)
         sfRenderWindow_close(window);

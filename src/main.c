@@ -6,10 +6,6 @@
 */
 
 #include "../include/main.h"
-#include "../include/ui.h"
-#include "../include/game.h"
-#include "../include/lib.h"
-#include "../include/events.h"
 
 void disp_help(char *argv1)
 {
@@ -23,7 +19,7 @@ int launch(void)
 {
     sfEvent event;
     sfRenderWindow *window = init_window();
-    game_t *game = init_game();
+    game *game = init_game();
 
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);

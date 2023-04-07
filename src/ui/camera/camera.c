@@ -5,9 +5,9 @@
 ** camera
 */
 
-#include "../../../include/camera.h"
+#include "../../../include/main.h"
 
-camera_t *init_camera(void);
-void move_camera(camera_t *camera, sfVector2f position);
-void zoom_camera(camera_t *camera, float zoom);
-void destroy_camera(camera_t *camera);
+camera *init_camera(void);
+void move_camera(camera *camera, sfVector2f position);
+void zoom_camera(camera *camera, float zoom);
+void destroy_camera(camera *camera);

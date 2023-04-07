@@ -5,7 +5,7 @@
 ** pnjs
 */
 
-#include "../../include/pnjs.h"
+#include "../../include/main.h"
 
-pnjs_t *init_pnjs(void);
-void destroy_pnjs(pnjs_t *pnjs);
+pnjs *init_pnjs(void);
+void destroy_pnjs(pnjs *pnjs);

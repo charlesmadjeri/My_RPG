@@ -7,7 +7,7 @@
 
 #include "../../include/main.h"
 
-void center_button_text(struct button_t *button)
+void center_button_text(button *button)
 {
     sfFloatRect text_bounds = sfText_getLocalBounds(button->text);
     sfVector2f text_position =
@@ -16,20 +16,26 @@ void center_button_text(struct button_t *button)
     sfText_setPosition(button->text, text_position);
 }
 
-struct button_t *init_button(sfVector2f position,
-sfVector2f size, sfColor color, char *text)
+button *init_button(sfVector2f position, sfVector2f size, char *text)
 {
-    struct button_t *button = malloc(sizeof(struct button_t));
+    button *button = malloc(sizeof(*button));
+    button->rect = sfRectangleShape_create();
     button->position = position;
     button->size = size;
-    button->color = color;
+    button->color = sfColor_fromRGB(128, 128, 128);
+    button->state = IS_RELEASED;
+    button->is_hover = sfFalse;
+    sfFont *font = sfFont_createFromFile(
+    "ressources/fonts/Oswald-Regular.ttf");
+    sfRectangleShape_setPosition(button->rect, position);
+    sfRectangleShape_setSize(button->rect, size);
+    sfRectangleShape_setFillColor(button->rect, button->color);
     button->text = sfText_create();
     sfText_setString(button->text, text);
-    sfText_setFont(button->text,
-    sfFont_createFromFile("assets/fonts/arial.ttf"));
-    sfText_setCharacterSize(button->text, 30);
+    sfText_setFont(button->text, font);
+    sfText_setCharacterSize(button->text, 20);
     sfText_setColor(button->text, sfBlack);
-
     center_button_text(button);
-    return (button);
+
+    return button;
 }

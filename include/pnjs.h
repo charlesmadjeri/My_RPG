@@ -11,14 +11,14 @@
     #pragma once
 
 // Structures :
-    typedef struct pnjs {
+    typedef struct pnjs_t {
         char *name;
         char **dialog;
-    } pnjs_t;
+    } pnjs;
 
 // Fonctions:
-    pnjs_t *init_pnjs(void);
-    void display_pnjs(sfRenderWindow *window, pnjs_t *pnjs);
-    void destroy_pnjs(pnjs_t *pnjs);
+    pnjs *init_pnjs(void);
+    void display_pnjs(sfRenderWindow *window, pnjs *pnjs);
+    void destroy_pnjs(pnjs *pnjs);
 
 #endif /* !PNJS_H_ */

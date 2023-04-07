@@ -6,9 +6,8 @@
 */
 
 #include "../../include/main.h"
-#include "../../include/game.h"
 
-void display(sfRenderWindow *window, game_t *game)
+void display(sfRenderWindow *window, game *game)
 {
     return;
 }

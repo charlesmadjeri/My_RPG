@@ -6,17 +6,10 @@
 */
 
 #include "../../include/main.h"
-#include "../../include/game.h"
-#include "../../include/map.h"
-#include "../../include/player.h"
-#include "../../include/inventory.h"
-#include "../../include/pnjs.h"
-#include <SFML/System/Clock.h>
-#include <stdbool.h>
 
-game_t *init_game(void)
+game *init_game(void)
 {
-    game_t *game = malloc(sizeof(game_t));
+    game *game = malloc(sizeof(*game));
     char **config_buf = parse_config_file();
     game->map = init_map();
     game->player = init_player(config_buf);
@@ -27,9 +20,9 @@ game_t *init_game(void)
     return game;
 }
 
-map_t *init_map(void)
+map *init_map(void)
 {
-    map_t *map = malloc(sizeof(map_t));
+    map *map = malloc(sizeof(*map));
     map->name = "first_map";
     map->enemies = init_enemy();
     map->num_enemies = 0;
@@ -39,9 +32,9 @@ map_t *init_map(void)
     map->num_pnjs = 0;
 }
 
-player_t *init_player(char **config_buf)
+player *init_player(char **config_buf)
 {
-    player_t *player = malloc(sizeof(player_t));
+    player *player = malloc(sizeof(*player));
 
     player->pos = (sfVector2f){PLAYER_START_POS_X, PLAYER_START_POS_Y};
     player->level = 1;
@@ -51,9 +44,9 @@ player_t *init_player(char **config_buf)
     player->strength = 20;
     player->inventory = init_inventory(config_buf);
     player->sprite = sfSprite_create();
-    sfTexture *player_texture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
+    sfTexture *playerexture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
     NULL);
-    sfSprite_setTexture(player->sprite, player_texture, sfTrue);
+    sfSprite_setTexture(player->sprite, playerexture, sfTrue);
     sfSprite_setPosition(player->sprite, player->pos);
     return player;
 }

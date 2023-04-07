@@ -11,16 +11,16 @@
     #pragma once
 
 // Structures :
-    typedef struct battle {
+    typedef struct battle_t {
         sfSprite *background;
         sfTexture *texture;
         sfVector2f position;
         sfIntRect rect;
-    } battle_t;
+    } battle;
 
 // Functions :
-    battle_t *init_battle(void);
-    void display_battle(sfRenderWindow *window, battle_t *battle);
-    void destroy_battle(battle_t *battle);
+    battle *init_battle(void);
+    void display_battle(sfRenderWindow *window, battle *battle);
+    void destroy_battle(battle *battle);
 
 #endif /* !BATTLE_H_ */

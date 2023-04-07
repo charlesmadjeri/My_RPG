@@ -9,6 +9,7 @@
     #define UI_H_
     #include <SFML/Graphics.h>
     #include "game.h"
+    #include "button.h"
     #pragma once
 
 // Macros :
@@ -22,13 +23,13 @@
     };
 
     struct s_gui_options {
-        struct button_s *button;
+        button *button;
         struct s_gui_object *option;
         struct s_gui_options *next;
     };
 
     struct s_gui_drop_menu {
-        struct button_s *button;
+        button *button;
         struct s_gui_options *options;
         sfBool is_open;
         struct s_gui_drop_menu *next;
@@ -36,8 +37,6 @@
 
 // Functions:
     sfRenderWindow *init_window(void);
-    struct button_s *init_button(sfVector2f position,
-    sfVector2f size, char *text);
-    void display(sfRenderWindow *window, game_t *game);
+    void display(sfRenderWindow *window, game *game);
 
 #endif /* !UI_H_ */

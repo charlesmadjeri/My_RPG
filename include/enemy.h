@@ -11,17 +11,17 @@
     #pragma once
 
 // Structures :
-    typedef struct enemy {
-        char name[64];
+    typedef struct enemy_t {
+        char *name;
         int level;
         int health;
         int max_health;
         int strength;
-    } enemy_t;
+    } enemy;
 
 // Fonctions:
-    enemy_t *init_enemy(void);
-    void display_enemy(sfRenderWindow *window, enemy_t *enemy);
-    void destroy_enemy(enemy_t *enemy);
+    enemy *init_enemy(void);
+    void display_enemy(sfRenderWindow *window, enemy *enemy);
+    void destroy_enemy(enemy *enemy);
 
 #endif /* !ENEMY_H_ */

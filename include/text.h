@@ -11,16 +11,16 @@
     #pragma once
 
 // Structures :
-    typedef struct text {
+    typedef struct text_t {
         sfText *text;
         sfFont *font;
         sfVector2f position;
         sfColor color;
         int size;
-    } text_t;
+    } text;
 
 // Functions :
-    text_t *init_text(char *str, sfVector2f position, sfColor color, int size);
-    void display_text(sfRenderWindow *window, text_t *text);
+    text *init_text(char *str, sfVector2f position, sfColor color, int size);
+    void display_text(sfRenderWindow *window, text *text);
 
 #endif /* !TEXT_H_ */
