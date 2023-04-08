@@ -5,8 +5,6 @@
 ** main
 */
 
-// Test et retest, on y arrive
-
 #include "../include/main.h"
 
 void disp_help(char *argv1)
