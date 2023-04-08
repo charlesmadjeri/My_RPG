@@ -8,11 +8,13 @@
 #ifndef GAME_H_
     #define GAME_H_
     #include <SFML/Graphics.h>
+    #include <SFML/Window/Window.h>
     #include "map.h"
     #include "player.h"
     #include "pnjs.h"
     #include "splash_screen.h"
     #include "pause_menu.h"
+    #include "settings.h"
     #pragma once
 
 // Macros:
@@ -22,6 +24,7 @@
     typedef struct game_t {
         splash_screen *splash_screen;
         pause_menu *pause_menu;
+        settings *settings;
         map *map;
         player *player;
         pnjs *pnjs;
@@ -31,7 +34,6 @@
 
 // Fonctions:
     char **parse_config_file(void);
-
     game *init_game(void);
     void save_game(game *game);
     void destroy_game(game *game);

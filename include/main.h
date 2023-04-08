@@ -35,7 +35,6 @@
     #include "lib.h"
     #include "ui.h"
     #include "pause_menu.h"
-
-
+    #include "settings.h"
 
 #endif /* !MAIN_H_ */

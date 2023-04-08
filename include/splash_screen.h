@@ -8,7 +8,7 @@
 #ifndef SPLASH_SCREEN_H_
     #define SPLASH_SCREEN_H_
     #include "button.h"
-#include <SFML/Graphics.h>
+    #include <SFML/Graphics.h>
     #pragma once
 
 // Structures :
@@ -24,9 +24,6 @@
         options *options;
         sfTexture *texture;
         sfSprite *sprite;
-        sfClock *clock;
-        sfTime time;
-        float seconds;
     } splash_screen;
 
 // Functions :

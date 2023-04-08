@@ -23,4 +23,9 @@
         button *save_button;
     } pause_menu;
 
+// Functions :
+    pause_menu *init_pause_menu(void);
+    void display_pause_menu(sfRenderWindow *window, pause_menu *pause_menu);
+    void destroy_pause_menu(pause_menu *pause_menu);
+
 #endif /* !PAUSE_MENU_H_ */
