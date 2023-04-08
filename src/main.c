@@ -5,6 +5,8 @@
 ** main
 */
 
+// TEST FOR DISCORD CRONJOB
+
 #include "../include/main.h"
 
 void disp_help(char *argv1)
