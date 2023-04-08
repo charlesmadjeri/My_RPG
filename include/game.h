@@ -11,6 +11,8 @@
     #include "map.h"
     #include "player.h"
     #include "pnjs.h"
+    #include "splash_screen.h"
+    #include "pause_menu.h"
     #pragma once
 
 // Macros:
@@ -18,6 +20,8 @@
 
 // Structures :
     typedef struct game_t {
+        splash_screen *splash_screen;
+        pause_menu *pause_menu;
         map *map;
         player *player;
         pnjs *pnjs;

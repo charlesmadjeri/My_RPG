@@ -34,6 +34,7 @@
     #include "battle.h"
     #include "lib.h"
     #include "ui.h"
+    #include "pause_menu.h"
 
 
 
