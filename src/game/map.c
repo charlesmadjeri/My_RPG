@@ -11,7 +11,6 @@ map *init_map(void)
 {
     map *map = malloc(sizeof(*map));
 
-    map->name = "first_map";
     map->enemies = init_enemy();
     map->num_enemies = 0;
     map->height = MAP_HEIGHT;

@@ -38,7 +38,7 @@
 // Fonctions:
     inventory *init_inventory(char **config_buf);
     items *init_items(char **config_buf);
-    item *init_item(char **config_buf);
+    item *init_item(char **config_buf, char *item_name);
     void add_item(inventory *inventory, char *name);
     void remove_item(inventory *inventory, char *name);
 

@@ -20,14 +20,14 @@ items *init_items(char **config_buf)
 {
     items *items = malloc(sizeof(*items));
 
-    items->key = init_item(config_buf);
-    items->potion = init_item(config_buf);
-    items->sword = init_item(config_buf);
-    items->shield = init_item(config_buf);
+    items->key = init_item(config_buf, "key");
+    items->potion = init_item(config_buf, "potion");
+    items->sword = init_item(config_buf, "sword");
+    items->shield = init_item(config_buf, "shield");
     return items;
 }
 
-item *init_item(char **config_buf)
+item *init_item(char **config_buf, char *item_name)
 {
     item *item = malloc(sizeof(*item));
     /* use getenv fork to get key values config...
