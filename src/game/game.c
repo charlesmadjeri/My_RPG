@@ -6,6 +6,8 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/splash_screen.h"
+#include "../../include/settings.h"
 
 game *init_game(void)
 {

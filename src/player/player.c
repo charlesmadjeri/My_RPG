@@ -6,11 +6,14 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/player.h"
+#include "../../include/inventory.h"
+#include <stdlib.h>
 
 player *init_player(char **config_buf)
 {
     player *player = malloc(sizeof(*player));
-
+    sfIntRect rect = {0, 231, 77, 77};
     player->pos = (sfVector2f){PLAYER_START_POS_X, PLAYER_START_POS_Y};
     player->level = 1;
     player->xp = 0;
@@ -19,9 +22,18 @@ player *init_player(char **config_buf)
     player->strength = 20;
     player->inventory = init_inventory(config_buf);
     player->sprite = sfSprite_create();
+    player->area = rect;
     sfTexture *playerexture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
     NULL);
     sfSprite_setTexture(player->sprite, playerexture, sfTrue);
     sfSprite_setPosition(player->sprite, player->pos);
+    sfSprite_setTextureRect(player->sprite, player->area);
     return player;
 }
+
+void display_player(sfRenderWindow *window, player *player)
+{
+    sfRenderWindow_drawSprite(window, player->sprite, NULL);
+}
+
+void destroy_player(player *player);    

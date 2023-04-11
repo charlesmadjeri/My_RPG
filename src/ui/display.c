@@ -9,5 +9,6 @@
 
 void display(sfRenderWindow *window, game *game)
 {
+        display_player(window, game->player);
     return;
 }

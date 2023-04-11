@@ -12,9 +12,9 @@
     #pragma once
 
 // Macros:
-    #define PLAYER_START_POS_X 0
-    #define PLAYER_START_POS_Y 0
-    #define PLAYER_TEXTURE_PATH "ressources/player.png"
+    #define PLAYER_START_POS_X 960
+    #define PLAYER_START_POS_Y 540
+    #define PLAYER_TEXTURE_PATH "ressources/sprites/SpriteHero.png"
 
 // Structures :
     typedef struct player_t {
@@ -27,6 +27,7 @@
         inventory *inventory;
         sfVector2f pos;
         sfSprite *sprite;
+        sfIntRect area;
     } player;
 
 // Fonctions:
