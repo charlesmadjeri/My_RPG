@@ -6,6 +6,7 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/pause_menu.h"
 
 pause_menu *init_pause_menu(void)
 {

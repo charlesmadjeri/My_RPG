@@ -6,6 +6,8 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/game.h"
+#include "../../include/lib.h"
 
 char **parse_config_file(void)
 {

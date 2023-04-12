@@ -6,6 +6,7 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/map.h"
 
 map *init_map(void)
 {

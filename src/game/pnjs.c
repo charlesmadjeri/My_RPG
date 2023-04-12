@@ -6,6 +6,7 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/pnjs.h"
 
 pnjs *init_pnjs(void)
 {

@@ -6,6 +6,7 @@
 */
 
 #include "../../../include/main.h"
+#include "../../../include/splash_screen.h"
 
 options *init_options(void)
 {

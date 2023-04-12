@@ -6,6 +6,10 @@
 */
 
 #include "../include/main.h"
+#include "../include/game.h"
+#include "../include/ui.h"
+#include "../include/lib.h"
+#include "../include/events.h"
 
 void disp_help(char *argv1)
 {

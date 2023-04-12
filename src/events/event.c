@@ -5,7 +5,7 @@
 ** events
 */
 
-#include "../../include/main.h"
+#include "../../include/events.h"
 
 void mouse_moved(sfRenderWindow *window, sfEvent *event, game *game)
 {

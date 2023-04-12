@@ -6,6 +6,7 @@
 */
 
 #include "../include/main.h"
+#include "../include/lib.h"
 
 char *trim(char *str)
 {

@@ -6,6 +6,7 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/inventory.h"
 
 inventory *init_inventory(char **config_buf)
 {

@@ -6,6 +6,7 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/enemy.h"
 
 enemy *init_enemy(void)
 {

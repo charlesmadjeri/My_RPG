@@ -6,6 +6,8 @@
 */
 
 #include "../../../include/main.h"
+#include "../../../include/ui.h"
+#include "../../../include/settings.h"
 
 settings *init_settings(void)
 {

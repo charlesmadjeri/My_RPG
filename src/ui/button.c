@@ -6,6 +6,8 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/ui.h"
+#include "../../include/button.h"
 
 void center_button_text(button *button)
 {

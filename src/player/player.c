@@ -7,8 +7,6 @@
 
 #include "../../include/main.h"
 #include "../../include/player.h"
-#include "../../include/inventory.h"
-#include <stdlib.h>
 
 player *init_player(char **config_buf)
 {
@@ -36,4 +34,4 @@ void display_player(sfRenderWindow *window, player *player)
     sfRenderWindow_drawSprite(window, player->sprite, NULL);
 }
 
-void destroy_player(player *player);    
+void destroy_player(player *player);
