@@ -12,9 +12,9 @@
 game *init_game(void)
 {
     game *game = malloc(sizeof(*game));
-    game->splash_screen = init_splash_screen();
+    // game->splash_screen = init_splash_screen();
     game->pause_menu = init_pause_menu();
-    game->settings = init_settings();
+    // game->settings = init_settings();
     char **config_buf = NULL; //parse_config_file();
     game->map = init_map();
     game->player = init_player(config_buf);
