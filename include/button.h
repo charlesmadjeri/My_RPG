@@ -33,8 +33,8 @@
     } buttons;
 
 // Functions :
-    buttons *init_buttons(void);
-    button *init_button(sfVector2f position, sfVector2f size, char *text);
+    options *init_button(splash_screen_t *splash, sfVector2f position,
+    sfVector2f size, sfRenderWindow *window);
     void press_button(button *button);
     void center_button_text(button *button);
     void display_button(sfRenderWindow *window, button *button);
