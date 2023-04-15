@@ -5,29 +5,43 @@
 ** settings
 */
 
-#include "../../../include/main.h"
+#include "../../../include/settings.h"
 
-settings *init_settings(sfVector2f position, sfRenderWindow *window)
+void set_textureandsprite(settings_t *settings)
 {
+    sfSprite_setPosition(settings->music, settings->pos_music);
+    sfSprite_setPosition(settings->sound, settings->pos_sound);
+    sfSprite_setPosition(settings->resolutions, settings->pos_resolutions);
+    sfSprite_setTexture(settings->music, settings->texture_music, sfTrue);
+    sfSprite_setTexture(settings->sound, settings->texture_sound, sfTrue);
+    sfSprite_setTexture(settings->resolutions,
+    settings->texture_resolutions, sfTrue);
+}
+
+void drawmysprite(settings_t *settings, sfRenderWindow *window)
+{
+    sfRenderWindow_drawSprite(window, settings->music, NULL);
+    sfRenderWindow_drawSprite(window, settings->sound, NULL);
+    sfRenderWindow_drawSprite(window, settings->resolutions, NULL);
+}
+
+settings_t *init_settings(sfVector2f position, sfRenderWindow *window)
+{
+    settings_t *settings = malloc(sizeof(settings_t));
     sfSprite *music = sfSprite_create();
-    sfTexture *texture_music = sfTexture_createFromFile("ressources/textures/music.png", NULL);
+    sfTexture *texture_music =
+    sfTexture_createFromFile("ressources/textures/music.png", NULL);
     sfSprite *sound = sfSprite_create();
-    sfTexture *texture_sound = sfTexture_createFromFile("ressources/textures/sound.png", NULL);
+    sfTexture *texture_sound =
+    sfTexture_createFromFile("ressources/textures/sound.png", NULL);
     sfSprite *resolutions = sfSprite_create();
-    sfTexture *texture_resolutions = sfTexture_createFromFile("ressources/textures/resolutions.png", NULL);
+    sfTexture *texture_resolutions =
+    sfTexture_createFromFile("ressources/textures/resolutions.png", NULL);
     sfVector2f pos_music = {(position.x / 2)- 64, position.y / 1.9};
     sfVector2f pos_sound = {(position.x / 2)- 64, position.y / 1.9};
     sfVector2f pos_resolutions = {(position.x / 2)- 64, position.y / 1.9};
-    sfSprite_setPosition(music, pos_music);
-    sfSprite_setPosition(sound, pos_sound);
-    sfSprite_setPosition(resolutions, pos_resolutions);
-    sfSprite_setTexture(music, texture_music, sfTrue);
-    sfSprite_setTexture(sound, texture_sound, sfTrue);
-    sfSprite_setTexture(resolutions, texture_resolutions, sfTrue);
-    sfRenderWindow_drawSprite(window, music, NULL);
-    sfRenderWindow_drawSprite(window, sound, NULL);
-    sfRenderWindow_drawSprite(window, resolutions, NULL);
-
+    set_textureandsprite(settings);
+    drawmysprite(settings, window);
 }
 
 void click_on_it(sfRenderWindow *window, sfMouseButtonEvent event)
@@ -49,4 +63,4 @@ void click_on_it(sfRenderWindow *window, sfMouseButtonEvent event)
     }
 }
 
-void save_settings(settings *settings);
+void save_settings(settings_t *settings);
