@@ -16,17 +16,25 @@
     #define SETTINGS_HEIGHT 1080
 
 // Structures :
-    typedef struct settings_t {
+    typedef struct settings {
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
-        sfVector2i resolution;
+        sfTexture *texture_music;
+        sfTexture *texture_sound;
+        sfTexture *texture_resolutions;
+        sfSprite *music;
+        sfSprite *sound;
+        sfSprite *resolutions;
+        sfVector2f pos_music;
+        sfVector2f pos_sound;
+        sfVector2f pos_resolutions;
         int fps;
-    } settings;
+    } settings_t;
 
 // Functions :
-    settings *init_settings(void);
-    void display_settings(sfRenderWindow *window, settings *settings);
-    void destroy_settings(settings *settings);
+    settings_t *init_settings(sfVector2f position, sfRenderWindow *window);
+    void display_settings(sfRenderWindow *window, settings_t *settings);
+    void destroy_settings(settings_t *settings);
 
 #endif /* !SETTINGS_H_ */
