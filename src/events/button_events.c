@@ -5,7 +5,8 @@
 ** button_events
 */
 
-#include "../../include/events.h"
+#include "../../include/main.h"
+#include "../../include/game.h"
 
 void button_events(sfRenderWindow *window, sfEvent event, game *game)
 {

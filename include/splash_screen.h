@@ -7,19 +7,10 @@
 
 #ifndef SPLASH_SCREEN_H_
     #define SPLASH_SCREEN_H_
-    #include "button.h"
     #include <SFML/Graphics.h>
     #pragma once
 
 // Structures :
-
-    typedef struct options_t {
-        button *new_game_button;
-        button *load_game_button;
-        button *settings_button;
-        button *quit_button;
-    } options;
-
     typedef struct splash_screen {
         sfTexture *texture_start;
         sfTexture *texture_continue;

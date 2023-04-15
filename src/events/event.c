@@ -5,6 +5,8 @@
 ** events
 */
 
+#include "../../include/main.h"
+#include "../../include/player.h"
 #include "../../include/events.h"
 
 void mouse_moved(sfRenderWindow *window, sfEvent *event, game *game)
@@ -23,7 +25,7 @@ void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
     if (event->type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (event->type == sfEvtKeyPressed)
-        player_move(game, &event);
+        player_move(game, event);
     /*
     if (event->type == sfEvtMouseMoved)
         mouse_moved(window, event, game);

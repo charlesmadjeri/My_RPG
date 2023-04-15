@@ -38,4 +38,6 @@
     void save_game(game *game);
     void destroy_game(game *game);
 
+    void player_move(game *game, sfEvent *event);
+
 #endif /* !GAME_H_ */
