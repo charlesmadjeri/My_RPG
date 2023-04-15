@@ -22,9 +22,9 @@
 
 // Structures :
     typedef struct game_t {
-        splash_screen *splash_screen;
+        splash_screen_t *splash_screen;
         pause_menu *pause_menu;
-        settings *settings;
+        settings_t *settings;
         map *map;
         player *player;
         pnjs *pnjs;
