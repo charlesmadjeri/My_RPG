@@ -14,10 +14,10 @@
 #include "../../include/player.h"
 #include "../../include/pnjs.h"
 
-game *init_game(void)
+game *init_game()
 {
     game *game = malloc(sizeof(*game));
-    // game->splash_screen = init_splash_screen();
+    game->splash = init_splash_screen();
     game->pause_menu = init_pause_menu();
     // game->settings = init_settings();
     char **config_buf = NULL; //parse_config_file();
