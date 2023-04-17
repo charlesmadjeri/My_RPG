@@ -22,7 +22,7 @@
 
 // Structures :
     typedef struct game_t {
-        splash_screen_t *splash_screen;
+        splash_screen_t *splash;
         pause_menu *pause_menu;
         settings_t *settings;
         map *map;
@@ -34,7 +34,7 @@
 
 // Fonctions:
     char **parse_config_file(void);
-    game *init_game(void);
+    game *init_game();
     void save_game(game *game);
     void destroy_game(game *game);
 
