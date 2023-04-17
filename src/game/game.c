@@ -7,12 +7,6 @@
 
 #include "../../include/main.h"
 #include "../../include/game.h"
-#include "../../include/splash_screen.h"
-#include "../../include/pause_menu.h"
-#include "../../include/settings.h"
-#include "../../include/map.h"
-#include "../../include/player.h"
-#include "../../include/pnjs.h"
 
 game *init_game(void)
 {

@@ -34,7 +34,7 @@
 
 // Fonctions:
     char **parse_config_file(void);
-    game *init_game();
+    game *init_game(void);
     void save_game(game *game);
     void destroy_game(game *game);
 

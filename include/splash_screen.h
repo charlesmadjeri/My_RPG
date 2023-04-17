@@ -20,7 +20,7 @@
     } splash_screen_t;
 
 // Functions :
-    splash_screen_t *init_splash_screen();
+    splash_screen_t *init_splash_screen(void);
     void display_splash_screen(sfRenderWindow *window,
     splash_screen_t *splash);
     void destroy_splash_screen(splash_screen_t *splash);
