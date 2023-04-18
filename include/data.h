@@ -8,6 +8,7 @@
 #ifndef DATA_H_
     #define DATA_H_
     #include <SFML/Graphics.h>
+    #include <SFML/Graphics/Types.h>
     #pragma once
 
 // Battle:
@@ -207,6 +208,7 @@
 
 // Game:
     typedef struct game_t {
+        sfView *view;
         state *state;
         splash_screen *splash;
         pause_menu *pause_menu;

@@ -26,12 +26,4 @@ void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
         sfRenderWindow_close(window);
     if (event->type == sfEvtKeyPressed)
         player_move(game, event);
-    /*
-    if (event->type == sfEvtMouseMoved)
-        mouse_moved(window, event, game);
-    if (event->type == sfEvtMouseButtonPressed)
-        mouse_button_pressed(window, event, game);
-    if (event->type == sfEvtMouseButtonReleased)
-        game->mouse_pressed = sfFalse;
-    */
 }

@@ -17,6 +17,7 @@
 
 // Functions:
     sfRenderWindow *init_window(void);
+    sfView *init_view(void);
     void display(sfRenderWindow *window, game *game);
 
 #endif /* !UI_H_ */

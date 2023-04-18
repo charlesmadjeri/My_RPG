@@ -16,3 +16,11 @@ sfRenderWindow *init_window(void)
     sfRenderWindow_setFramerateLimit(window, 60);
     return window;
 }
+
+sfView *init_view(void)
+{
+    sfView *view = sfView_create();
+    sfView_setCenter(view, (sfVector2f) {WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2});
+    sfView_setSize(view, (sfVector2f) {WINDOW_WIDTH, WINDOW_HEIGHT});
+    return view;
+}

@@ -11,6 +11,7 @@
 #include "../../include/player.h"
 #include "../../include/map.h"
 #include "../../include/pnjs.h"
+#include "../../include/ui.h"
 
 game *init_game(void)
 {
@@ -25,6 +26,7 @@ game *init_game(void)
     game->clock = sfClock_create();
     game->pnjs = init_pnjs();
     game->num_pnjs = 0;
+    game->view = init_view();
     return game;
 }
 

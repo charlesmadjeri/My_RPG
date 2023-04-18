@@ -45,6 +45,7 @@ static sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
 
     sfSprite_setTexture(map_sprite, map_texture, sfTrue);
     sfRenderTexture_destroy(map_render_tex);
+    sfSprite_setPosition(map_sprite, (sfVector2f) {0, 0});
 
     return map_sprite;
 }
