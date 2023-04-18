@@ -8,37 +8,8 @@
 #ifndef BUTTON_H_
     #define BUTTON_H_
     #include <SFML/Graphics.h>
-    #include "splash_screen.h"
+    #include "data.h"
     #pragma once
-
-// Structures :
-    enum e_gui_button_state {
-        IS_CLICKED = 1,
-        IS_PRESSED = 2,
-        IS_RELEASED = 3
-    };
-
-    typedef struct button_t {
-        sfRectangleShape *rect;
-        sfVector2f position;
-        sfVector2f size;
-        sfColor color;
-        sfText *text;
-        enum e_gui_button_state state;
-        sfBool is_hover;
-    } button;
-
-    typedef struct options_t {
-        button *new_game_button;
-        button *load_game_button;
-        button *settings_button;
-        button *quit_button;
-    } options;
-
-    typedef struct buttons_t {
-        button *button;
-        struct s_gui_object *next;
-    } buttons;
 
 // Functions :
     button *init_button(sfVector2f position, sfVector2f size, char *text);

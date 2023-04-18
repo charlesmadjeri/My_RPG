@@ -7,9 +7,8 @@
 
 #ifndef MAP_H_
     #define MAP_H_
-    #include "enemy.h"
-    #include "pnjs.h"
     #include <SFML/Graphics/Types.h>
+    #include "data.h"
     #pragma once
 
 // Macros:
@@ -31,37 +30,6 @@
     #define D_T_PATH "ressources/maps/dead_trees.png"
     #define C_W_PATH "ressources/maps/city_wall.png"
     #define H_PATH "ressources/maps/house.png"
-
-// Structures :
-    typedef struct textures_t {
-        sfTexture *grass;
-        sfTexture *pass;
-        sfTexture *stone_road;
-        sfTexture *sand;
-        sfTexture *bridge;
-        sfTexture *final_boss_dungeon;
-        sfTexture *mountains;
-        sfTexture *water;
-        sfTexture *unattackable_monster;
-        sfTexture *dead_trees;
-        sfTexture *city_wall;
-        sfTexture *house;
-    } textures;
-
-    typedef struct map_data_t {
-        sfRenderTexture *map_render_tex;
-        const sfTexture *map_final_tex;
-        textures *textures;
-        int **matrice;
-    } map_data;
-    typedef struct map_t {
-        sfSprite *map_sprite;
-        map_data *map_data;
-        enemy *enemies;
-        int num_enemies;
-        pnjs *pnjs;
-        int num_pnjs;
-    } map;
 
 // Fonctions:
     map *init_map(void);

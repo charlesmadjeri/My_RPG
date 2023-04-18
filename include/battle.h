@@ -8,15 +8,8 @@
 #ifndef BATTLE_H_
     #define BATTLE_H_
     #include <SFML/Graphics.h>
+    #include "data.h"
     #pragma once
-
-// Structures :
-    typedef struct battle_t {
-        sfSprite *background;
-        sfTexture *texture;
-        sfVector2f position;
-        sfIntRect rect;
-    } battle;
 
 // Functions :
     battle *init_battle(void);

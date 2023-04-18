@@ -8,32 +8,12 @@
 #ifndef UI_H_
     #define UI_H_
     #include <SFML/Graphics.h>
-    #include "game.h"
-    #include "button.h"
+    #include "data.h"
     #pragma once
 
 // Macros :
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
-
-// Structures :
-    struct s_gui_menu_bar {
-        struct s_gui_drop_menu *drop_menus;
-        struct s_gui_menu_bar *next;
-    };
-
-    struct s_gui_options {
-        button *button;
-        struct s_gui_object *option;
-        struct s_gui_options *next;
-    };
-
-    struct s_gui_drop_menu {
-        button *button;
-        struct s_gui_options *options;
-        sfBool is_open;
-        struct s_gui_drop_menu *next;
-    };
 
 // Functions:
     sfRenderWindow *init_window(void);

@@ -9,7 +9,7 @@
 #include "../../include/game.h"
 #include "../../include/splash_screen.h"
 
-void set_texture_and_sprite(splash_screen_t *splash)
+void set_texture_and_sprite(splash_screen *splash)
 {
     sfVector2f position;
     sfVector2f pos_start = {(position.x / 2)- 64, position.y / 1.9};
@@ -30,7 +30,7 @@ void set_texture_and_sprite(splash_screen_t *splash)
     sfSprite_setTexture(splash->quit, texture_quit, sfTrue);
 }
 
-void init_splash_button(splash_screen_t *splash)
+void init_splash_button(splash_screen *splash)
 {
     splash->start = sfSprite_create();
     sfTexture *texture_start = sfTexture_createFromFile
@@ -47,9 +47,9 @@ void init_splash_button(splash_screen_t *splash)
     set_texture_and_sprite(splash);
 }
 
-splash_screen_t *init_splash_screen(void)
+splash_screen *init_splash_screen(void)
 {
-    splash_screen_t *splash = malloc(sizeof(splash_screen_t));
+    splash_screen *splash = malloc(sizeof(splash_screen));
     sfTexture *texture = sfTexture_createFromFile
     ("../../ressources/textures/background.png", NULL);
     splash->background = sfSprite_create();
@@ -59,7 +59,7 @@ splash_screen_t *init_splash_screen(void)
 }
 
 void display_splash_screen(sfRenderWindow *window,
-splash_screen_t *splash)
+splash_screen *splash)
 {
     sfRenderWindow_drawSprite(window, splash->background, NULL);
     sfRenderWindow_drawSprite(window, splash->start, NULL);
@@ -68,4 +68,4 @@ splash_screen_t *splash)
     sfRenderWindow_drawSprite(window, splash->quit, NULL);
 }
 
-void destroy_splash_screen(splash_screen_t *splash);
+void destroy_splash_screen(splash_screen *splash);

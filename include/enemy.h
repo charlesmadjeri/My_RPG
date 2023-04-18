@@ -8,16 +8,8 @@
 #ifndef ENEMY_H_
     #define ENEMY_H_
     #include <SFML/Graphics.h>
+    #include "data.h"
     #pragma once
-
-// Structures :
-    typedef struct enemy_t {
-        char *name;
-        int level;
-        int health;
-        int max_health;
-        int strength;
-    } enemy;
 
 // Fonctions:
     enemy *init_enemy(void);

@@ -5,9 +5,10 @@
 ** settings
 */
 
+#include "../../include/main.h"
 #include "../../include/settings.h"
 
-void set_textureandsprite(settings_t *settings)
+void set_textureandsprite(settings *settings)
 {
     sfSprite_setPosition(settings->music, settings->pos_music);
     sfSprite_setPosition(settings->sound, settings->pos_sound);
@@ -18,16 +19,16 @@ void set_textureandsprite(settings_t *settings)
     settings->texture_resolutions, sfTrue);
 }
 
-void drawmysprite(settings_t *settings, sfRenderWindow *window)
+void drawmysprite(settings *settings, sfRenderWindow *window)
 {
     sfRenderWindow_drawSprite(window, settings->music, NULL);
     sfRenderWindow_drawSprite(window, settings->sound, NULL);
     sfRenderWindow_drawSprite(window, settings->resolutions, NULL);
 }
 
-settings_t *init_settings(sfVector2f position, sfRenderWindow *window)
+settings *init_settings(sfVector2f position, sfRenderWindow *window)
 {
-    settings_t *settings = malloc(sizeof(settings_t));
+    settings *settings = malloc(sizeof(*settings));
     sfSprite *music = sfSprite_create();
     sfTexture *texture_music =
     sfTexture_createFromFile("ressources/textures/music.png", NULL);
@@ -42,6 +43,7 @@ settings_t *init_settings(sfVector2f position, sfRenderWindow *window)
     sfVector2f pos_resolutions = {(position.x / 2)- 64, position.y / 1.9};
     set_textureandsprite(settings);
     drawmysprite(settings, window);
+    return settings;
 }
 
 void click_on_it(sfRenderWindow *window, sfMouseButtonEvent event)
@@ -63,4 +65,4 @@ void click_on_it(sfRenderWindow *window, sfMouseButtonEvent event)
     }
 }
 
-void save_settings(settings_t *settings);
+void save_settings(settings *settings);

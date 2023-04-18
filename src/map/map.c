@@ -7,7 +7,8 @@
 
 #include "../../include/main.h"
 #include "../../include/map.h"
-#include <SFML/Graphics/Types.h>
+#include "../../include/enemy.h"
+#include "../../include/pnjs.h"
 
 static void load_matrice(map_data *map_data)
 {

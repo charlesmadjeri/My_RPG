@@ -6,7 +6,7 @@
 */
 
 #include "../../include/main.h"
-#include "../../include/player.h"
+#include "../../include/game.h"
 #include "../../include/events.h"
 
 void mouse_moved(sfRenderWindow *window, sfEvent *event, game *game)

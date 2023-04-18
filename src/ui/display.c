@@ -7,6 +7,8 @@
 
 #include "../../include/main.h"
 #include "../../include/game.h"
+#include "../../include/splash_screen.h"
+#include "../../include/player.h"
 
 void display_map(sfRenderWindow *window, map *map)
 {

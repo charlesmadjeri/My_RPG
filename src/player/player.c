@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/player.h"
+#include "../../include/inventory.h"
 
 player *init_player(char **config_buf)
 {
