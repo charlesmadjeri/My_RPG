@@ -1,12 +1,11 @@
 0 = grass
 1 = pass
-2 = stone road
+2 = road
 3 = sand
-4 = bridge
-9 = final boss dungeon
+9 = dungeon door
 101 = mountains
 102 = water
-103 = unnatackable monster / steps
+103 = steps
 104 = dead trees
 110 = city wall
 111 = house
