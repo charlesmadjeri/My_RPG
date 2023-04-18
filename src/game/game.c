@@ -27,6 +27,7 @@ game *init_game(void)
     game->pnjs = init_pnjs();
     game->num_pnjs = 0;
     game->view = init_view();
+    game->music = init_music();
     return game;
 }
 

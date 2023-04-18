@@ -20,5 +20,6 @@
     #include <SFML/Window.h>
     #include <SFML/Config.h>
     #include <SFML/System.h>
+    #include <SFML/Audio.h>
 
 #endif /* !MAIN_H_ */

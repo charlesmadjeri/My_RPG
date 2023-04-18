@@ -9,6 +9,7 @@
     #define DATA_H_
     #include <SFML/Graphics.h>
     #include <SFML/Graphics/Types.h>
+    #include <SFML/Audio.h>
     #pragma once
 
 // Battle:
@@ -95,7 +96,7 @@
 
     typedef struct map_data_t {
         sfRenderTexture *map_render_tex;
-        const sfTexture *map_final_tex;
+        sfTexture *map_final_tex;
         textures *textures;
         int **matrice;
     } map_data;
@@ -218,6 +219,7 @@
         pnjs *pnjs;
         int num_pnjs;
         sfClock *clock;
+        sfMusic *music;
     } game;
 
 

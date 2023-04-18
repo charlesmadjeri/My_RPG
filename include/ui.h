@@ -14,10 +14,15 @@
 // Macros :
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
+    #define MUSIC_PATH "ressources/music/music.ogg"
 
 // Functions:
     sfRenderWindow *init_window(void);
     sfView *init_view(void);
+    sfMusic *init_music(void);
     void display(sfRenderWindow *window, game *game);
+
+    void refresh_view(sfRenderWindow *window, game *game);
+    void move_view(sfView *view, sfEvent *event);
 
 #endif /* !UI_H_ */

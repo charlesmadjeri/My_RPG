@@ -10,6 +10,7 @@
 #include "../include/ui.h"
 #include "../include/lib.h"
 #include "../include/events.h"
+#include "../include/destroy.h"
 
 void disp_help(char *argv1)
 {
@@ -27,12 +28,13 @@ int launch(void)
 
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);
-        while (sfRenderWindow_pollEvent(window, &event))
-            analyse_event(window, &event, game);
         display(window, game);
         sfRenderWindow_display(window);
+        while (sfRenderWindow_pollEvent(window, &event))
+            analyse_event(window, &event, game);
     }
     sfRenderWindow_destroy(window);
+    destroy_all(game);
     free(game);
     return 0;
 }
