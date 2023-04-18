@@ -5,8 +5,8 @@
 ** map
 */
 
-#include "../../../include/main.h"
-#include "../../../include/map.h"
+#include "../../include/main.h"
+#include "../../include/map.h"
 #include <SFML/Graphics/Types.h>
 
 static void load_matrice(map_data *map_data)

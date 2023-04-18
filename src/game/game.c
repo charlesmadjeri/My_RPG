@@ -14,14 +14,14 @@
 #include "../../include/player.h"
 #include "../../include/pnjs.h"
 
-game *init_game()
+game *init_game(void)
 {
     game *game = malloc(sizeof(*game));
     game->splash = init_splash_screen();
-    game->pause_menu = init_pause_menu();
+    // game->pause_menu = init_pause_menu();
     // game->settings = init_settings();
     char **config_buf = NULL; //parse_config_file();
-    game->map = init_map();
+    // game->map = init_map();
     game->player = init_player(config_buf);
     game->clock = sfClock_create();
     game->pnjs = init_pnjs();
