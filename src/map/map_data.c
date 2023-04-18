@@ -60,7 +60,8 @@ static void switch_tiles(int value, sfTexture* tex, textures *textures)
         case 5: tex = textures->final_boss_dungeon;
             break;
     }
-    (tex == NULL) ? switch_next_tiles(value, tex, textures) : 0;
+    if (tex == NULL)
+        switch_next_tiles(value, tex, textures);
 }
 
 static sfRenderTexture *draw_tiles_on_map_sprite(map_data *map_data)
