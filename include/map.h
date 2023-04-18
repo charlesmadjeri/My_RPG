@@ -20,14 +20,13 @@
     #define TILE_SIZE_Y 150 // in pixels
 
     #define G_PATH "ressources/maps/grass.png"
-    #define P_PATH "ressources/maps/pass.png"
-    #define S_R_PATH "ressources/maps/stone_road.png"
+    #define P_PATH "ressources/maps/path.png"
+    #define S_R_PATH "ressources/maps/road.png"
     #define S_PATH "ressources/maps/sand.png"
-    #define B_PATH "ressources/maps/bridge.png"
-    #define F_B_D_PATH "ressources/maps/final_boss_dungeon.png"
+    #define F_B_D_PATH "ressources/maps/dungeon_door.png"
     #define M_PATH "ressources/maps/mountains.png"
     #define W_PATH "ressources/maps/water.png"
-    #define U_M_PATH "ressources/maps/unattackable_monster.png"
+    #define U_M_PATH "ressources/maps/steps.png"
     #define D_T_PATH "ressources/maps/dead_trees.png"
     #define C_W_PATH "ressources/maps/city_wall.png"
     #define H_PATH "ressources/maps/house.png"
