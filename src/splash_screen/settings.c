@@ -5,7 +5,7 @@
 ** settings
 */
 
-#include "../../../include/settings.h"
+#include "../../include/settings.h"
 
 void set_textureandsprite(settings_t *settings)
 {
@@ -49,17 +49,17 @@ void click_on_it(sfRenderWindow *window, sfMouseButtonEvent event)
     sfVector2f music_button = {50, 50};
     if (event.x >= music_button.x && event.x <= music_button.x + 50 &&
     event.y >= music_button.y && event.y <= music_button.y + 50) {
-        handle_music(window);
+        // handle_music(window);
     }
     sfVector2f sound_button = {50, 50};
     if (event.x >= sound_button.x && event.x <= sound_button.x + 50 &&
     event.y >= sound_button.y && event.y <= sound_button.y + 50) {
-        handle_sound(window);
+        // handle_sound(window);
     }
     sfVector2f res_button = {50, 50};
     if (event.x >= res_button.x && event.x <= res_button.x + 50 &&
     event.y >= res_button.y && event.y <= res_button.y + 50) {
-        set_resolutions(window);
+        // set_resolutions(window);
     }
 }
 

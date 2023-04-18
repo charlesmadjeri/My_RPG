@@ -5,8 +5,8 @@
 ** generate_map
 */
 
-#include "../../../include/main.h"
-#include "../../../include/map.h"
+#include "../../include/main.h"
+#include "../../include/map.h"
 
 static textures *load_map_elements(void)
 {
