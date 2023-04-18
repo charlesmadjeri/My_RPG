@@ -31,13 +31,16 @@ settings *init_settings(sfVector2f position, sfRenderWindow *window)
     settings *settings = malloc(sizeof(*settings));
     sfSprite *music = sfSprite_create();
     sfTexture *texture_music =
-    sfTexture_createFromFile("ressources/textures/music.png", NULL);
+    sfTexture_createFromFile("ressources/splash_screen/textures/music.png",
+    NULL);
     sfSprite *sound = sfSprite_create();
     sfTexture *texture_sound =
-    sfTexture_createFromFile("ressources/textures/sound.png", NULL);
+    sfTexture_createFromFile("ressources/splash_screen/textures/sound.png",
+    NULL);
     sfSprite *resolutions = sfSprite_create();
     sfTexture *texture_resolutions =
-    sfTexture_createFromFile("ressources/textures/resolutions.png", NULL);
+    sfTexture_createFromFile(
+    "ressources/splash_screen/textures/resolutions.png", NULL);
     sfVector2f pos_music = {(position.x / 2)- 64, position.y / 1.9};
     sfVector2f pos_sound = {(position.x / 2)- 64, position.y / 1.9};
     sfVector2f pos_resolutions = {(position.x / 2)- 64, position.y / 1.9};

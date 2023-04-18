@@ -81,13 +81,12 @@
     typedef struct textures_t {
         sfTexture *grass;
         sfTexture *pass;
-        sfTexture *stone_road;
+        sfTexture *road;
         sfTexture *sand;
-        sfTexture *bridge;
-        sfTexture *final_boss_dungeon;
+        sfTexture *dungeon_door;
         sfTexture *mountains;
         sfTexture *water;
-        sfTexture *unattackable_monster;
+        sfTexture *steps;
         sfTexture *dead_trees;
         sfTexture *city_wall;
         sfTexture *house;

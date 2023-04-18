@@ -18,17 +18,17 @@
     #define TILE_SIZE_X 150 // in pixels
     #define TILE_SIZE_Y 150 // in pixels
 
-    #define G_PATH "ressources/maps/grass.png"
-    #define P_PATH "ressources/maps/path.png"
-    #define S_R_PATH "ressources/maps/road.png"
-    #define S_PATH "ressources/maps/sand.png"
-    #define F_B_D_PATH "ressources/maps/dungeon_door.png"
-    #define M_PATH "ressources/maps/mountains.png"
-    #define W_PATH "ressources/maps/water.png"
-    #define U_M_PATH "ressources/maps/steps.png"
-    #define D_T_PATH "ressources/maps/dead_trees.png"
-    #define C_W_PATH "ressources/maps/city_wall.png"
-    #define H_PATH "ressources/maps/house.png"
+    #define G_PATH "ressources/maps/textures/grass.png"
+    #define P_PATH "ressources/maps/textures/path.png"
+    #define R_PATH "ressources/maps/textures/road.png"
+    #define SA_PATH "ressources/maps/textures/sand.png"
+    #define D_D_PATH "ressources/maps/textures/dungeon_door.png"
+    #define M_PATH "ressources/maps/textures/mountains.png"
+    #define W_PATH "ressources/maps/textures/water.png"
+    #define ST_PATH "ressources/maps/textures/steps.png"
+    #define D_T_PATH "ressources/maps/textures/dead_trees.png"
+    #define C_W_PATH "ressources/maps/textures/city_wall.png"
+    #define H_PATH "ressources/maps/textures/house.png"
 
 // Fonctions:
     map *init_map(void);

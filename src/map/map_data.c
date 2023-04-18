@@ -13,13 +13,12 @@ static textures *load_map_elements(void)
     textures *textures = malloc(sizeof(*textures));
     textures->grass = sfTexture_createFromFile(G_PATH, NULL);
     textures->pass = sfTexture_createFromFile(P_PATH, NULL);
-    textures->stone_road = sfTexture_createFromFile(S_R_PATH, NULL);
-    textures->sand = sfTexture_createFromFile(S_PATH, NULL);
-    textures->bridge = sfTexture_createFromFile(B_PATH, NULL);
-    textures->final_boss_dungeon = sfTexture_createFromFile(F_B_D_PATH, NULL);
+    textures->road = sfTexture_createFromFile(R_PATH, NULL);
+    textures->sand = sfTexture_createFromFile(SA_PATH, NULL);
+    textures->dungeon_door = sfTexture_createFromFile(D_D_PATH, NULL);
     textures->mountains = sfTexture_createFromFile(M_PATH, NULL);
     textures->water = sfTexture_createFromFile(W_PATH, NULL);
-    textures->unattackable_monster = sfTexture_createFromFile(U_M_PATH, NULL);
+    textures->steps = sfTexture_createFromFile(ST_PATH, NULL);
     textures->dead_trees = sfTexture_createFromFile(D_T_PATH, NULL);
     textures->city_wall = sfTexture_createFromFile(C_W_PATH, NULL);
     textures->house = sfTexture_createFromFile(H_PATH, NULL);
@@ -33,13 +32,13 @@ static void switch_next_tiles(int value, sfTexture *tex, textures *textures)
             break;
         case 102: tex = textures->water;
             break;
-        case 103: tex = textures->unattackable_monster;
+        case 103: tex = textures->steps;
             break;
         case 104: tex = textures->dead_trees;
             break;
-        case 105: tex = textures->city_wall;
+        case 110: tex = textures->city_wall;
             break;
-        case 106: tex = textures->house;
+        case 111: tex = textures->house;
             break;
     }
 }
@@ -51,13 +50,11 @@ static void switch_tiles(int value, sfTexture* tex, textures *textures)
             break;
         case 1: tex = textures->pass;
             break;
-        case 2: tex = textures->stone_road;
+        case 2: tex = textures->road;
             break;
         case 3: tex = textures->sand;
             break;
-        case 4: tex = textures->bridge;
-            break;
-        case 5: tex = textures->final_boss_dungeon;
+        case 9: tex = textures->dungeon_door;
             break;
     }
     if (tex == NULL)

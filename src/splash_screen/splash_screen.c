@@ -34,16 +34,16 @@ void init_splash_button(splash_screen *splash)
 {
     splash->start = sfSprite_create();
     sfTexture *texture_start = sfTexture_createFromFile
-    ("ressources/textures/start.png",NULL);
+    ("ressources/splash_screen/textures/start.png",NULL);
     splash->continued = sfSprite_create();
     sfTexture *texture_continue = sfTexture_createFromFile
-    ("ressources/textures/continue.png",NULL);
+    ("ressources/splash_screen/textures/continue.png",NULL);
     splash->help = sfSprite_create();
     sfTexture *texture_help = sfTexture_createFromFile
-    ("ressources/textures/help.png", NULL);
+    ("ressources/splash_screen/textures/help.png", NULL);
     splash->quit = sfSprite_create();
     sfTexture *texture_quit = sfTexture_createFromFile
-    ("ressources/textures/quit.png", NULL);
+    ("ressources/splash_screen/textures/quit.png", NULL);
     set_texture_and_sprite(splash);
 }
 
@@ -51,7 +51,7 @@ splash_screen *init_splash_screen(void)
 {
     splash_screen *splash = malloc(sizeof(splash_screen));
     sfTexture *texture = sfTexture_createFromFile
-    ("../../ressources/textures/background.png", NULL);
+    ("../../ressources/splash_screen/textures/background.png", NULL);
     splash->background = sfSprite_create();
     sfSprite_setTexture(splash->background, texture, sfTrue);
     init_splash_button(splash);

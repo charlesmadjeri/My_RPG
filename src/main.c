@@ -15,7 +15,7 @@ void disp_help(char *argv1)
 {
     if (argv1[0] == '-' && argv1[1] == 'h') {
         my_putstr("\nUsage:\t./my_rpg\n\nDescription:");
-        my_putstr("\n\tWelcume Role playing gaymer !\n\n");
+        my_putstr("\n\tWelcome Role playing gamer !\n\n");
     }
 }
 
