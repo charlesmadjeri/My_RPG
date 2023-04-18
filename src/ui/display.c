@@ -18,7 +18,7 @@ void display_map(sfRenderWindow *window, map *map)
 
 void display(sfRenderWindow *window, game *game)
 {
-    display_splash_screen(window, game->splash);
+    //display_splash_screen(window, game->splash);
     display_map(window, game->map);
     display_player(window, game->player);
     return;
