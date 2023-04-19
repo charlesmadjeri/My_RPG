@@ -27,6 +27,6 @@ void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
         sfRenderWindow_close(window);
     if (event->type == sfEvtKeyPressed) {
         player_move(game, event);
-        move_view(game->view, event);
+        move_view(game, event, window);
     }
 }

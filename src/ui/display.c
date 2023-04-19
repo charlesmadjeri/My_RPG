@@ -19,8 +19,8 @@ void display_map(sfRenderWindow *window, map *map)
 void display(sfRenderWindow *window, game *game)
 {
     //display_splash_screen(window, game->splash);
+    refresh_view(window, game);
     display_map(window, game->map);
     display_player(window, game->player);
-    refresh_view(window, game);
     return;
 }

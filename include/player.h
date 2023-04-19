@@ -9,11 +9,12 @@
     #define PLAYER_H_
     #include <SFML/Graphics.h>
     #include "data.h"
+    #include "ui.h"
     #pragma once
 
 // Macros:
-    #define PLAYER_START_POS_X 960
-    #define PLAYER_START_POS_Y 540
+    #define PLAYER_START_POS_X WINDOW_WIDTH / 2
+    #define PLAYER_START_POS_Y WINDOW_HEIGHT / 2
     #define PLAYER_TEXTURE_PATH "ressources/sprites/SpriteHero.png"
 
 // Fonctions:

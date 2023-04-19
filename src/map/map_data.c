@@ -25,8 +25,10 @@ static textures *load_map_elements(void)
     return textures;
 }
 
-static void switch_next_tiles(int value, sfTexture *tex, textures *textures)
+static sfTexture *switch_next_tiles(int value, textures *textures)
 {
+    sfTexture *tex = NULL;
+
     switch (value) {
         case 101: tex = textures->mountains;
             break;
@@ -41,10 +43,13 @@ static void switch_next_tiles(int value, sfTexture *tex, textures *textures)
         case 111: tex = textures->house;
             break;
     }
+    return tex;
 }
 
-static void switch_tiles(int value, sfTexture* tex, textures *textures)
+static sfTexture *switch_tiles(int value, textures *textures)
 {
+    sfTexture *tex = NULL;
+
     switch (value) {
         case 0: tex = textures->grass;
             break;
@@ -58,16 +63,16 @@ static void switch_tiles(int value, sfTexture* tex, textures *textures)
             break;
     }
     if (tex == NULL)
-        switch_next_tiles(value, tex, textures);
+        tex = switch_next_tiles(value, textures);
+    return tex;
 }
 
 static sfRenderTexture *draw_tiles_on_map_sprite(map_data *map_data)
 {
     for (int i = 0; i < MAP_HEIGHT; i++) {
         for (int j = 0; j < MAP_WIDTH; j++) {
-            sfTexture *tex = NULL;
-            switch_tiles(map_data->matrice[i][j],
-            tex, map_data->textures);
+            sfTexture *tex = switch_tiles(map_data->matrice[i][j],
+            map_data->textures);
             sfSprite *tileSprite = sfSprite_create();
             sfSprite_setTexture(tileSprite, tex, sfFalse);
             sfVector2f pos = {j * TILE_SIZE_X, i * TILE_SIZE_Y};
@@ -83,8 +88,9 @@ static sfRenderTexture *draw_tiles_on_map_sprite(map_data *map_data)
 void make_map_texture(map_data *map_data)
 {
     map_data->textures = load_map_elements();
-    map_data->map_render_tex = sfRenderTexture_create(MAP_WIDTH
-    * TILE_SIZE_X, MAP_HEIGHT * TILE_SIZE_Y, sfFalse);
+    map_data->map_render_tex = sfRenderTexture_create(MAP_WIDTH * TILE_SIZE_X,
+    MAP_HEIGHT * TILE_SIZE_Y, sfFalse);
     sfRenderTexture_clear(map_data->map_render_tex, sfBlack);
     map_data->map_render_tex = draw_tiles_on_map_sprite(map_data);
+    sfRenderTexture_display(map_data->map_render_tex);
 }

@@ -21,7 +21,7 @@ static void load_matrice(map_data *map_data)
     fp = fopen(MATRICE_PATH, "r");
     for (i = 0; i < MAP_HEIGHT; i++) {
         for (j = 0; j < MAP_WIDTH; j++)
-            fscanf(fp, "%d,", &map_data->matrice[i][j]);
+            fscanf(fp, "%i,", &map_data->matrice[i][j]);
         fgetc(fp);
     }
 
@@ -44,7 +44,6 @@ static sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
     const sfTexture *map_texture = sfRenderTexture_getTexture(map_render_tex);
 
     sfSprite_setTexture(map_sprite, map_texture, sfTrue);
-    sfRenderTexture_destroy(map_render_tex);
     sfSprite_setPosition(map_sprite, (sfVector2f) {0, 0});
 
     return map_sprite;

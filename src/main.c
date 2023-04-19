@@ -11,6 +11,7 @@
 #include "../include/lib.h"
 #include "../include/events.h"
 #include "../include/destroy.h"
+#include <SFML/Graphics/Color.h>
 
 void disp_help(char *argv1)
 {

@@ -13,7 +13,7 @@ player *init_player(char **config_buf)
 {
     player *player = malloc(sizeof(*player));
     sfIntRect rect = {0, 231, 77, 77};
-    player->pos = (sfVector2f){PLAYER_START_POS_X, PLAYER_START_POS_Y};
+    player->pos = (sfVector2f) {PLAYER_START_POS_X, PLAYER_START_POS_Y};
     player->level = 1;
     player->xp = 0;
     player->health = 100;
@@ -22,9 +22,9 @@ player *init_player(char **config_buf)
     player->inventory = init_inventory(config_buf);
     player->sprite = sfSprite_create();
     player->area = rect;
-    sfTexture *playerexture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
+    sfTexture *player_texture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,
     NULL);
-    sfSprite_setTexture(player->sprite, playerexture, sfTrue);
+    sfSprite_setTexture(player->sprite, player_texture, sfTrue);
     sfSprite_setPosition(player->sprite, player->pos);
     sfSprite_setTextureRect(player->sprite, player->area);
     return player;

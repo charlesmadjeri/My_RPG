@@ -23,6 +23,6 @@
     void display(sfRenderWindow *window, game *game);
 
     void refresh_view(sfRenderWindow *window, game *game);
-    void move_view(sfView *view, sfEvent *event);
+    void move_view(game *game, sfEvent *event, sfRenderWindow *window);
 
 #endif /* !UI_H_ */
