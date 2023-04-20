@@ -14,8 +14,8 @@ state *init_state(void)
 {
     state *state = malloc(sizeof(*state));
 
-    state->current_state = SPLASH;
-    state->previous_state = NONE;
+    state->current_state = MAP;
+    state->previous_state = SPLASH;
 
     return state;
 }

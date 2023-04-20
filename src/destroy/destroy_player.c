@@ -32,6 +32,5 @@ void destroy_player(player *player)
 {
     sfSprite_destroy(player->sprite);
     destroy_inventory(player->inventory);
-    free(player->name);
     free(player);
 }

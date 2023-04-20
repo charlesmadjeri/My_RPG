@@ -36,7 +36,6 @@ int launch(void)
     }
     sfRenderWindow_destroy(window);
     destroy_all(game);
-    free(game);
     return 0;
 }
 

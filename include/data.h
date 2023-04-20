@@ -134,7 +134,6 @@
 
 // Player:
     typedef struct player_t {
-        char *name;
         int level;
         int xp;
         int health;
