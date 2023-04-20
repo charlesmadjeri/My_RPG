@@ -33,6 +33,6 @@
 // Fonctions:
     map *init_map(void);
     void make_map_texture(map_data *map_data);
-    void display_map(sfRenderWindow *window, map *map);
+    void display_map(sfRenderWindow *window, game *game);
 
 #endif /* !MAP_H_ */

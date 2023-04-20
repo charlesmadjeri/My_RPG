@@ -29,7 +29,7 @@ game *init_game(void)
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();
-    game->battle = init_battle();
+    //game->battle = init_battle();
     return game;
 }
 

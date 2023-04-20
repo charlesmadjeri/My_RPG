@@ -9,6 +9,7 @@
 #include "../../include/map.h"
 #include "../../include/enemy.h"
 #include "../../include/pnjs.h"
+#include "../../include/player.h"
 
 static void load_matrice(map_data *map_data)
 {
@@ -63,7 +64,8 @@ map *init_map(void)
     return map;
 }
 
-void display_map(sfRenderWindow *window, map *map)
+void display_map(sfRenderWindow *window, game *game)
 {
-    sfRenderWindow_drawSprite(window, map->map_sprite, NULL);
+    sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
+    display_player(window, game->player);
 }
