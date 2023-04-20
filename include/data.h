@@ -10,6 +10,7 @@
     #include <SFML/Graphics.h>
     #include <SFML/Graphics/Types.h>
     #include <SFML/Audio.h>
+    #include <SFML/System/Vector2.h>
     #pragma once
 
 // Battle:
@@ -80,6 +81,12 @@
     } pnjs;
 
 // Map:
+    typedef struct weather_t {
+        sfSprite *cloud_sprite;
+        sfSprite *rain_sprite;
+        sfVector2f cloud_pos;
+        sfVector2f rain_pos;
+    } weather;
     typedef struct textures_t {
         sfTexture *grass;
         sfTexture *pass;
@@ -107,6 +114,7 @@
         int num_enemies;
         pnjs *pnjs;
         int num_pnjs;
+        weather *weather;
     } map;
 
 // Inventory:
@@ -206,6 +214,12 @@
         button *save_button;
     } pause_menu;
 
+// Clocks:
+    typedef struct clocks_t {
+        sfClock *cloud_clock;
+        sfClock *rain_clock;
+    } clocks;
+
 // Game:
     typedef struct game_t {
         sfView *view;
@@ -218,7 +232,7 @@
         player *player;
         pnjs *pnjs;
         int num_pnjs;
-        sfClock *clock;
+        clocks *clocks;
         sfMusic *music;
     } game;
 

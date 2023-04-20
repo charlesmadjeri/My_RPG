@@ -24,12 +24,12 @@ game *init_game(void)
     game->state = init_state();
     game->map = init_map();
     game->player = init_player(config_buf);
-    game->clock = sfClock_create();
     game->pnjs = init_pnjs();
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();
     //game->battle = init_battle();
+    game->clocks = init_clocks();
     return game;
 }
 

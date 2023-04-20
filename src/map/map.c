@@ -11,7 +11,7 @@
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
 
-static void load_matrice(map_data *map_data)
+void load_matrice(map_data *map_data)
 {
     FILE* fp;
     int i, j;
@@ -29,17 +29,7 @@ static void load_matrice(map_data *map_data)
     fclose(fp);
 }
 
-static map_data *init_map_data(void)
-{
-    map_data *map_data = malloc(sizeof(*map_data));
-
-    load_matrice(map_data);
-    make_map_texture(map_data);
-
-    return map_data;
-}
-
-static sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
+sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
 {
     sfSprite *map_sprite = sfSprite_create();
     const sfTexture *map_texture = sfRenderTexture_getTexture(map_render_tex);
@@ -50,22 +40,9 @@ static sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
     return map_sprite;
 }
 
-map *init_map(void)
-{
-    map *map = malloc(sizeof(*map));
-    map->map_data = init_map_data();
-    map->map_sprite = create_sprite_from_rend_tex
-    (map->map_data->map_render_tex);
-    map->enemies = init_enemy();
-    map->num_enemies = 0;
-    map->pnjs = init_pnjs();
-    map->num_pnjs = 0;
-
-    return map;
-}
-
 void display_map(sfRenderWindow *window, game *game)
 {
     sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
     display_player(window, game->player);
+    display_weather(window, game);
 }

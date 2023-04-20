@@ -16,6 +16,7 @@
     #include <limits.h>
     #include <errno.h>
     #include <fcntl.h>
+    #include <math.h>
     #include <SFML/Graphics.h>
     #include <SFML/Window.h>
     #include <SFML/Config.h>

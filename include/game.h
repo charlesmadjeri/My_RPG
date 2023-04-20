@@ -22,4 +22,7 @@
 
     void player_move(game *game, sfEvent *event);
 
+    clocks *init_clocks(void);
+    clocks *init_clock(void);
+
 #endif /* !GAME_H_ */
