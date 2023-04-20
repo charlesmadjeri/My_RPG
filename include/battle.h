@@ -9,11 +9,11 @@
     #define BATTLE_H_
     #include <SFML/Graphics.h>
     #include "data.h"
+    #include "destroy.h"
     #pragma once
+    #define BG_PATH "ressources/battle/bg.png"
 
 // Functions :
     battle *init_battle(void);
     void display_battle(sfRenderWindow *window, battle *battle);
-    void destroy_battle(battle *battle);
-
 #endif /* !BATTLE_H_ */

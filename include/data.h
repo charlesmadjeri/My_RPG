@@ -18,6 +18,8 @@
         sfTexture *texture;
         sfVector2f position;
         sfIntRect rect;
+        int player_hp;
+        int ennemy_hp;
     } battle;
 
 // Button:
