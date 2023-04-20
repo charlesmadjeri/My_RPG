@@ -12,6 +12,7 @@
 #include "../../include/map.h"
 #include "../../include/pnjs.h"
 #include "../../include/ui.h"
+#include "../../include/battle.h"
 
 game *init_game(void)
 {
@@ -28,6 +29,7 @@ game *init_game(void)
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();
+    game->battle = init_battle();
     return game;
 }
 

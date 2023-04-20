@@ -214,6 +214,7 @@
         pause_menu *pause_menu;
         settings *settings;
         map *map;
+        battle *battle;
         player *player;
         pnjs *pnjs;
         int num_pnjs;

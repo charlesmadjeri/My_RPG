@@ -40,3 +40,9 @@ void center_button_text(button *button)
 //     center_button_text(button);
 //     return button;
 // }
+
+void display_button(sfRenderWindow *window, button *button)
+{
+    sfRenderWindow_drawRectangleShape(window, button->rect, NULL);
+    sfRenderWindow_drawText(window, button->text, NULL);
+}

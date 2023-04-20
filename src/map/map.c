@@ -62,3 +62,8 @@ map *init_map(void)
 
     return map;
 }
+
+void display_map(sfRenderWindow *window, map *map)
+{
+    sfRenderWindow_drawSprite(window, map->map_sprite, NULL);
+}

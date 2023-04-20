@@ -21,5 +21,6 @@
     item *init_item(char **config_buf, char *item_name);
     void add_item(inventory *inventory, char *name);
     void remove_item(inventory *inventory, char *name);
+    void display_inventory(sfRenderWindow *window, inventory *inventory);
 
 #endif /* !INVENTORY_H_ */
