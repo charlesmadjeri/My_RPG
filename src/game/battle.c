@@ -5,13 +5,15 @@
 ** battle
 */
 
+#include "../../include/main.h"
+#include "../../include/lib.h"
 #include "../../include/battle.h"
 
-void battle_event(sfRenderWindow *window, sfEvent *Gameevt, battle *battle)
+void battle_event(sfRenderWindow *window, sfEvent *game_event, battle *battle)
 {
-    if (Gameevt->type == sfEvtKeyPressed) {
-        printf("HIT");
-        if (sfKeyboard_isKeyPressed == sfKeyA) {
+    if (game_event->type == sfEvtKeyPressed) {
+        my_putstr("HIT");
+        if (sfKeyboard_isKeyPressed(sfKeyA) == sfTrue) {
             battle->ennemy_hp -= 10;
         }
     }
@@ -19,7 +21,7 @@ void battle_event(sfRenderWindow *window, sfEvent *Gameevt, battle *battle)
 
 battle *init_battle(void)
 {
-    battle *battle = malloc(sizeof(battle));
+    battle *battle = malloc(sizeof(*battle));
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create();
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);
@@ -30,13 +32,6 @@ battle *init_battle(void)
 
 void display_battle(sfRenderWindow *window, battle *battle)
 {
-    sfEvent Gameevt;
-    while (battle->ennemy_hp > 0) {
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, battle->background, NULL);
-        sfRenderWindow_display(window);
-        while (sfWindow_pollEvent(window, &Gameevt)) {
-            battle_event(window, &Gameevt, battle);
-        }
-    }
+    sfRenderWindow_drawSprite(window, battle->background, NULL);
+    // Just draw all the battle sprites from back to front
 }
