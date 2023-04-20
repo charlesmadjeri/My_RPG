@@ -16,6 +16,10 @@
     #define PLAYER_START_POS_X WINDOW_WIDTH / 2
     #define PLAYER_START_POS_Y WINDOW_HEIGHT / 2
     #define PLAYER_TEXTURE_PATH "ressources/sprites/SpriteHero.png"
+    #define TOP 231
+    #define LEFT 77
+    #define RIGHT 154
+    #define BOTTOM 0
 
 // Fonctions:
     player *init_player(char **config_buf);

@@ -138,6 +138,7 @@
         int health;
         int max_health;
         int strength;
+        sfClock* clock;
         inventory *inventory;
         sfVector2f pos;
         sfSprite *sprite;
