@@ -116,6 +116,7 @@
         sfSprite *rain_sprite;
         sfVector2f cloud_pos;
         sfVector2f rain_pos;
+        sfBool is_raining;
     } weather;
     typedef struct textures_t {
         sfTexture *grass;
