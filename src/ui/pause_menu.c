@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/pause_menu.h"
+#include "../../include/button.h"
 
 // pause_menu *init_pause_menu(void)
 // {
@@ -26,5 +27,13 @@
 //     return pause_menu;
 // }
 
-void display_pause_menu(sfRenderWindow *window, pause_menu *pause_menu);
+void display_pause_menu(sfRenderWindow *window, pause_menu *pause_menu)
+{
+    display_button(window, pause_menu->resume_button);
+    display_button(window, pause_menu->settings_button);
+    display_button(window, pause_menu->quit_button);
+    display_button(window, pause_menu->load_button);
+    display_button(window, pause_menu->save_button);
+}
+
 void destroy_pause_menu(pause_menu *pause_menu);
