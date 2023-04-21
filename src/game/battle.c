@@ -9,16 +9,6 @@
 #include "../../include/lib.h"
 #include "../../include/battle.h"
 
-void battle_event(sfRenderWindow *window, sfEvent *game_event, battle *battle)
-{
-    if (game_event->type == sfEvtKeyPressed) {
-        my_putstr("HIT");
-        if (sfKeyboard_isKeyPressed(sfKeyA) == sfTrue) {
-            battle->ennemy_hp -= 10;
-        }
-    }
-}
-
 battle *init_battle(void)
 {
     battle *battle = malloc(sizeof(*battle));
@@ -30,8 +20,12 @@ battle *init_battle(void)
     return battle;
 }
 
-void display_battle(sfRenderWindow *window, battle *battle)
+void display_battle(sfRenderWindow *window, game *game)
 {
-    sfRenderWindow_drawSprite(window, battle->background, NULL);
+    sfRenderWindow_drawSprite(window, game->battle->background, NULL);
+    if (game->battle->ennemy_hp < 0) {
+        game->state->current_state = MAP;
+        game->state->previous_state = SPLASH;
+    }
     // Just draw all the battle sprites from back to front
 }

@@ -15,5 +15,5 @@
 
 // Functions :
     battle *init_battle(void);
-    void display_battle(sfRenderWindow *window, battle *battle);
+    void display_battle(sfRenderWindow *window, game *game);
 #endif /* !BATTLE_H_ */
