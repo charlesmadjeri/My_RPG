@@ -13,6 +13,7 @@
 #include "../../include/pnjs.h"
 #include "../../include/ui.h"
 #include "../../include/battle.h"
+#include "../../include/splash_screen.h"
 
 game *init_game(void)
 {
