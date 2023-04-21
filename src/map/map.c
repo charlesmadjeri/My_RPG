@@ -33,10 +33,8 @@ sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
 {
     sfSprite *map_sprite = sfSprite_create();
     const sfTexture *map_texture = sfRenderTexture_getTexture(map_render_tex);
-
     sfSprite_setTexture(map_sprite, map_texture, sfTrue);
     sfSprite_setPosition(map_sprite, (sfVector2f) {0, 0});
-
     return map_sprite;
 }
 
@@ -44,5 +42,6 @@ void display_map(sfRenderWindow *window, game *game)
 {
     sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
     display_player(window, game->player);
+    display_pnjs(window, game->pnjs);
     display_weather(window, game);
 }

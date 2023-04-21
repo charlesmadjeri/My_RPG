@@ -77,6 +77,10 @@
 // Pnjs:
     typedef struct pnjs_t {
         char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
         char **dialog;
     } pnjs;
 

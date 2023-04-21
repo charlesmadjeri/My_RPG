@@ -23,6 +23,7 @@ void map_event(sfRenderWindow *window, sfEvent *event, game *game)
             return;
         } else {
             player_move(game, event);
+            // check_pnj(game);
             move_view(game, event, window);
             return;
         }
