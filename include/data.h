@@ -97,8 +97,8 @@
         sfSprite *xp_bar_sprite1;
         sfSprite *xp_bar_sprite2;
         sfSprite *xp_bar_sprite3;
+        sfSprite *xp_bar_sprite4;
         sfVector2f xp_bar_pos;
-        sfVector2f xp_bar_pos2;
     } xp_bar;
     typedef struct level_nb_t {
         sfSprite *level_1_sprite;
@@ -173,6 +173,7 @@
     typedef struct player_t {
         int level;
         int xp;
+        int xp_max;
         int health;
         int max_health;
         int strength;

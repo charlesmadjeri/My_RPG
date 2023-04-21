@@ -14,6 +14,9 @@ sfSprite *create_life_bar_sprite(char *path)
     sfSprite *sprite = sfSprite_create();
     sfSprite_setTexture(sprite, texture, sfTrue);
 
+    sfVector2f scale = {3, 3};
+    sfSprite_setScale(sprite, scale);
+
     return (sprite);
 }
 
@@ -28,7 +31,6 @@ life_bar *init_life_bar(void)
     life_bar->life_bar_sprite4 = create_life_bar_sprite(LIFE_BAR_4_PATH);
     life_bar->life_bar_sprite5 = create_life_bar_sprite(LIFE_BAR_5_PATH);
     life_bar->life_bar_sprite6 = create_life_bar_sprite(LIFE_BAR_6_PATH);
-    life_bar->life_bar_sprite7 = create_life_bar_sprite(LIFE_BAR_7_PATH);
     life_bar->life_bar_pos = (sfVector2f){0, 0};
 
     return life_bar;

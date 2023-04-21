@@ -49,6 +49,7 @@
     #define XP_BAR_1_PATH "ressources/maps/infos/xp_bar_1.png"
     #define XP_BAR_2_PATH "ressources/maps/infos/xp_bar_2.png"
     #define XP_BAR_3_PATH "ressources/maps/infos/xp_bar_3.png"
+    #define XP_BAR_4_PATH "ressources/maps/infos/xp_bar_4.png"
     #define LIFE_BAR_0_PATH "ressources/maps/infos/life_bar_0.png"
     #define LIFE_BAR_1_PATH "ressources/maps/infos/life_bar_1.png"
     #define LIFE_BAR_2_PATH "ressources/maps/infos/life_bar_2.png"
@@ -56,7 +57,6 @@
     #define LIFE_BAR_4_PATH "ressources/maps/infos/life_bar_4.png"
     #define LIFE_BAR_5_PATH "ressources/maps/infos/life_bar_5.png"
     #define LIFE_BAR_6_PATH "ressources/maps/infos/life_bar_6.png"
-    #define LIFE_BAR_7_PATH "ressources/maps/infos/life_bar_7.png"
 
 // Fonctions:
     map *init_map(void);
@@ -73,9 +73,13 @@
     level_nb *init_level_nb(void);
     life_bar *init_life_bar(void);
     xp_bar *init_xp_bar(void);
-    sfSprite *create_level_sprite(char *path);
     sfSprite *create_life_bar_sprite(char *path);
-    sfSprite *create_xp_bar_sprite(char *path);
+    void display_level(sfRenderWindow *window,
+    player *player, level_nb *level_nb);
+    void display_xp_bar(sfRenderWindow *window,
+    player *player, xp_bar *xp_bar);
+    void display_life_bar(sfRenderWindow *window,
+    player *player, life_bar *life_bar);
     void display_infos(sfRenderWindow *window, game *game);
 
 #endif /* !MAP_H_ */
