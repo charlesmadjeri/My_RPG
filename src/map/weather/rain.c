@@ -5,8 +5,8 @@
 ** rain
 */
 
-#include "../../include/main.h"
-#include "../../include/map.h"
+#include "../../../include/main.h"
+#include "../../../include/map.h"
 
 sfRenderTexture *generate_rain_texture(void)
 {

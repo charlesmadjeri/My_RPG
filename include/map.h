@@ -42,6 +42,22 @@
     #define C_W_PATH "ressources/maps/textures/city_wall.png"
     #define H_PATH "ressources/maps/textures/house.png"
 
+    #define LEVEL_1_PATH "ressources/maps/infos/level_1.png"
+    #define LEVEL_2_PATH "ressources/maps/infos/level_2.png"
+    #define LEVEL_3_PATH "ressources/maps/infos/level_3.png"
+    #define XP_BAR_0_PATH "ressources/maps/infos/xp_bar_0.png"
+    #define XP_BAR_1_PATH "ressources/maps/infos/xp_bar_1.png"
+    #define XP_BAR_2_PATH "ressources/maps/infos/xp_bar_2.png"
+    #define XP_BAR_3_PATH "ressources/maps/infos/xp_bar_3.png"
+    #define LIFE_BAR_0_PATH "ressources/maps/infos/life_bar_0.png"
+    #define LIFE_BAR_1_PATH "ressources/maps/infos/life_bar_1.png"
+    #define LIFE_BAR_2_PATH "ressources/maps/infos/life_bar_2.png"
+    #define LIFE_BAR_3_PATH "ressources/maps/infos/life_bar_3.png"
+    #define LIFE_BAR_4_PATH "ressources/maps/infos/life_bar_4.png"
+    #define LIFE_BAR_5_PATH "ressources/maps/infos/life_bar_5.png"
+    #define LIFE_BAR_6_PATH "ressources/maps/infos/life_bar_6.png"
+    #define LIFE_BAR_7_PATH "ressources/maps/infos/life_bar_7.png"
+
 // Fonctions:
     map *init_map(void);
     void make_map_texture(map_data *map_data);
@@ -53,5 +69,13 @@
     sfSprite *create_rain_sprite(void);
     sfSprite *create_cloud_sprite(void);
     void display_weather(sfRenderWindow *window, game *game);
+
+    level_nb *init_level_nb(void);
+    life_bar *init_life_bar(void);
+    xp_bar *init_xp_bar(void);
+    sfSprite *create_level_sprite(char *path);
+    sfSprite *create_life_bar_sprite(char *path);
+    sfSprite *create_xp_bar_sprite(char *path);
+    void display_infos(sfRenderWindow *window, game *game);
 
 #endif /* !MAP_H_ */

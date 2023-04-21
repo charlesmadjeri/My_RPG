@@ -5,11 +5,9 @@
 ** weather
 */
 
-#include "../../include/main.h"
-#include "../../include/map.h"
-#include "../../include/ui.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Types.h>
+#include "../../../include/main.h"
+#include "../../../include/map.h"
+#include "../../../include/ui.h"
 
 void move_clouds(game *game)
 {

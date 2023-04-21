@@ -81,6 +81,36 @@
     } pnjs;
 
 // Map:
+    typedef struct life_bar_t {
+        sfSprite *life_bar_sprite0;
+        sfSprite *life_bar_sprite1;
+        sfSprite *life_bar_sprite2;
+        sfSprite *life_bar_sprite3;
+        sfSprite *life_bar_sprite4;
+        sfSprite *life_bar_sprite5;
+        sfSprite *life_bar_sprite6;
+        sfSprite *life_bar_sprite7;
+        sfVector2f life_bar_pos;
+    } life_bar;
+    typedef struct xp_bar_t {
+        sfSprite *xp_bar_sprite0;
+        sfSprite *xp_bar_sprite1;
+        sfSprite *xp_bar_sprite2;
+        sfSprite *xp_bar_sprite3;
+        sfVector2f xp_bar_pos;
+        sfVector2f xp_bar_pos2;
+    } xp_bar;
+    typedef struct level_nb_t {
+        sfSprite *level_1_sprite;
+        sfSprite *level_2_sprite;
+        sfSprite *level_3_sprite;
+        sfVector2f level_nb_pos;
+    } level_nb;
+    typedef struct infos_t {
+        life_bar *life_bar;
+        xp_bar *xp_bar;
+        level_nb *level_nb;
+    } infos;
     typedef struct weather_t {
         sfSprite *cloud_sprite;
         sfSprite *rain_sprite;
@@ -115,6 +145,7 @@
         pnjs *pnjs;
         int num_pnjs;
         weather *weather;
+        infos *infos;
     } map;
 
 // Inventory:
