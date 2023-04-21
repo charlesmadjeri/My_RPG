@@ -15,9 +15,9 @@ player *init_player(char **config_buf)
     sfIntRect rect = {0, 231, 77, 77};
     player->pos = (sfVector2f) {PLAYER_START_POS_X, PLAYER_START_POS_Y};
     player->level = 1;
-    player->xp = 80;
+    player->xp = 0;
     player->xp_max = 100;
-    player->health = 25;
+    player->health = 100;
     player->max_health = 100;
     player->strength = 20;
     player->inventory = init_inventory(config_buf);
