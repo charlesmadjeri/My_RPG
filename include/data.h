@@ -176,6 +176,15 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
+        sfTexture *start_tex;
+        sfTexture *continued_tex;
+        sfTexture *help_tex;
+        sfTexture *quit_tex;
+        sfVector2f pos;
+        sfVector2f start_pos;
+        sfVector2f continued_pos;
+        sfVector2f help_pos;
+        sfVector2f quit_pos;
     } splash_screen;
 
 // Text:

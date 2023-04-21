@@ -8,41 +8,41 @@
 #include "../../include/main.h"
 #include "../../include/game.h"
 #include "../../include/splash_screen.h"
+#include "../../include/data.h"
 
 void set_texture_and_sprite(splash_screen *splash)
 {
-    sfVector2f position;
-    sfVector2f pos_start = {(position.x / 2)- 64, position.y / 1.9};
-    sfVector2f pos_continue_game = {(position.x / 2)- 64, position.y / 1.9};
-    sfVector2f pos_help = {(position.x / 2)- 64, position.y / 1.9};
-    sfVector2f pos_quit = {(position.x / 2)- 64, position.y / 1.9};
-    sfTexture *texture_start;
-    sfTexture *texture_continue;
-    sfTexture *texture_help;
-    sfTexture *texture_quit;
-    sfSprite_setPosition(splash->start, pos_start);
-    sfSprite_setPosition(splash->continued, pos_continue_game);
-    sfSprite_setPosition(splash->help, pos_help);
-    sfSprite_setPosition(splash->quit, pos_quit);
-    sfSprite_setTexture(splash->start, texture_start, sfTrue);
-    sfSprite_setTexture(splash->continued, texture_continue, sfTrue);
-    sfSprite_setTexture(splash->help, texture_help, sfTrue);
-    sfSprite_setTexture(splash->quit, texture_quit, sfTrue);
+    splash->start_pos.x = 100;
+    splash->start_pos.y = 100;
+    splash->continued_pos.x = 200;
+    splash->continued_pos.y = 100;
+    splash->help_pos.x = 300;
+    splash->help_pos.y = 100;
+    splash->quit_pos.x = 400;
+    splash->quit_pos.y = 100;
+    sfSprite_setTexture(splash->start, splash->start_tex, sfTrue);
+    sfSprite_setTexture(splash->continued, splash->continued_tex, sfTrue);
+    sfSprite_setTexture(splash->help, splash->help_tex, sfTrue);
+    sfSprite_setTexture(splash->quit, splash->quit_tex, sfTrue);
+    sfSprite_setPosition(splash->start, splash->start_pos);
+    sfSprite_setPosition(splash->continued, splash->continued_pos);
+    sfSprite_setPosition(splash->help, splash->help_pos);
+    sfSprite_setPosition(splash->quit, splash->quit_pos);
 }
 
 void init_splash_button(splash_screen *splash)
 {
     splash->start = sfSprite_create();
-    sfTexture *texture_start = sfTexture_createFromFile
+    splash->start_tex = sfTexture_createFromFile
     ("ressources/splash_screen/textures/start.png",NULL);
     splash->continued = sfSprite_create();
-    sfTexture *texture_continue = sfTexture_createFromFile
+    splash->continued_tex = sfTexture_createFromFile
     ("ressources/splash_screen/textures/continue.png",NULL);
     splash->help = sfSprite_create();
-    sfTexture *texture_help = sfTexture_createFromFile
+    splash->help_tex = sfTexture_createFromFile
     ("ressources/splash_screen/textures/help.png", NULL);
     splash->quit = sfSprite_create();
-    sfTexture *texture_quit = sfTexture_createFromFile
+    splash->quit_tex = sfTexture_createFromFile
     ("ressources/splash_screen/textures/quit.png", NULL);
     set_texture_and_sprite(splash);
 }
@@ -51,8 +51,9 @@ splash_screen *init_splash_screen(void)
 {
     splash_screen *splash = malloc(sizeof(splash_screen));
     sfTexture *texture = sfTexture_createFromFile
-    ("../../ressources/splash_screen/textures/background.png", NULL);
+    ("ressources/splash_screen/textures/background.png", NULL);
     splash->background = sfSprite_create();
+    sfSprite_setPosition(splash->background, (sfVector2f) {0, 0});
     sfSprite_setTexture(splash->background, texture, sfTrue);
     init_splash_button(splash);
     return splash;

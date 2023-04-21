@@ -17,7 +17,7 @@
 game *init_game(void)
 {
     game *game = malloc(sizeof(*game));
-    // game->splash = init_splash_screen();
+    game->splash = init_splash_screen();
     // game->pause_menu = init_pause_menu();
     // game->settings = init_settings();
     char **config_buf = NULL; //parse_config_file();
