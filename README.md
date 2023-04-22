@@ -45,10 +45,9 @@ This RPG game includes the following features:
 
 The following controls are used in this game:
 
-- Arrow keys: Move the player character
-- Spacebar: Interact with objects or characters
+- Z, Q, S D: Move the player character
 - I: Open the inventory
-- Escape: Quit the game
+- Escape: Pause the game the game
 
 ## Contributors
 

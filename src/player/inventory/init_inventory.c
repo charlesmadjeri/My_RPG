@@ -8,33 +8,43 @@
 #include "../../../include/main.h"
 #include "../../../include/inventory.h"
 
-inventory *init_inventory(char **config_buf)
+static item *init_item(char *path, char *item_name, sfVector2f scale)
 {
-    inventory *inventory = malloc(sizeof(*inventory));
+    item *item = malloc(sizeof(*item));
 
-    inventory->items = init_items(config_buf);
-    inventory->num_items = NUM_ITEMS;
-    return inventory;
+    item->texture = sfTexture_createFromFile(path, NULL);
+    item->sprite = sfSprite_create();
+    sfSprite_setTexture(item->sprite, item->texture, sfTrue);
+    item->quantity = 1;
+    item->pos = (sfVector2f){0, 0};
+
+    sfSprite_setScale(item->sprite, scale);
+
+    return item;
 }
 
-items *init_items(char **config_buf)
+static items *init_items(void)
 {
     items *items = malloc(sizeof(*items));
 
-    items->key = init_item(config_buf, "key");
-    items->potion = init_item(config_buf, "potion");
-    items->sword = init_item(config_buf, "sword");
-    items->shield = init_item(config_buf, "shield");
+    items->key = init_item(KEY_PATH, "key", (sfVector2f){1, 1});
+    items->potion = init_item(POTION_PATH, "potion", (sfVector2f){1, 1});
+    items->sword = init_item(SWORD_PATH, "sword", (sfVector2f){1, 1});
+    items->shield = init_item(SHIELD_PATH, "shield", (sfVector2f){1, 1});
+
     return items;
 }
 
-item *init_item(char **config_buf, char *item_name)
+inventory *init_inventory(void)
 {
-    item *item = malloc(sizeof(*item));
-    /* use getenv fork to get key values config...
-    item->name = get_item_name(config_buf);
-    item->description = get_item_description(config_buf);
-    item->type = get_item_type(config_buf);
-    item->value = get_item_value(config_buf); */
-    return item;
+    inventory *inventory = malloc(sizeof(*inventory));
+
+    inventory->background = sfSprite_create();
+    inventory->texture = sfTexture_createFromFile(INVENTORY_BG_PATH, NULL);
+    sfSprite_setTexture(inventory->background, inventory->texture, sfTrue);
+
+    inventory->items = init_items();
+    inventory->num_items = NUM_ITEMS;
+
+    return inventory;
 }

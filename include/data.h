@@ -156,6 +156,9 @@
         int health_factor;
         int strength_factor;
         int shield_factor;
+        sfTexture *texture;
+        sfSprite *sprite;
+        sfVector2f pos;
     } item;
 
     typedef struct items_t {
@@ -168,6 +171,8 @@
     typedef struct inventory_t {
         items *items;
         int num_items;
+        sfSprite *background;
+        sfTexture *texture;
     } inventory;
 
 // Player:
