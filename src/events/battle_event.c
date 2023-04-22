@@ -16,6 +16,9 @@ void battle_event(sfRenderWindow *window, sfEvent *event, game *game)
             game->state->previous_state = BATTLE;
         } if (event->key.code = sfKeyNumpad1) {
             game->battle->ennemy_hp -= 10;
-         }
+        } if (event->key.code = sfKeyNumpad4) {
+            game->state->current_state = MAP;
+            game->state->previous_state = SPLASH;
+        }
     }
 }
