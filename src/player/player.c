@@ -16,6 +16,7 @@ player *init_player(char **config_buf)
     player->pos = (sfVector2f) {PLAYER_START_POS_X, PLAYER_START_POS_Y};
     player->level = 1;
     player->xp = 0;
+    player->xp_max = 100;
     player->health = 100;
     player->max_health = 100;
     player->strength = 20;
@@ -34,5 +35,3 @@ void display_player(sfRenderWindow *window, player *player)
 {
     sfRenderWindow_drawSprite(window, player->sprite, NULL);
 }
-
-void destroy_player(player *player);

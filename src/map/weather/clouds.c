@@ -5,8 +5,8 @@
 ** clouds
 */
 
-#include "../../include/main.h"
-#include "../../include/map.h"
+#include "../../../include/main.h"
+#include "../../../include/map.h"
 
 
 

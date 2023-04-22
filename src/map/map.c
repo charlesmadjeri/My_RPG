@@ -44,4 +44,5 @@ void display_map(sfRenderWindow *window, game *game)
     display_player(window, game->player);
     display_pnjs(window, game);
     display_weather(window, game);
+    display_infos(window, game);
 }

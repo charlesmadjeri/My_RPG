@@ -32,6 +32,17 @@ static map_data *init_map_data(void)
     return map_data;
 }
 
+static infos *init_infos(void)
+{
+    infos *infos = malloc(sizeof(*infos));
+
+    infos->level_nb = init_level_nb();
+    infos->life_bar = init_life_bar();
+    infos->xp_bar = init_xp_bar();
+
+    return infos;
+}
+
 map *init_map(void)
 {
     map *map = malloc(sizeof(*map));
@@ -43,6 +54,7 @@ map *init_map(void)
     map->pnjs = init_pnjs();
     map->num_pnjs = 0;
     map->weather = init_weather();
+    map->infos = init_infos();
 
     return map;
 }
