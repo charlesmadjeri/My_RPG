@@ -19,6 +19,11 @@
         sfTexture *texture;
         sfVector2f position;
         sfIntRect rect;
+        int special_attack;
+        int ennemy_type;
+        int ennemy_hp;
+        int ennemy_attack;
+        int ennemy_xp;
     } battle;
 
 // Button:

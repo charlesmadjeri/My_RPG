@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/game.h"
+#include "../../include/battle.h"
 #include "../../include/events.h"
 #include "../../include/ui.h"
 
