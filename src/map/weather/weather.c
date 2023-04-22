@@ -5,11 +5,9 @@
 ** weather
 */
 
-#include "../../include/main.h"
-#include "../../include/map.h"
-#include "../../include/ui.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Types.h>
+#include "../../../include/main.h"
+#include "../../../include/map.h"
+#include "../../../include/ui.h"
 
 void move_clouds(game *game)
 {
@@ -45,7 +43,8 @@ void display_weather(sfRenderWindow *window, game *game)
     game->map->weather->cloud_pos);
     sfSprite_setPosition(game->map->weather->rain_sprite,
     game->map->weather->rain_pos);
-
-    sfRenderWindow_drawSprite(window, game->map->weather->rain_sprite, NULL);
+    if (game->map->weather->is_raining == sfTrue)
+        sfRenderWindow_drawSprite(window,
+        game->map->weather->rain_sprite, NULL);
     sfRenderWindow_drawSprite(window, game->map->weather->cloud_sprite, NULL);
 }

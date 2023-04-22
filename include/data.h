@@ -78,15 +78,63 @@
 // Pnjs:
     typedef struct pnjs_t {
         char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
         char **dialog;
+        int stat_num;
+        char stat;
     } pnjs;
 
+    typedef struct athena_t {
+        char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
+        char **dialog;
+        int stat_num;
+        char stat;
+    } athena;
+
 // Map:
+    typedef struct life_bar_t {
+        sfSprite *life_bar_sprite0;
+        sfSprite *life_bar_sprite1;
+        sfSprite *life_bar_sprite2;
+        sfSprite *life_bar_sprite3;
+        sfSprite *life_bar_sprite4;
+        sfSprite *life_bar_sprite5;
+        sfSprite *life_bar_sprite6;
+        sfSprite *life_bar_sprite7;
+        sfVector2f life_bar_pos;
+    } life_bar;
+    typedef struct xp_bar_t {
+        sfSprite *xp_bar_sprite0;
+        sfSprite *xp_bar_sprite1;
+        sfSprite *xp_bar_sprite2;
+        sfSprite *xp_bar_sprite3;
+        sfSprite *xp_bar_sprite4;
+        sfVector2f xp_bar_pos;
+    } xp_bar;
+    typedef struct level_nb_t {
+        sfSprite *level_1_sprite;
+        sfSprite *level_2_sprite;
+        sfSprite *level_3_sprite;
+        sfVector2f level_nb_pos;
+    } level_nb;
+    typedef struct infos_t {
+        life_bar *life_bar;
+        xp_bar *xp_bar;
+        level_nb *level_nb;
+    } infos;
     typedef struct weather_t {
         sfSprite *cloud_sprite;
         sfSprite *rain_sprite;
         sfVector2f cloud_pos;
         sfVector2f rain_pos;
+        sfBool is_raining;
     } weather;
     typedef struct textures_t {
         sfTexture *grass;
@@ -116,6 +164,7 @@
         pnjs *pnjs;
         int num_pnjs;
         weather *weather;
+        infos *infos;
     } map;
 
 // Inventory:
@@ -125,6 +174,9 @@
         int health_factor;
         int strength_factor;
         int shield_factor;
+        sfTexture *texture;
+        sfSprite *sprite;
+        sfVector2f pos;
     } item;
 
     typedef struct items_t {
@@ -137,12 +189,15 @@
     typedef struct inventory_t {
         items *items;
         int num_items;
+        sfSprite *background;
+        sfTexture *texture;
     } inventory;
 
 // Player:
     typedef struct player_t {
         int level;
         int xp;
+        int xp_max;
         int health;
         int max_health;
         int strength;
@@ -227,6 +282,8 @@
     typedef struct clocks_t {
         sfClock *cloud_clock;
         sfClock *rain_clock;
+        sfClock* pnj;
+        sfClock* athena;
     } clocks;
 
 // Game:
@@ -240,6 +297,7 @@
         battle *battle;
         player *player;
         pnjs *pnjs;
+        athena *athena;
         int num_pnjs;
         clocks *clocks;
         sfMusic *music;

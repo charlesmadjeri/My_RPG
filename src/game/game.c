@@ -13,8 +13,12 @@
 #include "../../include/pnjs.h"
 #include "../../include/ui.h"
 #include "../../include/battle.h"
+<<<<<<< HEAD
 #include "../../include/splash_screen.h"
 #include "../../include/settings.h"
+=======
+#include "../../include/athena.h"
+>>>>>>> main
 
 game *init_game(void)
 {
@@ -27,6 +31,7 @@ game *init_game(void)
     game->map = init_map();
     game->player = init_player(config_buf);
     game->pnjs = init_pnjs();
+    game->athena = init_athena();
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();
@@ -34,6 +39,3 @@ game *init_game(void)
     game->clocks = init_clocks();
     return game;
 }
-
-void save_game(game *game);
-void destroy_game(game *game);

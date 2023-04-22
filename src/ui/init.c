@@ -13,7 +13,7 @@ sfRenderWindow *init_window(void)
     sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, 32};
     sfRenderWindow *window = sfRenderWindow_create(mode,
     "My RPG", sfResize | sfClose, NULL);
-    sfRenderWindow_setFramerateLimit(window, 60);
+    sfRenderWindow_setFramerateLimit(window, 120);
     return window;
 }
 
