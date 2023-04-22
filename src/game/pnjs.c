@@ -26,9 +26,9 @@ pnjs *init_pnjs(void)
     return pnjs;
 }
 
-sfIntRect dir_player(pnjs* pnjs, sfIntRect rect)
+sfIntRect dir_player(pnjs* pnjs, sfIntRect rect, sfTime time)
 {
-    srand(time(0));
+    srand((int)sfTime_asMicroseconds(time));
     int num = rand() % 100 + 1;
     if (num < 6) {
         num = rand() % 3 + 2;
@@ -50,7 +50,7 @@ void pnj_move(game *game)
     float sec = sfTime_asSeconds(time);
     if (sec > 0.2) {
         sfIntRect rect = sfSprite_getTextureRect(game->pnjs->sprite);
-        rect = dir_player(game->pnjs, rect);
+        rect = dir_player(game->pnjs, rect, time);
         rect.left += 77;
         rect.left > 616 ? rect.left = 0 : 0;
         game->pnjs->area = rect;
