@@ -45,4 +45,5 @@ void display_map(sfRenderWindow *window, game *game)
     sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
     display_player(window, game->player);
     display_weather(window, game);
+    display_infos(window, game);
 }

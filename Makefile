@@ -30,7 +30,7 @@ TARGET = my_rpg
 ### SOURCES FILES    ###
 ########################
 
-SRCS := $(wildcard $(SRC_DIR)/**/*.c $(SRC_DIR)/*.c)
+SRCS := $(wildcard $(SRC_DIR)/**/**/*.c $(SRC_DIR)/**/*.c $(SRC_DIR)/*.c)
 OBJS := $(SRCS:%.c=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:%.o=%.d)
 
