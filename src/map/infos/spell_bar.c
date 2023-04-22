@@ -46,7 +46,7 @@ spell_bar *spell_bar)
         case 2: sfSprite_setPosition(spell_bar->sprite2, spell_bar->pos);
             sfRenderWindow_drawSprite(window, spell_bar->sprite2, NULL);
             break;
-        case 3: sfSprite_setPosition(spell_bar->sprite3, spell_bar->pos);
+        default: sfSprite_setPosition(spell_bar->sprite3, spell_bar->pos);
             sfRenderWindow_drawSprite(window, spell_bar->sprite3, NULL);
             break;
     }
