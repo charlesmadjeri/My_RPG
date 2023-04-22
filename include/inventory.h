@@ -15,12 +15,18 @@
     #define NUM_ITEMS 4
     #define MAX_ITEMS 10
 
+    #define INVENTORY_BG_PATH "ressources/sprites/inventory/inventory_bg.png"
+    #define KEY_PATH "ressources/sprites/inventory/key.png"
+    #define POTION_PATH "ressources/sprites/inventory/potion.png"
+    #define SWORD_PATH "ressources/sprites/inventory/sword.png"
+    #define SHIELD_PATH "ressources/sprites/inventory/shield.png"
+
 // Fonctions:
-    inventory *init_inventory(char **config_buf);
-    items *init_items(char **config_buf);
-    item *init_item(char **config_buf, char *item_name);
+    inventory *init_inventory(void);
     void add_item(inventory *inventory, char *name);
     void remove_item(inventory *inventory, char *name);
     void display_inventory(sfRenderWindow *window, inventory *inventory);
+    sfVector2f calculate_first_item_pos(inventory *inventory);
+    void count_items(inventory *inventory);
 
 #endif /* !INVENTORY_H_ */
