@@ -13,6 +13,7 @@
 #include "../../include/pnjs.h"
 #include "../../include/ui.h"
 #include "../../include/battle.h"
+#include "../../include/athena.h"
 
 game *init_game(void)
 {
@@ -25,6 +26,7 @@ game *init_game(void)
     game->map = init_map();
     game->player = init_player(config_buf);
     game->pnjs = init_pnjs();
+    game->athena = init_athena();
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();

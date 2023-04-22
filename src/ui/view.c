@@ -28,7 +28,6 @@ void refresh_view(sfRenderWindow *window, game *game)
 void move_view(game *game, sfEvent *event, sfRenderWindow *window)
 {
     sfVector2f pos = sfSprite_getPosition(game->player->sprite);
-
     if (event->key.code == sfKeyQ)
         pos.x -= 10;
     if (event->key.code == sfKeyD)
