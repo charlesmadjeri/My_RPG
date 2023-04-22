@@ -82,6 +82,8 @@
         sfSprite *sprite;
         sfIntRect area;
         char **dialog;
+        int stat_num;
+        char stat;
     } pnjs;
 
 // Map:
@@ -223,6 +225,7 @@
     typedef struct clocks_t {
         sfClock *cloud_clock;
         sfClock *rain_clock;
+        sfClock* pnj;
     } clocks;
 
 // Game:

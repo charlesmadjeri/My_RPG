@@ -11,11 +11,11 @@
     #include "data.h"
     #pragma once
 
-#define VILLAGER_SPRITE_PATH "ressources/sprites/SpriteVillager.png"
+    #define VILLAGER_SPRITE_PATH "ressources/sprites/SpriteVillager.png"
 
 // Fonctions:
     pnjs *init_pnjs(void);
-    void display_pnjs(sfRenderWindow *window, pnjs *pnjs);
+    void display_pnjs(sfRenderWindow *window, game* game);
     void destroy_pnjs(pnjs *pnjs);
     // void check_pnj(game* game);
 
