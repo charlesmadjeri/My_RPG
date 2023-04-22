@@ -47,4 +47,8 @@ void player_move(game *game, sfEvent *event)
         sfIntRect rect = find_rect(old_rect, 'B'); game->player->area = rect;
         sfSprite_setTextureRect(game->player->sprite, game->player->area);
     }
+    sfIntRect playur = sfSprite_getTextureRect(game->player->sprite);
+    sfIntRect sprute = sfSprite_getTextureRect(game->pnjs->sprite);
+    if (sfIntRect_intersects(&playur, &sprute, NULL) == sfTrue)
+        printf("OUAIS!!\n");
 }
