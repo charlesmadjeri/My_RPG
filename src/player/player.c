@@ -22,7 +22,7 @@ player *init_player(char **config_buf)
     player->max_health = 100;
     player->strength = 20;
     player->game_len = 0;
-    player->inventory = init_inventory(config_buf);
+    player->inventory = init_inventory();
     player->sprite = sfSprite_create();
     player->area = rect;
     sfTexture *player_texture = sfTexture_createFromFile(PLAYER_TEXTURE_PATH,

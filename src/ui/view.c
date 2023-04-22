@@ -15,11 +15,6 @@ void refresh_view(sfRenderWindow *window, game *game)
 {
     sfVector2f pos = sfSprite_getPosition(game->player->sprite);
     sfVector2u size = sfRenderWindow_getSize(window);
-
-    //int mapWidth = MAP_WIDTH * TILE_SIZE_X;
-    //int mapHeight = MAP_HEIGHT * TILE_SIZE_Y;
-    //sfView_setSize(game->view, (sfVector2f) {mapWidth, mapHeight});
-    //sfView_setCenter(game->view, (sfVector2f) {mapWidth / 2, mapHeight / 2});
     sfView_setSize(game->view, (sfVector2f) {size.x, size.y});
     sfView_setCenter(game->view, pos);
     sfRenderWindow_setView(window, game->view);

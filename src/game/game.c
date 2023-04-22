@@ -36,6 +36,3 @@ game *init_game(void)
     game->clocks = init_clocks();
     return game;
 }
-
-void save_game(game *game);
-void destroy_game(game *game);

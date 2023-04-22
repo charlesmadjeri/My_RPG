@@ -10,7 +10,7 @@
 ########################
 
 CC = gcc
-CFLAGS = -Wall -Wextra -pedantic -std=c11 -g3 -Wno-unused-parameter
+CFLAGS = -Wall -Wextra -pedantic -g3 -Wno-unused-parameter
 LIBS = -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 ########################

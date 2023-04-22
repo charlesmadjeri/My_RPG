@@ -22,5 +22,6 @@
     #include <SFML/Config.h>
     #include <SFML/System.h>
     #include <SFML/Audio.h>
+    #include <sys/stat.h>
 
 #endif /* !MAIN_H_ */
