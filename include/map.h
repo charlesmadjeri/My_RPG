@@ -76,6 +76,7 @@
 
     level_nb *init_level_nb(void);
     life_bar *init_life_bar(void);
+    spell_bar *init_spell_bar(void);
     xp_bar *init_xp_bar(void);
     sfSprite *create_life_bar_sprite(char *path);
     void display_level(sfRenderWindow *window,
@@ -84,6 +85,8 @@
     player *player, xp_bar *xp_bar);
     void display_life_bar(sfRenderWindow *window,
     player *player, life_bar *life_bar);
+    void display_spell_bar(sfRenderWindow *window, battle *battle,
+    spell_bar *spell_bar);
     void display_infos(sfRenderWindow *window, game *game);
 
 #endif /* !MAP_H_ */
