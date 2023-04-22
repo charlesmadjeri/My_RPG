@@ -100,6 +100,13 @@
         sfSprite *xp_bar_sprite4;
         sfVector2f xp_bar_pos;
     } xp_bar;
+    typedef struct spell_bar_t {
+        sfSprite *spell_bar_sprite0;
+        sfSprite *spell_bar_sprite1;
+        sfSprite *spell_bar_sprite2;
+        sfSprite *spell_bar_sprite3;
+        sfVector2f spell_bar_pos;
+    } spell_bar;
     typedef struct level_nb_t {
         sfSprite *level_1_sprite;
         sfSprite *level_2_sprite;
@@ -108,6 +115,7 @@
     } level_nb;
     typedef struct infos_t {
         life_bar *life_bar;
+        spell_bar *spell_bar;
         xp_bar *xp_bar;
         level_nb *level_nb;
     } infos;

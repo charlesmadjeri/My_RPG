@@ -57,6 +57,10 @@
     #define LIFE_BAR_4_PATH "ressources/maps/infos/life_bar_4.png"
     #define LIFE_BAR_5_PATH "ressources/maps/infos/life_bar_5.png"
     #define LIFE_BAR_6_PATH "ressources/maps/infos/life_bar_6.png"
+    #define SPELL_BAR_0_PATH "ressources/maps/infos/Barre-4.png"
+    #define SPELL_BAR_1_PATH "ressources/maps/infos/Barre-3.png"
+    #define SPELL_BAR_2_PATH "ressources/maps/infos/Barre-2.png"
+    #define SPELL_BAR_3_PATH "ressources/maps/infos/Barre-1.png"
 
 // Fonctions:
     map *init_map(void);
