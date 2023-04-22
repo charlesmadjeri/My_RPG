@@ -20,12 +20,6 @@ void destroy_pnjs(pnjs *pnjs, int num_pnjs)
     free(pnjs);
 }
 
-void destroy_enemy(enemy *enemy)
-{
-    free(enemy->name);
-    free(enemy);
-}
-
 void destroy_map_data(map_data *map_data)
 {
     for (int i = 0; i < MAP_HEIGHT; i++)
@@ -39,9 +33,6 @@ void destroy_map(map *map)
 {
     sfSprite_destroy(map->map_sprite);
     destroy_map_data(map->map_data);
-    for (int i = 0; i < map->num_enemies; i++)
-        destroy_enemy(&map->enemies[i]);
-    free(map->enemies);
     destroy_pnjs(map->pnjs, map->num_pnjs);
     free(map);
 }
