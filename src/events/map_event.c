@@ -49,6 +49,8 @@ void map_event(sfRenderWindow *window, sfEvent *event, game *game)
             return;
         } else {
             handle_regular_events(window, event, game);
+            player_move(game, event);
+            move_view(game, event, window);
             return;
         }
     }
