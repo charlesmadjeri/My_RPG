@@ -31,6 +31,7 @@ static void destroy_xp_bar(xp_bar *xp_bar)
     sfSprite_destroy(xp_bar->xp_bar_sprite4);
     sfSprite_destroy(xp_bar->xp_bar_sprite3);
 }
+
 static void destroy_life_bar(life_bar *life_bar)
 {
     sfSprite_destroy(life_bar->life_bar_sprite0);
