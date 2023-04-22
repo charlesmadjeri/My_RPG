@@ -10,6 +10,7 @@
 #include "../../include/enemy.h"
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
+#include "../../include/athena.h"
 
 void load_matrice(map_data *map_data)
 {
@@ -42,6 +43,7 @@ void display_map(sfRenderWindow *window, game *game)
 {
     sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
     display_player(window, game->player);
+    display_athena(window, game);
     display_pnjs(window, game);
     display_weather(window, game);
     display_infos(window, game);
