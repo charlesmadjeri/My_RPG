@@ -38,10 +38,6 @@ static void destroy_life_bar(life_bar *life_bar)
     sfSprite_destroy(life_bar->life_bar_sprite1);
     sfSprite_destroy(life_bar->life_bar_sprite2);
     sfSprite_destroy(life_bar->life_bar_sprite3);
-    sfSprite_destroy(life_bar->life_bar_sprite4);
-    sfSprite_destroy(life_bar->life_bar_sprite5);
-    sfSprite_destroy(life_bar->life_bar_sprite6);
-    sfSprite_destroy(life_bar->life_bar_sprite7);
 }
 
 void destroy_hud(infos *infos)
