@@ -44,5 +44,10 @@ void display_battle(sfRenderWindow *window, game *game)
         game->state->current_state = MAP;
         game->state->previous_state = SPLASH;
     }
-    // Just draw all the battle sprites from back to front
+    if (game->player->health < 0) {
+        printf("game over\n");
+        game->player->health = game->player->max_health;
+        game->state->current_state = MAP;
+        game->state->previous_state = SPLASH;
+    }
 }
