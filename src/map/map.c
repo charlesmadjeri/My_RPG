@@ -12,6 +12,7 @@
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
 #include "../../include/athena.h"
+#include "../../include/minotaure.h"
 
 void load_matrice(map_data *map_data)
 {
@@ -46,6 +47,7 @@ void display_map(sfRenderWindow *window, game *game)
     display_player(window, game->player);
     display_athena(window, game);
     display_pnjs(window, game);
+    display_minotaure(window, game);
     display_weather(window, game);
     display_infos(window, game);
     is_interaction(game);

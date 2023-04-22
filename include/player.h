@@ -22,9 +22,8 @@
     #define BOTTOM 0
     #define ATHENA 1
     #define PNJ 2
-    #define MONSTRE 3
-    #define MINOTAURE 4
-    #define DOOR 5
+    #define MINOTAURE 3
+    #define DOOR 4
 
 // Fonctions:
     player *init_player(char **config_buf);

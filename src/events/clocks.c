@@ -16,5 +16,6 @@ clocks *init_clocks(void)
     clocks->rain_clock = sfClock_create();
     clocks->pnj = sfClock_create();
     clocks->athena = sfClock_create();
+    clocks->minotaure = sfClock_create();
     return clocks;
 }
