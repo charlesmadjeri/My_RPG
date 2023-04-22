@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2023
 ** Epitech
 ** File description:
-** inventory
+** init_inventory
 */
 
-#include "../../include/main.h"
-#include "../../include/inventory.h"
+#include "../../../include/main.h"
+#include "../../../include/inventory.h"
 
 inventory *init_inventory(char **config_buf)
 {
@@ -37,17 +37,4 @@ item *init_item(char **config_buf, char *item_name)
     item->type = get_item_type(config_buf);
     item->value = get_item_value(config_buf); */
     return item;
-}
-
-void display_item(sfRenderWindow *window, item *item)
-{
-    /* display item sprite */
-}
-
-void display_inventory(sfRenderWindow *window, inventory *inventory)
-{
-    display_item(window, inventory->items->key);
-    display_item(window, inventory->items->potion);
-    display_item(window, inventory->items->sword);
-    display_item(window, inventory->items->shield);
 }
