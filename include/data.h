@@ -91,6 +91,17 @@
         char stat;
     } pnjs;
 
+    typedef struct athena_t {
+        char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
+        char **dialog;
+        int stat_num;
+        char stat;
+    } athena;
+
 // Map:
     typedef struct life_bar_t {
         sfSprite *life_bar_sprite0;
@@ -273,6 +284,7 @@
         sfClock *cloud_clock;
         sfClock *rain_clock;
         sfClock* pnj;
+        sfClock* athena;
     } clocks;
 
 // Game:
@@ -286,6 +298,7 @@
         battle *battle;
         player *player;
         pnjs *pnjs;
+        athena *athena;
         int num_pnjs;
         clocks *clocks;
         sfMusic *music;
