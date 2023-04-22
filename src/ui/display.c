@@ -29,7 +29,7 @@ void display(sfRenderWindow *window, game *game)
             break;
         case INVENTORY: //display_inventory(window, game->player->inventory);
             break;
-        case BATTLE: //display_battle(window, game);
+        case BATTLE: display_battle(window, game);
             break;
         default:
             break;

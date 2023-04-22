@@ -37,6 +37,7 @@ static infos *init_infos(void)
     infos *infos = malloc(sizeof(*infos));
 
     infos->level_nb = init_level_nb();
+    infos->spell_bar = init_spell_bar();
     infos->life_bar = init_life_bar();
     infos->xp_bar = init_xp_bar();
 

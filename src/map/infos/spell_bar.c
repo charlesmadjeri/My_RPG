@@ -29,7 +29,6 @@ spell_bar *init_spell_bar(void)
     spell_bar->sprite2 = create_spell_sprite(SPELL_BAR_2_PATH);
     spell_bar->sprite3 = create_spell_sprite(SPELL_BAR_3_PATH);
     spell_bar->pos = (sfVector2f){0, 0};
-    printf("\n%.2f\t%.2f\n\n", spell_bar->pos.x, spell_bar->pos.y);
 
     return spell_bar;
 }
