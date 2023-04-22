@@ -56,13 +56,13 @@
     } buttons;
 
 // Enemy:
-    typedef struct enemy_t {
+    typedef struct monster {
         char *name;
-        int level;
-        int health;
-        int max_health;
-        int strength;
-    } enemy;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
+        char stat;
+    } monster;
 
 // Events:
     enum state_type_e {
@@ -160,7 +160,7 @@
     typedef struct map_t {
         sfSprite *map_sprite;
         map_data *map_data;
-        enemy *enemies;
+        monster *monster;
         int num_enemies;
         pnjs *pnjs;
         int num_pnjs;
