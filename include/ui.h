@@ -24,5 +24,7 @@
 
     void refresh_view(sfRenderWindow *window, game *game);
     void move_view(game *game, sfEvent *event, sfRenderWindow *window);
+    void set_view_to_center(sfRenderWindow *window,
+    sfSprite *sprite, sfView *view);
 
 #endif /* !UI_H_ */
