@@ -82,7 +82,13 @@
 // Pnjs:
     typedef struct pnjs_t {
         char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
         char **dialog;
+        int stat_num;
+        char stat;
     } pnjs;
 
 // Map:
@@ -265,6 +271,7 @@
     typedef struct clocks_t {
         sfClock *cloud_clock;
         sfClock *rain_clock;
+        sfClock* pnj;
     } clocks;
 
 // Game:
