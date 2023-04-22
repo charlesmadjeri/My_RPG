@@ -25,8 +25,8 @@ void splash_event(sfRenderWindow *window, sfEvent *event, game *game)
         sfVector2f settings_button = {windowsize.x - 1700, windowsize.y - 400};
         if (event_mouse.x >= settings_button.x && event_mouse.x <= settings_button.x + 238 &&
         event_mouse.y >= settings_button.y && event_mouse.y <= settings_button.y + 70) {
-            game->state->previous_state = SPLASH;
             game->state->current_state = SETTINGS;
+            game->state->previous_state = SPLASH;
         }
         sfVector2f quit_button = {windowsize.x - 235, windowsize.y - 100};
         if (event_mouse.x > quit_button.x && event_mouse.x < quit_button.x + 176 &&
