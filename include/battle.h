@@ -12,9 +12,10 @@
     #include "destroy.h"
     #pragma once
     #define BG_PATH "ressources/battle/bg.png"
-    #define MINOTAURE 1
-    #define CYCLOPE 2
-    #define MONSTER 0
+    #define C_PATH "ressources/sprite/cyclope.png"
+    #define MINOTAURE_T 1
+    #define CYCLOPE_T 2
+    #define MONSTER_T 0
     #define MINOTAURE_HP 200
     #define CYCLOPE_HP 250
     #define MONSTER_HP 75
@@ -29,4 +30,5 @@
     battle *init_battle(void);
     void init_ennemy(battle *battle);
     void display_battle(sfRenderWindow *window, game *game);
+    void get_battle_pos(sfView *view, battle *battle);
 #endif /* !BATTLE_H_ */

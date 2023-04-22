@@ -14,7 +14,8 @@ static void entering_battle(game *game, sfEvent *event)
 {
     if (event->key.code == sfKeyEnter
     && game->state->current_state != BATTLE) {
-        game->battle->ennemy_type = MONSTER;
+        game->battle->ennemy_type = CYCLOPE_T;
+        get_battle_pos(game->view, game->battle);
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
