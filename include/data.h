@@ -11,6 +11,7 @@
     #include <SFML/Graphics/Types.h>
     #include <SFML/Audio.h>
     #include <SFML/System/Vector2.h>
+    #include <SFML/System/Vector3.h>
     #pragma once
 
 // Battle:
@@ -157,9 +158,11 @@
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
+        sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
         sfTexture *texture_resolutions;
+        sfSprite *parchment;
         sfSprite *music;
         sfSprite *sound;
         sfSprite *resolutions;
@@ -176,15 +179,11 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
+        sfTexture *background_texture;
         sfTexture *start_tex;
         sfTexture *continued_tex;
         sfTexture *help_tex;
         sfTexture *quit_tex;
-        sfVector2f pos;
-        sfVector2f start_pos;
-        sfVector2f continued_pos;
-        sfVector2f help_pos;
-        sfVector2f quit_pos;
     } splash_screen;
 
 // Text:

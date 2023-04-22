@@ -9,25 +9,14 @@
 #include "../../include/game.h"
 #include "../../include/splash_screen.h"
 #include "../../include/data.h"
+#include <SFML/Graphics/RenderWindow.h>
 
 void set_texture_and_sprite(splash_screen *splash)
 {
-    splash->start_pos.x = 100;
-    splash->start_pos.y = 100;
-    splash->continued_pos.x = 200;
-    splash->continued_pos.y = 100;
-    splash->help_pos.x = 300;
-    splash->help_pos.y = 100;
-    splash->quit_pos.x = 400;
-    splash->quit_pos.y = 100;
     sfSprite_setTexture(splash->start, splash->start_tex, sfTrue);
     sfSprite_setTexture(splash->continued, splash->continued_tex, sfTrue);
     sfSprite_setTexture(splash->help, splash->help_tex, sfTrue);
     sfSprite_setTexture(splash->quit, splash->quit_tex, sfTrue);
-    sfSprite_setPosition(splash->start, splash->start_pos);
-    sfSprite_setPosition(splash->continued, splash->continued_pos);
-    sfSprite_setPosition(splash->help, splash->help_pos);
-    sfSprite_setPosition(splash->quit, splash->quit_pos);
 }
 
 void init_splash_button(splash_screen *splash)
@@ -50,11 +39,10 @@ void init_splash_button(splash_screen *splash)
 splash_screen *init_splash_screen(void)
 {
     splash_screen *splash = malloc(sizeof(splash_screen));
-    sfTexture *texture = sfTexture_createFromFile
-    ("ressources/splash_screen/textures/background.png", NULL);
+    splash->background_texture = sfTexture_createFromFile
+    ("ressources/splash_screen/textures/background_splash.png", NULL);
     splash->background = sfSprite_create();
-    sfSprite_setPosition(splash->background, (sfVector2f) {0, 0});
-    sfSprite_setTexture(splash->background, texture, sfTrue);
+    sfSprite_setTexture(splash->background, splash->background_texture, sfTrue);
     init_splash_button(splash);
     return splash;
 }
@@ -62,6 +50,15 @@ splash_screen *init_splash_screen(void)
 void display_splash_screen(sfRenderWindow *window,
 splash_screen *splash)
 {
+    sfVector2u windowsize = sfRenderWindow_getSize(window);
+    sfVector2f start_pos = {windowsize.x - 1700, windowsize.y - 600};
+    sfVector2f continued_pos = {windowsize.x - 1700, windowsize.y - 500};
+    sfVector2f help_pos = {windowsize.x - 1700, windowsize.y - 400};
+    sfVector2f quit_pos = {windowsize.x - 235, windowsize.y - 100};
+    sfSprite_setPosition(splash->start, start_pos);
+    sfSprite_setPosition(splash->continued, continued_pos);
+    sfSprite_setPosition(splash->help, help_pos);
+    sfSprite_setPosition(splash->quit, quit_pos);
     sfRenderWindow_drawSprite(window, splash->background, NULL);
     sfRenderWindow_drawSprite(window, splash->start, NULL);
     sfRenderWindow_drawSprite(window, splash->continued, NULL);

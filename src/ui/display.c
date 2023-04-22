@@ -25,7 +25,7 @@ void display(sfRenderWindow *window, game *game)
             break;
         case PAUSE: //display_pause_menu(window, game->pause_menu);
             break;
-        case SETTINGS: //display_settings(window, game->settings);
+        case SETTINGS: display_settings(window, game->settings);
             break;
         case INVENTORY: //display_inventory(window, game->player->inventory);
             break;

@@ -1,12 +1,31 @@
-// /*
-// ** EPITECH PROJECT, 2023
-// ** B-MUL-200-LYN-2-1-myrpg-maxence.guy
-// ** File description:
-// ** settings
-// */
+/*
+** EPITECH PROJECT, 2023
+** B-MUL-200-LYN-2-1-myrpg-maxence.guy
+** File description:
+** settings
+*/
 
-// #include "../../include/main.h"
-// #include "../../include/settings.h"
+#include "../../include/main.h"
+#include "../../include/settings.h"
+#include "../../include/data.h"
+
+settings *init_settings(void)
+{
+    settings *settings = malloc(sizeof(*settings));
+    settings->texture_parchment = sfTexture_createFromFile
+    ("ressources/splash_screen/textures/parchment.png", NULL);
+    settings->parchment = sfSprite_create();    
+    sfSprite_setTexture(settings->parchment, settings->texture_parchment, sfTrue);
+    return settings;
+}
+
+void display_settings(sfRenderWindow *window, settings *settings)
+{
+    sfVector2u windowsize = sfRenderWindow_getSize(window);
+    sfVector2f pos_parchment = (sfVector2f){windowsize.x - 1700, windowsize.y - 600};
+    sfSprite_setPosition(settings->parchment, pos_parchment);
+    sfRenderWindow_drawSprite(window, settings->parchment, NULL);
+}
 
 // void set_textureandsprite(settings *settings)
 // {

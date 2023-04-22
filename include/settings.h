@@ -11,11 +11,11 @@
     #pragma once
 
 // Macros:
-    #define SETTINGS_WIDTH 1920
-    #define SETTINGS_HEIGHT 1080
+    // #define SETTINGS_WIDTH 1920
+    // #define SETTINGS_HEIGHT 1080
 
 // Functions :
-    settings *init_settings(sfVector2f position, sfRenderWindow *window);
+    settings *init_settings(void);
     void display_settings(sfRenderWindow *window, settings *settings);
     void destroy_settings(settings *settings);
 
