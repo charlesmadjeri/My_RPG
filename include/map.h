@@ -57,6 +57,10 @@
     #define LIFE_BAR_4_PATH "ressources/maps/infos/life_bar_4.png"
     #define LIFE_BAR_5_PATH "ressources/maps/infos/life_bar_5.png"
     #define LIFE_BAR_6_PATH "ressources/maps/infos/life_bar_6.png"
+    #define SPELL_BAR_0_PATH "ressources/maps/infos/Barre-4.png"
+    #define SPELL_BAR_1_PATH "ressources/maps/infos/Barre-3.png"
+    #define SPELL_BAR_2_PATH "ressources/maps/infos/Barre-2.png"
+    #define SPELL_BAR_3_PATH "ressources/maps/infos/Barre-1.png"
 
 // Fonctions:
     map *init_map(void);
@@ -72,6 +76,7 @@
 
     level_nb *init_level_nb(void);
     life_bar *init_life_bar(void);
+    spell_bar *init_spell_bar(void);
     xp_bar *init_xp_bar(void);
     sfSprite *create_life_bar_sprite(char *path);
     void display_level(sfRenderWindow *window,
@@ -80,6 +85,8 @@
     player *player, xp_bar *xp_bar);
     void display_life_bar(sfRenderWindow *window,
     player *player, life_bar *life_bar);
+    void display_spell_bar(sfRenderWindow *window, battle *battle,
+    spell_bar *spell_bar);
     void display_infos(sfRenderWindow *window, game *game);
 
 #endif /* !MAP_H_ */

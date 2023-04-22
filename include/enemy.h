@@ -12,8 +12,5 @@
     #pragma once
 
 // Fonctions:
-    enemy *init_enemy(void);
-    void display_enemy(sfRenderWindow *window, enemy *enemy);
-    void destroy_enemy(enemy *enemy);
 
 #endif /* !ENEMY_H_ */

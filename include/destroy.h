@@ -14,6 +14,7 @@
 // Functions:
     void destroy_all(game *game);
     void destroy_battle(battle *battle);
+    void destroy_hud(infos *infos);
     void destroy_map(map *map);
     void destroy_menus(game *game);
     void destroy_player(player *player);

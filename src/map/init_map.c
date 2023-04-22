@@ -37,6 +37,7 @@ static infos *init_infos(void)
     infos *infos = malloc(sizeof(*infos));
 
     infos->level_nb = init_level_nb();
+    infos->spell_bar = init_spell_bar();
     infos->life_bar = init_life_bar();
     infos->xp_bar = init_xp_bar();
 
@@ -49,7 +50,6 @@ map *init_map(void)
     map->map_data = init_map_data();
     map->map_sprite = create_sprite_from_rend_tex
     (map->map_data->map_render_tex);
-    map->enemies = init_enemy();
     map->num_enemies = 0;
     map->pnjs = init_pnjs();
     map->num_pnjs = 0;

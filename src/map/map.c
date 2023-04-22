@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/map.h"
+#include "../../include/events.h"
 #include "../../include/enemy.h"
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
@@ -47,4 +48,5 @@ void display_map(sfRenderWindow *window, game *game)
     display_pnjs(window, game);
     display_weather(window, game);
     display_infos(window, game);
+    is_interaction(game);
 }
