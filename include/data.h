@@ -197,6 +197,7 @@
         int health;
         int max_health;
         int strength;
+        int intersection;
         sfClock* clock;
         inventory *inventory;
         sfVector2f pos;

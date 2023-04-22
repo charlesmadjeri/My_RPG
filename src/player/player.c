@@ -18,6 +18,7 @@ player *init_player(char **config_buf)
     player->xp = 0;
     player->xp_max = 100;
     player->health = 100;
+    player->intersection = 0;
     player->max_health = 100;
     player->strength = 20;
     player->inventory = init_inventory(config_buf);
