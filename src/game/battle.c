@@ -21,15 +21,15 @@ battle *init_battle(void)
 
 void init_ennemy(battle *battle)
 {
-    if (battle->ennemy_type = MONSTER) {
+    if (battle->ennemy_type == MONSTER) {
         battle->ennemy_attack = MONSTER_ATK;
         battle->ennemy_hp = MONSTER_HP;
         battle->ennemy_xp = MONSTER_XP;
-    } if (battle->ennemy_type = MINOTAURE) {
+    } if (battle->ennemy_type == MINOTAURE) {
         battle->ennemy_attack = MINOTAURE_ATK;
         battle->ennemy_hp = MINOTAURE_HP;
         battle->ennemy_xp = MINOTAURE_XP;
-    } if (battle->ennemy_type = CYCLOPE) {
+    } if (battle->ennemy_type == CYCLOPE) {
         battle->ennemy_attack = CYCLOPE_ATK;
         battle->ennemy_hp = CYCLOPE_HP;
         battle->ennemy_xp = CYCLOPE_XP;
@@ -45,7 +45,6 @@ void display_battle(sfRenderWindow *window, game *game)
         game->state->previous_state = SPLASH;
     }
     if (game->player->health < 0) {
-        printf("game over\n");
         game->player->health = game->player->max_health;
         game->state->current_state = MAP;
         game->state->previous_state = SPLASH;
