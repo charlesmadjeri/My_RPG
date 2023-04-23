@@ -14,10 +14,12 @@ void splash_event(sfRenderWindow *window, sfEvent *event, game *game)
     sfVector2u windowsize = sfRenderWindow_getSize(window);
     sfMouseButtonEvent event_mouse = event->mouseButton;
     if (event->type == sfEvtMouseButtonPressed) {
-        // sfVector2f start_button = {windowsize.x - 1700, windowsize.y - 600};
-        // if (event_mouse.x >= start_button.x && event_mouse.x <= start_button.x + 241 &&
-        // event_mouse.y >= start_button.y && event_mouse.y <= start_button.y + 73)
-        //     start_newgame(window);
+        sfVector2f start_button = {windowsize.x - 1700, windowsize.y - 600};
+        if (event_mouse.x >= start_button.x && event_mouse.x <= start_button.x + 241 &&
+        event_mouse.y >= start_button.y && event_mouse.y <= start_button.y + 73) {
+            game->state->previous_state = SPLASH;
+            game->state->current_state = MAP;
+        }
         // sfVector2f continue_button = {windowsize.x - 1700, windowsize.y - 500};
         // if (event_mouse.x >= continue_button.x && event_mouse.x <= continue_button.x + 244 &&
         // event_mouse.y >= continue_button.y && event_mouse.y <= continue_button.y + 70)

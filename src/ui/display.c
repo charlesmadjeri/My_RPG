@@ -23,9 +23,9 @@ void display(sfRenderWindow *window, game *game)
             break;
         case MAP: display_map(window, game);
             break;
-        case PAUSE: //display_pause_menu(window, game->pause_menu);
+        case PAUSE: display_pause_menu(window, game->pause_menu);
             break;
-        case SETTINGS: display_settings(window, game->settings);
+        case SETTINGS: display_settings(window, game->settings, game->splash);
             break;
         case INVENTORY: display_inventory(window, game->player->inventory);
             break;

@@ -24,7 +24,7 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
 void map_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
     if (event->type == sfEvtKeyPressed) {
-        if (event->key.code == sfKeyEscape) {
+        if (event->key.code == sfKeySpace) {
             game->state->current_state = PAUSE;
             game->state->previous_state = MAP;
             return;
@@ -41,3 +41,4 @@ void map_event(sfRenderWindow *window, sfEvent *event, game *game)
         }
     }
 }
+    

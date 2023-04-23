@@ -271,11 +271,8 @@
 
 // Pause_menu:
     typedef struct pause_menu_t {
-        button *resume_button;
-        button *quit_button;
-        button *settings_button;
-        button *load_button;
-        button *save_button;
+        sfSprite *menu;
+        sfTexture *text_menu;
     } pause_menu;
 
 // Clocks:
