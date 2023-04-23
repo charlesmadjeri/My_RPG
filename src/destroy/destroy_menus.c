@@ -7,22 +7,19 @@
 
 #include "../../include/main.h"
 #include "../../include/destroy.h"
-
-void destroy_button(button *button)
-{
-    sfRectangleShape_destroy(button->rect);
-    sfText_destroy(button->text);
-    free(button);
-}
+#include <SFML/Graphics/Sprite.h>
+#include <SFML/Graphics/Texture.h>
 
 void destroy_settings(settings *settings)
 {
     sfTexture_destroy(settings->texture_music);
     sfTexture_destroy(settings->texture_sound);
     sfTexture_destroy(settings->texture_resolutions);
+    sfTexture_destroy(settings->texture_parchment);
     sfSprite_destroy(settings->music);
     sfSprite_destroy(settings->sound);
     sfSprite_destroy(settings->resolutions);
+    sfSprite_destroy(settings->parchment);
     free(settings);
 }
 
@@ -33,16 +30,18 @@ void destroy_splash_screen(splash_screen *splash_screen)
     sfSprite_destroy(splash_screen->continued);
     sfSprite_destroy(splash_screen->help);
     sfSprite_destroy(splash_screen->quit);
+    sfTexture_destroy(splash_screen->background_texture);
+    sfTexture_destroy(splash_screen->start_tex);
+    sfTexture_destroy(splash_screen->continued_tex);
+    sfTexture_destroy(splash_screen->help_tex);
+    sfTexture_destroy(splash_screen->quit_tex);
     free(splash_screen);
 }
 
 void destroy_pause_menu(pause_menu *pause_menu)
 {
     sfSprite_destroy(pause_menu->menu);
-    // destroy_button(pause_menu->quit_button);
-    // destroy_button(pause_menu->settings_button);
-    // destroy_button(pause_menu->load_button);
-    // destroy_button(pause_menu->save_button);
+    sfTexture_destroy(pause_menu->text_menu);
     free(pause_menu);
 }
 
