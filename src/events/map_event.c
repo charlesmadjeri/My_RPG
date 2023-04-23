@@ -70,8 +70,7 @@ void map_event(sfRenderWindow *window, sfEvent *event, game *game)
             return;
         }
         handle_pause_menu_for_the_fucking_codn_style(window, event, game);
-        } else {
-            handle_regular_events(window, event, game);
-            return;
-        }
+        handle_regular_events(window, event, game);
+        return;
+    }
 }
