@@ -13,7 +13,7 @@
     #pragma once
     #define BG_PATH "ressources/battle/bg.png"
     #define C_PATH "ressources/sprites/cyclope.png"
-    #define P_PATH "ressources/sprites/SpriteHero.png"
+    #define PL_PATH "ressources/sprites/SpriteHero.png"
     #define MINOTAURE_T 1
     #define CYCLOPE_T 2
     #define MONSTER_T 0

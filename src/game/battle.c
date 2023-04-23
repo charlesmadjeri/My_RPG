@@ -8,6 +8,8 @@
 #include "../../include/main.h"
 #include "../../include/lib.h"
 #include "../../include/battle.h"
+#include "../../include/map.h"
+#include "../../include/ui.h"
 
 static void get_battle_pos(sfView *view, battle *battle)
 {
@@ -27,7 +29,7 @@ battle *init_battle(void)
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create();
     battle->player = sfSprite_create();
-    battle->text_player = sfTexture_createFromFile(P_PATH, &area);
+    battle->text_player = sfTexture_createFromFile(PL_PATH, &area);
     battle->ennemy_sprite = sfSprite_create();
     battle->cyclope = sfTexture_createFromFile(C_PATH, NULL);
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
