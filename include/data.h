@@ -107,6 +107,17 @@
         char stat;
     } athena;
 
+    typedef struct minotaure_t {
+        char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
+        char **dialog;
+        int stat_num;
+        char stat;
+    } minotaure;
+
 // Map:
     typedef struct life_bar_t {
         sfSprite *life_bar_sprite0;
@@ -219,6 +230,7 @@
         int max_health;
         int strength;
         int intersection;
+        int game_len;
         sfClock* clock;
         inventory *inventory;
         sfVector2f pos;
@@ -295,6 +307,9 @@
         sfClock *rain_clock;
         sfClock* pnj;
         sfClock* athena;
+        sfClock* minotaure;
+        sfClock* player;
+        sfClock* view;
     } clocks;
 
 // Game:
@@ -309,6 +324,7 @@
         player *player;
         pnjs *pnjs;
         athena *athena;
+        minotaure *minotaure;
         int num_pnjs;
         clocks *clocks;
         sfMusic *music;

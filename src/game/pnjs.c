@@ -8,6 +8,7 @@
 #include "../../include/main.h"
 #include "../../include/pnjs.h"
 #include "../../include/data.h"
+#include "../../include/player.h"
 
 pnjs *init_pnjs(void)
 {
@@ -62,7 +63,10 @@ void pnj_move(game *game)
 
 void display_pnjs(sfRenderWindow *window, game* game)
 {
-    pnj_move(game);
+    if (game->player->intersection != PNJ)
+        pnj_move(game);
+    if (game->player->intersection == PNJ && game->player->game_len == 1)
+        game->player->game_len = 2;
     sfRenderWindow_drawSprite(window, game->pnjs->sprite, NULL);
 }
 

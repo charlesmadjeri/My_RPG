@@ -14,21 +14,16 @@
 
 void is_interaction(game *game)
 {
-    if (sfIntRect_intersects(&game->player->area, &game->pnjs->area, NULL)
-    == sfTrue) {
-        game->player->intersection = PNJ;
-    // } if (sfIntRect_intersects(&game->player->area,&game->athena->area, NULL)
-    // == sfTrue) {
-        // game->player->intersection = ATHENA;
-    // } if (sfIntRect_intersects(&game->player->area,
-    // &game->ennemy->monster->area, NULL) == sfTrue) {
-        // game->player->intersection = MONSTER;
-    // } if (sfIntRect_intersects(&game->player->area,
-    // &game->ennemy->minotaure->area, NULL) == sfTrue) {
-        // game->player->intersection = MINOTAURE;
-    // } if (sfIntRect_intersects(&game->player->area,
-    // &game->ennemy->cyclope->area, NULL) == sfTrue) {
-        // game->player->intersection = CYCLOPE;
-    } else
-        game->player->intersection = 0;
+    sfVector2f player_pos = sfSprite_getPosition(game->player->sprite);
+    sfVector2f pnj_pos = sfSprite_getPosition(game->pnjs->sprite);
+    if (player_pos.x > 1240 - 77 && player_pos.x < 1240 + 77)
+        if (player_pos.y > 2440 - 77 && player_pos.y < 2440 + 77) {
+            game->player->intersection = ATHENA; return;
+        }
+    if (player_pos.x > pnj_pos.x - 77 && player_pos.x < pnj_pos.x + 77)
+        if (player_pos.y > pnj_pos.y - 77 && player_pos.y < pnj_pos.y + 77) {
+            game->player->intersection = PNJ; return;
+        }
+    game->player->intersection = 0;
+    return;
 }

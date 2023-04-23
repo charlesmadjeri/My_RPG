@@ -21,6 +21,7 @@ player *init_player(char **config_buf)
     player->intersection = 0;
     player->max_health = 100;
     player->strength = 20;
+    player->game_len = 0;
     player->inventory = init_inventory();
     player->sprite = sfSprite_create();
     player->area = rect;

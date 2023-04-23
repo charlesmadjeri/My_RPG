@@ -14,6 +14,7 @@
 #include "../../include/ui.h"
 #include "../../include/battle.h"
 #include "../../include/athena.h"
+#include "../../include/minotaure.h"
 
 game *init_game(void)
 {
@@ -27,6 +28,7 @@ game *init_game(void)
     game->player = init_player(config_buf);
     game->pnjs = init_pnjs();
     game->athena = init_athena();
+    game->minotaure = init_minotaure();
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();

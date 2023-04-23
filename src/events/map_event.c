@@ -30,8 +30,12 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
         else
             game->map->weather->is_raining = sfFalse;
     }
-    player_move(game, event);
-    move_view(game, event, window);
+    if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->player)) > 0.1) {
+        player_move(game, event); sfClock_restart(game->clocks->player);
+    }
+    if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->view)) > 0.01) {
+        move_view(game, event, window); sfClock_restart(game->clocks->view);
+    }
 }
 
 void map_event(sfRenderWindow *window, sfEvent *event, game *game)
@@ -49,8 +53,6 @@ void map_event(sfRenderWindow *window, sfEvent *event, game *game)
             return;
         } else {
             handle_regular_events(window, event, game);
-            player_move(game, event);
-            move_view(game, event, window);
             return;
         }
     }
