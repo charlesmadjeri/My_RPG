@@ -19,7 +19,6 @@ void destroy_clocks(clocks *clocks)
     sfClock_destroy(clocks->player);
     sfClock_destroy(clocks->pnj);
     sfClock_destroy(clocks->view);
-    //sfClock_destroy(clocks->text);
     free(clocks);
 }
 
