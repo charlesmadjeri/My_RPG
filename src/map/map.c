@@ -14,24 +14,6 @@
 #include "../../include/athena.h"
 #include "../../include/minotaure.h"
 #include "../../include/events.h"
-
-void load_matrice(map_data *map_data)
-{
-    FILE* fp;
-    int i, j;
-    map_data->matrice = malloc(sizeof(int *) * MAP_HEIGHT);
-    for (int i = 0; i < MAP_HEIGHT; i++)
-        map_data->matrice[i] = malloc(sizeof(int) * MAP_WIDTH);
-
-    fp = fopen(MATRICE_PATH, "r");
-    for (i = 0; i < MAP_HEIGHT; i++) {
-        for (j = 0; j < MAP_WIDTH; j++)
-            fscanf(fp, "%i,", &map_data->matrice[i][j]);
-        fgetc(fp);
-    }
-
-    fclose(fp);
-}
 #include "../../include/events.h"
 
 sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)

@@ -303,6 +303,8 @@
         sfClock* pnj;
         sfClock* athena;
         sfClock* minotaure;
+        sfClock* player;
+        sfClock* view;
     } clocks;
 
 // Game:
