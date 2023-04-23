@@ -20,7 +20,7 @@
     void save_game(game *game);
     void destroy_game(game *game);
 
-    void player_move(game *game, sfEvent *event);
+    void player_move(game *game, sfEvent *event, sfVector2f pos);
 
     clocks *init_clocks(void);
     clocks *init_clock(void);

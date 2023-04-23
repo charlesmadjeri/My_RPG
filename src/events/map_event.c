@@ -30,8 +30,10 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
         else
             game->map->weather->is_raining = sfFalse;
     }
+    sfVector2f p_player = sfSprite_getPosition(game->player->sprite);
     if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->player)) > 0.1) {
-        player_move(game, event); sfClock_restart(game->clocks->player);
+        player_move(game, event, p_player);
+        sfClock_restart(game->clocks->player);
     }
     if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->view)) > 0.01) {
         move_view(game, event, window); sfClock_restart(game->clocks->view);
