@@ -16,7 +16,7 @@
         sfSprite *player;
         sfTexture *text_player;
         sfTexture *texture;
-        sfVector2f pos_ennemy;
+        sfVector2f pos_cyclope;
         sfVector2f pos_player;
         sfIntRect rect;
         sfTexture *cyclope;
@@ -34,6 +34,7 @@
         sfTexture *help_texture;
         sfSprite *ennemy_bar;
         sfVector2f pos_bar;
+        sfVector2f pos_mino;
         sfTexture *bar_ennemy_0;
         sfTexture *bar_ennemy_1;
         sfTexture *bar_ennemy_2;

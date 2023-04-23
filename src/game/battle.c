@@ -14,31 +14,25 @@
 
 static void get_battle_pos(sfView *view, battle *battle)
 {
-    battle->pos_ennemy.x = (sfView_getCenter(view).x + 300);
-    battle->pos_ennemy.y = (sfView_getCenter(view).y - 200);
-    sfSprite_setPosition(battle->ennemy_sprite, battle->pos_ennemy);
-    battle->pos_player.x = (sfView_getCenter(view).x + - 300);
+    if (battle->ennemy_type == CYCLOPE_T) {
+        battle->pos_cyclope.x = (sfView_getCenter(view).x + 300);
+        battle->pos_cyclope.y = (sfView_getCenter(view).y - 200);
+        sfSprite_setPosition(battle->ennemy_sprite, battle->pos_cyclope);
+    } if (battle->ennemy_type == MINOTAURE_T) {
+        battle->pos_mino.x = (sfView_getCenter(view).x + 450);
+        battle->pos_mino.y = (sfView_getCenter(view).y - 50);
+        sfSprite_setPosition(battle->ennemy_sprite, battle->pos_mino);
+    } if (battle->ennemy_type == MONSTER_T) {
+        battle->pos_cyclope.x = (sfView_getCenter(view).x + 300);
+        battle->pos_cyclope.y = (sfView_getCenter(view).y - 200);
+        sfSprite_setPosition(battle->ennemy_sprite, battle->pos_cyclope);
+    }
+    battle->pos_player.x = (sfView_getCenter(view).x - 300);
     battle->pos_player.y = (sfView_getCenter(view).y + 200);
     sfSprite_setPosition(battle->player, battle->pos_player);
     battle->pos_bar.x = (sfView_getCenter(view).x + 350);
     battle->pos_bar.y = (sfView_getCenter(view).y - 375);
     sfSprite_setPosition(battle->ennemy_bar, battle->pos_bar);
-}
-
-static void display_ennemy_bar(sfRenderWindow *window, battle *battle)
-{
-    float ratio = (battle->ennemy_hp * 100) / (battle->ennemy_max_hp);
-    if (ratio >= 80)
-        sfSprite_setTexture(battle->ennemy_bar, battle->bar_ennemy_4, sfFalse);
-    if (ratio >= 60 && ratio < 80)
-        sfSprite_setTexture(battle->ennemy_bar, battle->bar_ennemy_3, sfFalse);
-    if (ratio >= 40 && ratio < 60)
-        sfSprite_setTexture(battle->ennemy_bar, battle->bar_ennemy_2, sfFalse);
-    if (ratio >= 20 && ratio < 40) 
-        sfSprite_setTexture(battle->ennemy_bar, battle->bar_ennemy_1, sfFalse);
-    if (ratio < 20)
-        sfSprite_setTexture(battle->ennemy_bar, battle->bar_ennemy_0, sfFalse);
-    sfRenderWindow_drawSprite(window, battle->ennemy_bar, NULL);
 }
 
 static battle *second_part_init(battle *battle)
@@ -62,7 +56,7 @@ battle *init_battle(void)
     sfIntRect area; battle *battle = malloc(sizeof(*battle));
     sfIntRect a_mino;
     area.height = 77; area.width = 77; area.left = 231; area.top = 160;
-    a_mino.height = 77; a_mino.width = 77; a_mino.left = 370; a_mino.top = 160;
+    a_mino.height = 330; a_mino.width = 200; a_mino.left = 450; a_mino.top = 780;
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create(); battle->player = sfSprite_create();
     battle->text_player = sfTexture_createFromFile(PL_PATH, &area);
@@ -72,6 +66,27 @@ battle *init_battle(void)
     battle->mino = sfTexture_createFromFile(MINO_SPRITE_PATH, &a_mino);
     second_part_init(battle);
     return battle;
+}
+
+static void win_or_lose(game *game)
+{
+    if (game->battle->ennemy_hp < 0) {
+        game->player->xp += game->battle->ennemy_xp;
+        game->state->current_state = MAP;
+        game->state->previous_state = SPLASH;
+        if (game->battle->ennemy_type = MONSTER_T) {
+            game->player->inventory->items->potion->quantity += 20;
+            game->player->inventory->items->shield->quantity ++;
+        }
+        if (game->battle->ennemy_type = MINOTAURE_T) {
+            game->player->inventory->items->key->quantity ++;
+        }
+    }
+    if (game->player->health < 0) {
+        game->player->health = game->player->max_health;
+        game->state->current_state = MAP;
+        game->state->previous_state = SPLASH;
+    }
 }
 
 void display_battle(sfRenderWindow *window, game *game)
@@ -84,14 +99,5 @@ void display_battle(sfRenderWindow *window, game *game)
     display_ennemy_bar(window, game->battle);
     display_infos(window, game);
     display_help(window, game);
-    if (game->battle->ennemy_hp < 0) {
-        game->player->xp += game->battle->ennemy_xp;
-        game->state->current_state = MAP;
-        game->state->previous_state = SPLASH;
-    }
-    if (game->player->health < 0) {
-        game->player->health = game->player->max_health;
-        game->state->current_state = MAP;
-        game->state->previous_state = SPLASH;
-    }
+    win_or_lose(game);
 }

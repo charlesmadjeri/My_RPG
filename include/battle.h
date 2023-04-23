@@ -37,4 +37,5 @@
     battle *init_battle(void);
     void init_ennemy(battle *battle);
     void display_battle(sfRenderWindow *window, game *game);
+    void display_ennemy_bar(sfRenderWindow *window, battle *battle);
 #endif /* !BATTLE_H_ */
