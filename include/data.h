@@ -7,11 +7,7 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-    #include <SFML/Graphics.h>
-    #include <SFML/Graphics/Types.h>
-    #include <SFML/Audio.h>
-    #include <SFML/System/Vector2.h>
-    #include <SFML/System/Vector3.h>
+    #include "main.h"
     #pragma once
 
 // Battle:
@@ -27,12 +23,20 @@
         sfSprite *ennemy_sprite;
         int special_attack;
         int ennemy_type;
+        int ennemy_max_hp;
         int ennemy_hp;
         int ennemy_attack;
         int ennemy_xp;
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
+        sfSprite *ennemy_bar;
+        sfVector2f pos_bar;
+        sfTexture *bar_ennemy_0;
+        sfTexture *bar_ennemy_1;
+        sfTexture *bar_ennemy_2;
+        sfTexture *bar_ennemy_3;
+        sfTexture *bar_ennemy_4;
     } battle;
 
 // Button:
@@ -258,11 +262,9 @@
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
-        sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
         sfTexture *texture_resolutions;
-        sfSprite *parchment;
         sfSprite *music;
         sfSprite *sound;
         sfSprite *resolutions;
@@ -279,11 +281,6 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
-        sfTexture *background_texture;
-        sfTexture *start_tex;
-        sfTexture *continued_tex;
-        sfTexture *help_tex;
-        sfTexture *quit_tex;
     } splash_screen;
 
 // Text:
@@ -316,8 +313,11 @@
 
 // Pause_menu:
     typedef struct pause_menu_t {
-        sfSprite *menu;
-        sfTexture *text_menu;
+        button *resume_button;
+        button *quit_button;
+        button *settings_button;
+        button *load_button;
+        button *save_button;
     } pause_menu;
 
 // Clocks:
