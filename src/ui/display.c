@@ -31,6 +31,7 @@ void display(sfRenderWindow *window, game *game)
             break;
         case BATTLE: display_battle(window, game);
             break;
+        case SETTINGS_PAUSE: display_settings_pause(window, game, game->view);
         default:
             break;
     }
