@@ -15,11 +15,12 @@
     #define MATRICE_PATH "ressources/maps/map.txt"
     #define MAP_WIDTH 36 // in tiles
     #define MAP_HEIGHT 21 // in tiles
-    #define MAP_WIDTH_PX 5400 // in pixels
-    #define MAP_HEIGHT_PX 3150 // in pixels
+    #define MAP_WIDTH_PX 5400 - 30 // in pixels
+    #define MAP_HEIGHT_PX 3150 - 30 // in pixels
     #define TILE_SIZE_X 150 // in pixels
     #define TILE_SIZE_Y 150 // in pixels
 
+    #define HELP_PATH "ressources/maps/help.png"
     #define CLOUDS_PATH "ressources/maps/weather/clouds.png"
     #define RAINDROP_PATH "ressources/maps/weather/rain.png"
     #define NB_CLOUDS 50
@@ -29,6 +30,11 @@
     #define RAIN_MOVE_AMOUNT 4
     #define CLOUDS_WIDTH 564
     #define RAINDROP_HEIGHT 603
+
+    #define U_FOG_PATH "ressources/maps/vectors/u_fog.png"
+    #define D_FOG_PATH "ressources/maps/vectors/d_fog.png"
+    #define L_FOG_PATH "ressources/maps/vectors/l_fog.png"
+    #define R_FOG_PATH "ressources/maps/vectors/r_fog.png"
 
     #define G_PATH "ressources/maps/textures/grass.png"
     #define P_PATH "ressources/maps/textures/path.png"

@@ -38,11 +38,11 @@ void destroy_splash_screen(splash_screen *splash_screen)
 
 void destroy_pause_menu(pause_menu *pause_menu)
 {
-    destroy_button(pause_menu->resume_button);
-    destroy_button(pause_menu->quit_button);
-    destroy_button(pause_menu->settings_button);
-    destroy_button(pause_menu->load_button);
-    destroy_button(pause_menu->save_button);
+    sfSprite_destroy(pause_menu->menu);
+    // destroy_button(pause_menu->quit_button);
+    // destroy_button(pause_menu->settings_button);
+    // destroy_button(pause_menu->load_button);
+    // destroy_button(pause_menu->save_button);
     free(pause_menu);
 }
 

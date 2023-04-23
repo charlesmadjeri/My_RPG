@@ -25,7 +25,7 @@
     inventory *init_inventory(void);
     void add_item(inventory *inventory, char *name);
     void remove_item(inventory *inventory, char *name);
-    void display_inventory(sfRenderWindow *window, inventory *inventory);
+    void display_inventory(sfRenderWindow *window, game *game, sfView *view);
     sfVector2f calculate_first_item_pos(inventory *inventory);
     void count_items(inventory *inventory);
 

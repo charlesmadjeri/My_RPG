@@ -7,6 +7,7 @@
 
 #include "../../../include/main.h"
 #include "../../../include/map.h"
+#include "../../../include/events.h"
 
 static sfSprite *create_level_sprite(char *path)
 {
@@ -35,17 +36,21 @@ level_nb *init_level_nb(void)
 void display_level(sfRenderWindow *window, player *player, level_nb *level_nb)
 {
     switch (player->level) {
-        case 1: sfSprite_setPosition(level_nb->level_1_sprite,
-            (sfVector2f) {level_nb->level_nb_pos.x, level_nb->level_nb_pos.y});
+        case 1:
+            sfSprite_setPosition(level_nb->level_1_sprite,
+            level_nb->level_nb_pos);
             sfRenderWindow_drawSprite(window, level_nb->level_1_sprite, NULL);
             break;
-        case 2: sfSprite_setPosition(level_nb->level_2_sprite,
-            (sfVector2f) {level_nb->level_nb_pos.x, level_nb->level_nb_pos.y});
+        case 2:
+            sfSprite_setPosition(level_nb->level_2_sprite,
+            level_nb->level_nb_pos);
             sfRenderWindow_drawSprite(window, level_nb->level_2_sprite, NULL);
             break;
-        case 3: sfSprite_setPosition(level_nb->level_3_sprite,
-            (sfVector2f) {level_nb->level_nb_pos.x, level_nb->level_nb_pos.y});
+        case 3:
+            sfSprite_setPosition(level_nb->level_3_sprite,
+            level_nb->level_nb_pos);
             sfRenderWindow_drawSprite(window, level_nb->level_3_sprite, NULL);
             break;
     }
+    level_up(player);
 }

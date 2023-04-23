@@ -7,7 +7,6 @@
 
 #include "../../include/main.h"
 #include "../../include/map.h"
-#include "../../include/enemy.h"
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
 
@@ -55,6 +54,11 @@ map *init_map(void)
     map->num_pnjs = 0;
     map->weather = init_weather();
     map->infos = init_infos();
+    map->disp_help = sfTrue;
+    map->help_sprite = sfSprite_create();
+    map->help_texture = sfTexture_createFromFile(HELP_PATH, NULL);
+    sfSprite_setTexture(map->help_sprite, map->help_texture, sfTrue);
+    init_fog(map);
 
     return map;
 }

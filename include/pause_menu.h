@@ -12,13 +12,17 @@
     #pragma once
 
 // Macros:
-    #define PAUSE_MENU_WIDTH 1920
-    #define PAUSE_MENU_HEIGHT 1080
+    // #define PAUSE_MENU_WIDTH 1920
+    // #define PAUSE_MENU_HEIGHT 1080
 
 // Functions :
     pause_menu *init_pause_menu(void);
-    void display_pause_menu(sfRenderWindow *window, pause_menu *pause_menu);
+    void display_pause_menu(sfRenderWindow *window, pause_menu *pause_menu,
+    game *game);
     void destroy_pause_menu(pause_menu *pause_menu);
-    void display_pause(sfWindow *window, pause_menu *pause_menu);
+    void set_view_to_center(sfRenderWindow *window, sfSprite *sprite,
+    sfView *view);
+
+    // void display_pause(sfWindow *window, pause_menu *pause_menu);
 
 #endif /* !PAUSE_MENU_H_ */

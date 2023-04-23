@@ -27,4 +27,6 @@
     void set_view_to_center(sfRenderWindow *window,
     sfSprite *sprite, sfView *view);
 
+    void display_help(sfRenderWindow *window, game *game);
+
 #endif /* !UI_H_ */

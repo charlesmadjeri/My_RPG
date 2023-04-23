@@ -7,23 +7,28 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-    #include <SFML/Graphics.h>
-    #include <SFML/Graphics/Types.h>
-    #include <SFML/Audio.h>
-    #include <SFML/System/Vector2.h>
+    #include "main.h"
     #pragma once
 
 // Battle:
     typedef struct battle_t {
         sfSprite *background;
+        sfSprite *player;
+        sfTexture *text_player;
         sfTexture *texture;
-        sfVector2f position;
+        sfVector2f pos_ennemy;
+        sfVector2f pos_player;
         sfIntRect rect;
+        sfTexture *cyclope;
+        sfSprite *ennemy_sprite;
         int special_attack;
         int ennemy_type;
         int ennemy_hp;
         int ennemy_attack;
         int ennemy_xp;
+        sfBool disp_help;
+        sfSprite *help_sprite;
+        sfTexture *help_texture;
     } battle;
 
 // Button:
@@ -158,6 +163,14 @@
         sfVector2f cloud_pos;
         sfVector2f rain_pos;
         sfBool is_raining;
+        sfSprite *L_fog_sprite;
+        sfSprite *R_fog_sprite;
+        sfSprite *U_fog_sprite;
+        sfSprite *D_fog_sprite;
+        sfVector2f L_fog_pos;
+        sfVector2f R_fog_pos;
+        sfVector2f U_fog_pos;
+        sfVector2f D_fog_pos;
     } weather;
     typedef struct textures_t {
         sfTexture *grass;
@@ -188,6 +201,17 @@
         int num_pnjs;
         weather *weather;
         infos *infos;
+        sfBool disp_help;
+        sfSprite *help_sprite;
+        sfTexture *help_texture;
+        sfTexture *u_fog_texture;
+        sfTexture *d_fog_texture;
+        sfTexture *l_fog_texture;
+        sfTexture *r_fog_texture;
+        sfSprite *U_fog_sprite;
+        sfSprite *D_fog_sprite;
+        sfSprite *L_fog_sprite;
+        sfSprite *R_fog_sprite;
     } map;
 
 // Inventory:
@@ -238,9 +262,11 @@
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
+        sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
         sfTexture *texture_resolutions;
+        sfSprite *parchment;
         sfSprite *music;
         sfSprite *sound;
         sfSprite *resolutions;
@@ -257,6 +283,11 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
+        sfTexture *background_texture;
+        sfTexture *start_tex;
+        sfTexture *continued_tex;
+        sfTexture *help_tex;
+        sfTexture *quit_tex;
     } splash_screen;
 
 // Text:
@@ -289,11 +320,8 @@
 
 // Pause_menu:
     typedef struct pause_menu_t {
-        button *resume_button;
-        button *quit_button;
-        button *settings_button;
-        button *load_button;
-        button *save_button;
+        sfSprite *menu;
+        sfTexture *text_menu;
     } pause_menu;
 
 // Clocks:
