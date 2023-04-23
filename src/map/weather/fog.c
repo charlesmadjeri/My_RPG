@@ -13,7 +13,7 @@
 void reduce_sprite_transparency(map *map)
 {
     sfColor color = sfSprite_getColor(map->U_fog_sprite);
-    color.a -= 50;  // Reduce alpha by specified amount
+    color.a -= 50;
     sfSprite_setColor(map->U_fog_sprite, color);
     sfSprite_setColor(map->D_fog_sprite, color);
     sfSprite_setColor(map->L_fog_sprite, color);
@@ -46,14 +46,14 @@ void set_textures_and_scale(map *map)
 
 void set_positions(map *map)
 {
-    sfSprite_setPosition(map->U_fog_sprite, 
+    sfSprite_setPosition(map->U_fog_sprite,
     (sfVector2f) {- (int)(WINDOW_WIDTH / 2), - (int)(WINDOW_HEIGHT / 2)});
-    sfSprite_setPosition(map->D_fog_sprite, 
+    sfSprite_setPosition(map->D_fog_sprite,
     (sfVector2f) {- (int)(WINDOW_WIDTH / 2),
     MAP_HEIGHT_PX - (int)(WINDOW_WIDTH / 2)});
-    sfSprite_setPosition(map->L_fog_sprite, 
+    sfSprite_setPosition(map->L_fog_sprite,
     (sfVector2f) {- (int)(WINDOW_WIDTH / 2), - (int)(WINDOW_HEIGHT / 2)});
-    sfSprite_setPosition(map->R_fog_sprite, 
+    sfSprite_setPosition(map->R_fog_sprite,
     (sfVector2f) {MAP_WIDTH_PX - (int)(WINDOW_WIDTH / 2),
     - (int)(WINDOW_HEIGHT / 2)});
 }
