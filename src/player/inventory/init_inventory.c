@@ -15,7 +15,7 @@ static item *init_item(char *path, char *item_name, sfVector2f scale)
     item->texture = sfTexture_createFromFile(path, NULL);
     item->sprite = sfSprite_create();
     sfSprite_setTexture(item->sprite, item->texture, sfTrue);
-    item->quantity = 1;
+    item->quantity = 0;
     item->pos = (sfVector2f){0, 0};
 
     sfSprite_setScale(item->sprite, scale);

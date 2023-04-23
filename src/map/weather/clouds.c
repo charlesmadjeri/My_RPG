@@ -8,8 +8,6 @@
 #include "../../../include/main.h"
 #include "../../../include/map.h"
 
-
-
 sfRenderTexture *generate_cloud_texture(void)
 {
     sfTexture *cloud_texture = sfTexture_createFromFile(CLOUDS_PATH, NULL);
