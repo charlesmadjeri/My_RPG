@@ -11,10 +11,10 @@
 static void atk_animation(sfRenderWindow *window, game *game, battle *battle)
 {
     sfClock *clock = sfClock_create();
-    float time = sfTime_asSeconds(sfClock_restart(clock));
-    while (time < 0.9) {
-        time = sfTime_asSeconds(sfClock_getElapsedTime(clock));
-        // battle->pos_player.x += 80;
+    sfTime time = sfClock_getElapsedTime(clock);
+    while ((int) time.microseconds < 500000) {
+        time = sfClock_getElapsedTime(clock);
+        battle->pos_player = battle->pos_ennemy;
         sfSprite_setPosition(battle->player, battle->pos_player);
         sfRenderWindow_drawSprite(window, battle->player, NULL);
     }
