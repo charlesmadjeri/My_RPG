@@ -23,8 +23,8 @@ static void get_battle_pos(sfView *view, battle *battle)
         battle->pos_mino.y = (sfView_getCenter(view).y - 50);
         sfSprite_setPosition(battle->ennemy_sprite, battle->pos_mino);
     } if (battle->ennemy_type == MONSTER_T) {
-        battle->pos_cyclope.x = (sfView_getCenter(view).x + 300);
-        battle->pos_cyclope.y = (sfView_getCenter(view).y - 200);
+        battle->pos_cyclope.x = (sfView_getCenter(view).x + 500);
+        battle->pos_cyclope.y = (sfView_getCenter(view).y + 200);
         sfSprite_setPosition(battle->ennemy_sprite, battle->pos_cyclope);
     }
     battle->pos_player.x = (sfView_getCenter(view).x - 300);
@@ -54,8 +54,9 @@ static battle *second_part_init(battle *battle)
 battle *init_battle(void)
 {
     sfIntRect area; battle *battle = malloc(sizeof(*battle));
-    sfIntRect a_mino;
+    sfIntRect a_mino; sfIntRect a_monst;
     area.height = 77; area.width = 77; area.left = 231; area.top = 160;
+    a_monst.height = 77; a_monst.width = 77; a_monst.left = 0; a_monst.top = 0;
     a_mino.height = 330; a_mino.width = 200; a_mino.left = 450; a_mino.top = 780;
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create(); battle->player = sfSprite_create();
@@ -64,6 +65,7 @@ battle *init_battle(void)
     battle->help_sprite = sfSprite_create();
     battle->cyclope = sfTexture_createFromFile(C_PATH, NULL);
     battle->mino = sfTexture_createFromFile(MINO_SPRITE_PATH, &a_mino);
+    battle->monst = sfTexture_createFromFile(MON_PATH, &a_monst);
     second_part_init(battle);
     return battle;
 }

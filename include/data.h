@@ -34,6 +34,7 @@
         sfTexture *help_texture;
         sfSprite *ennemy_bar;
         sfVector2f pos_bar;
+        sfVector2f pos_monst;
         sfVector2f pos_mino;
         sfTexture *bar_ennemy_0;
         sfTexture *bar_ennemy_1;
