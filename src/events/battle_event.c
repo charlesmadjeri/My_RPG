@@ -7,16 +7,27 @@
 
 #include "../../include/main.h"
 #include "../../include/battle.h"
+#include "../../include/ui.h"
 
 static void atk_animation(sfRenderWindow *window, game *game, battle *battle)
 {
     sfClock *clock = sfClock_create();
     sfTime time = sfClock_getElapsedTime(clock);
-    while ((int) time.microseconds < 500000) {
-        time = sfClock_getElapsedTime(clock);
-        battle->pos_player = battle->pos_ennemy;
-        sfSprite_setPosition(battle->player, battle->pos_player);
-        sfRenderWindow_drawSprite(window, battle->player, NULL);
+    sfVector2f moko;
+    while (42) {
+        if (time.microseconds < 1000000) {
+            time = sfClock_getElapsedTime(clock);
+            moko = sfSprite_getPosition(battle->player);
+
+            set_view_to_center(window, battle->background, game->view);
+            
+            battle->pos_player = (sfVector2f) {0,0};
+            sfSprite_setPosition(battle->player, battle->pos_player);
+            printf("%.1f\t%.1f\t\t\t%.1f\t%.1f\n", battle->pos_player.x, battle->pos_ennemy.y, moko.x, moko.y);
+            sfRenderWindow_drawSprite(window, battle->player, NULL);
+        } else {
+            break;
+        }
     }
 }
 
