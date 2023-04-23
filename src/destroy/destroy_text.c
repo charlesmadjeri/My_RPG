@@ -10,7 +10,7 @@
 
 void destroy_text(text *text)
 {
-    sfText_destroy(text->text);
-    sfFont_destroy(text->font);
+    sfSprite_destroy(text->sprite1);
+
     free(text);
 }

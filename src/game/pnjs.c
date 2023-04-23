@@ -62,8 +62,11 @@ void display_pnjs(sfRenderWindow *window, game* game)
 {
     if (game->player->intersection != PNJ)
         pnj_move(game);
-    if (game->player->intersection == PNJ && game->player->game_len == 1)
+    if (game->player->intersection == PNJ && game->player->game_len == 1) {
         game->player->game_len = 2;
+        game->text->len = 3;
+    } else if (game->player->game_len == 2 && game->player->intersection != PNJ)
+        game->text->len = 0;
     sfRenderWindow_drawSprite(window, game->pnjs->sprite, NULL);
 }
 

@@ -12,6 +12,7 @@
 #include "../../include/player.h"
 #include "../../include/athena.h"
 #include "../../include/minotaure.h"
+#include "../../include/game.h"
 
 sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
 {
@@ -40,6 +41,7 @@ void display_map(sfRenderWindow *window, game *game)
     display_minotaure(window, game);
     display_weather(window, game);
     display_fog(window, game);
+    display_text(game, window, game->text);
     display_infos(window, game);
     display_help(window, game);
     is_interaction(game);

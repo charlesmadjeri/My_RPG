@@ -59,6 +59,5 @@ map *init_map(void)
     map->help_texture = sfTexture_createFromFile(HELP_PATH, NULL);
     sfSprite_setTexture(map->help_sprite, map->help_texture, sfTrue);
     init_fog(map);
-
     return map;
 }

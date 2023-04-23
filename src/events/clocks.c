@@ -19,5 +19,6 @@ clocks *init_clocks(void)
     clocks->minotaure = sfClock_create();
     clocks->player = sfClock_create();
     clocks->view = sfClock_create();
+    clocks->text = sfClock_create();
     return clocks;
 }

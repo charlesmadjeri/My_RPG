@@ -6,6 +6,7 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/game.h"
 #include "../../include/splash_screen.h"
 #include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Window/Event.h>

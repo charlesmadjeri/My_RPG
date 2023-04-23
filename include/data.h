@@ -292,10 +292,12 @@
 
 // Text:
     typedef struct text_t {
-        sfText *text;
-        sfFont *font;
-        sfVector2f position;
-        sfColor color;
+        sfSprite *sprite1;
+        sfSprite *sprite2;
+        sfSprite *sprite3;
+        sfSprite *sprite4;
+        sfVector2f pos;
+        int len;
         int size;
     } text;
 
@@ -333,6 +335,7 @@
         sfClock* minotaure;
         sfClock* player;
         sfClock* view;
+        sfClock* text;
     } clocks;
 
 // Game:
@@ -351,6 +354,7 @@
         int num_pnjs;
         clocks *clocks;
         sfMusic *music;
+        text* text;
     } game;
 
 

@@ -24,6 +24,9 @@ void is_interaction(game *game)
         if (player_pos.y > pnj_pos.y - 77 && player_pos.y < pnj_pos.y + 77) {
             game->player->intersection = PNJ; return;
         }
+    if (player_pos.x == 4520 && player_pos.y == 500) {
+            game->player->intersection = DOOR;return;
+    }
     game->player->intersection = 0;
     return;
 }
