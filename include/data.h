@@ -7,7 +7,11 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-    #include "main.h"
+    #include <SFML/Graphics.h>
+    #include <SFML/Graphics/Types.h>
+    #include <SFML/Audio.h>
+    #include <SFML/System/Vector2.h>
+    #include <SFML/System/Vector3.h>
     #pragma once
 
 // Battle:
@@ -254,9 +258,11 @@
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
+        sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
         sfTexture *texture_resolutions;
+        sfSprite *parchment;
         sfSprite *music;
         sfSprite *sound;
         sfSprite *resolutions;
@@ -273,6 +279,11 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
+        sfTexture *background_texture;
+        sfTexture *start_tex;
+        sfTexture *continued_tex;
+        sfTexture *help_tex;
+        sfTexture *quit_tex;
     } splash_screen;
 
 // Text:
@@ -305,11 +316,8 @@
 
 // Pause_menu:
     typedef struct pause_menu_t {
-        button *resume_button;
-        button *quit_button;
-        button *settings_button;
-        button *load_button;
-        button *save_button;
+        sfSprite *menu;
+        sfTexture *text_menu;
     } pause_menu;
 
 // Clocks:

@@ -13,15 +13,18 @@
 #include "../../include/pnjs.h"
 #include "../../include/ui.h"
 #include "../../include/battle.h"
+#include "../../include/splash_screen.h"
+#include "../../include/settings.h"
 #include "../../include/athena.h"
+#include "../../include/pause_menu.h"
 #include "../../include/minotaure.h"
 
 game *init_game(void)
 {
     game *game = malloc(sizeof(*game));
-    // game->splash = init_splash_screen();
-    // game->pause_menu = init_pause_menu();
-    // game->settings = init_settings();
+    game->splash = init_splash_screen();
+    game->pause_menu = init_pause_menu();
+    game->settings = init_settings();
     char **config_buf = NULL; //parse_config_file();
     game->state = init_state();
     game->map = init_map();
