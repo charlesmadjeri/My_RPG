@@ -7,31 +7,17 @@
 
 #include "../../include/main.h"
 #include "../../include/battle.h"
-#include "../../include/ui.h"
-#include <SFML/Graphics/View.h>
-#include <SFML/System/Vector2.h>
 
-// static void atk_animation(sfRenderWindow *window, game *game, battle *battle)
-// {
-    // sfClock *clock = sfClock_create();
-    // sfTime time = sfClock_getElapsedTime(clock);
-    // sfVector2f moko;
-    // while (42) {
-        // if (time.microseconds < 1000000) {
-            // time = sfClock_getElapsedTime(clock);
-            // moko = sfSprite_getPosition(battle->player);
-// 
-            // set_view_to_center(window, battle->background, game->view);
-            // sfVector2f view_pos = sfView_getCenter(game->view);
-            // battle->pos_player = (sfVector2f) {view_pos.x, view_pos.y};
-// 
-            // sfSprite_setPosition(battle->player, battle->pos_player);
-            // sfRenderWindow_drawSprite(window, battle->player, NULL);
-        // } else {
-            // break;
-        // }
-    // }
-// }
+static void atk_animation(sfRenderWindow *window, game *game, battle *battle)
+{
+    sfClock *clock = sfClock_create();
+    float time = sfTime_asSeconds(sfClock_restart(clock));
+    while (time < 0.9) {
+        time = sfTime_asSeconds(sfClock_getElapsedTime(clock));
+        sfSprite_setPosition(battle->player, battle->pos_player);
+        sfRenderWindow_drawSprite(window, battle->player, NULL);
+    }
+}
 
 static void combat_event(sfRenderWindow *window, game *game,
 battle *battle, sfEvent *event)

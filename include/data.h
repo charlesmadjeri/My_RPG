@@ -86,6 +86,7 @@
         NONE,
         SPLASH,
         SETTINGS,
+        SETTINGS_PAUSE,
         PAUSE,
         BATTLE,
         MAP,
@@ -216,10 +217,7 @@
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
-        sfTexture *u_fog_texture;
-        sfTexture *d_fog_texture;
-        sfTexture *l_fog_texture;
-        sfTexture *r_fog_texture;
+        sfTexture *fog_texture;
         sfSprite *U_fog_sprite;
         sfSprite *D_fog_sprite;
         sfSprite *L_fog_sprite;
@@ -271,9 +269,8 @@
 
 // Settings:
     typedef struct settings_t {
-        int music_volume;
-        int sound_volume;
-        sfBool fullscreen;
+        // int music_volume;
+        // int sound_volume;
         sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
@@ -285,7 +282,7 @@
         sfVector2f pos_music;
         sfVector2f pos_sound;
         sfVector2f pos_resolutions;
-        int fps;
+        // int fps;
     } settings;
 
 // Splash_screen:
@@ -333,8 +330,15 @@
 // Pause_menu:
     typedef struct pause_menu_t {
         sfSprite *menu;
+        sfSprite *return_button;
+        sfTexture *text_return;
         sfTexture *text_menu;
     } pause_menu;
+
+    typedef struct settings_pause_t {
+        sfSprite *background;
+        sfSprite *settings_parch;
+    } settings_pause;
 
 // Clocks:
     typedef struct clocks_t {

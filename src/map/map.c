@@ -39,7 +39,6 @@ void display_map(sfRenderWindow *window, game *game)
     display_pnjs(window, game);
     display_minotaure(window, game);
     display_weather(window, game);
-    display_fog(window, game);
     display_infos(window, game);
     display_help(window, game);
     is_interaction(game);

@@ -8,12 +8,11 @@
 #include "../../../include/main.h"
 #include "../../../include/map.h"
 #include "../../../include/ui.h"
-#include <SFML/Graphics/Sprite.h>
 
 void reduce_sprite_transparency(map *map)
 {
     sfColor color = sfSprite_getColor(map->U_fog_sprite);
-    color.a -= 50;
+    color.a -= 0;
     sfSprite_setColor(map->U_fog_sprite, color);
     sfSprite_setColor(map->D_fog_sprite, color);
     sfSprite_setColor(map->L_fog_sprite, color);
@@ -26,22 +25,19 @@ void create_sprites_and_textures(map *map)
     map->D_fog_sprite = sfSprite_create();
     map->L_fog_sprite = sfSprite_create();
     map->R_fog_sprite = sfSprite_create();
-    map->u_fog_texture = sfTexture_createFromFile(U_FOG_PATH, NULL);
-    map->d_fog_texture = sfTexture_createFromFile(D_FOG_PATH, NULL);
-    map->l_fog_texture = sfTexture_createFromFile(L_FOG_PATH, NULL);
-    map->r_fog_texture = sfTexture_createFromFile(R_FOG_PATH, NULL);
+    map->fog_texture = sfTexture_createFromFile(FOG_PATH, NULL);
+    sfSprite_setTexture(map->U_fog_sprite, map->fog_texture, sfTrue);
+    sfSprite_setTexture(map->D_fog_sprite, map->fog_texture, sfTrue);
+    sfSprite_setTexture(map->L_fog_sprite, map->fog_texture, sfTrue);
+    sfSprite_setTexture(map->R_fog_sprite, map->fog_texture, sfTrue);
 }
 
 void set_textures_and_scale(map *map)
 {
-    sfSprite_setTexture(map->U_fog_sprite, map->u_fog_texture, sfTrue);
-    sfSprite_setTexture(map->D_fog_sprite, map->d_fog_texture, sfTrue);
-    sfSprite_setTexture(map->L_fog_sprite, map->l_fog_texture, sfTrue);
-    sfSprite_setTexture(map->R_fog_sprite, map->r_fog_texture, sfTrue);
-    sfSprite_setScale(map->U_fog_sprite, (sfVector2f) {6, 2});
-    sfSprite_setScale(map->D_fog_sprite, (sfVector2f) {6, 2});
-    sfSprite_setScale(map->L_fog_sprite, (sfVector2f) {3, 4});
-    sfSprite_setScale(map->R_fog_sprite, (sfVector2f) {3, 4});
+    sfSprite_setScale(map->U_fog_sprite, (sfVector2f) {1, 1});
+    sfSprite_setScale(map->D_fog_sprite, (sfVector2f) {1, 1});
+    sfSprite_setScale(map->L_fog_sprite, (sfVector2f) {1, 1});
+    sfSprite_setScale(map->R_fog_sprite, (sfVector2f) {1, 1});
 }
 
 void set_positions(map *map)

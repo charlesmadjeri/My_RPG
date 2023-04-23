@@ -25,7 +25,7 @@ game *init_game(void)
     game->splash = init_splash_screen();
     game->pause_menu = init_pause_menu();
     game->settings = init_settings();
-    char **config_buf = NULL; //parse_config_file();
+    char **config_buf = NULL;
     game->state = init_state();
     game->map = init_map();
     game->player = init_player(config_buf);

@@ -10,17 +10,19 @@
 #include "../../include/pause_menu.h"
 #include "../../include/data.h"
 #include "../../include/map.h"
+#include "../../include/settings.h"
 #include <SFML/Graphics/RenderWindow.h>
+
 
 pause_menu *init_pause_menu(void)
 {
     pause_menu *pause_menu = malloc(sizeof(*pause_menu));
-    // pause_menu->text_menu = sfTexture_createFromFile
-    // ("ressources/maps/textures/pause_menu.png", NULL);
-    // pause_menu->menu = sfSprite_create();
-    // sfSprite_setTexture(pause_menu->menu, pause_menu->text_menu, sfTrue);
-    // sfVector2f scale = {0.8f, 0.8f};
-    // sfSprite_setScale(pause_menu->menu, scale);
+    pause_menu->text_menu = sfTexture_createFromFile
+    ("ressources/maps/textures/pause_menu.png", NULL);
+    pause_menu->menu = sfSprite_create();
+    sfSprite_setTexture(pause_menu->menu, pause_menu->text_menu,sfTrue);
+    sfVector2f scale = {0.8f, 0.8f};
+    sfSprite_setScale(pause_menu->menu, scale);
     return pause_menu;
 }
 
@@ -29,7 +31,19 @@ game *game)
 {
     sfVector2u windowsize = sfRenderWindow_getSize(window);
     sfVector2f pos_menu_pause = {windowsize.x - 100, windowsize.y - 200};
-    // sfSprite_setPosition(pause_menu->menu, pos_menu_pause);
-    // sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
-    // sfRenderWindow_drawSprite(window, pause_menu->menu, NULL);
+    sfSprite_setPosition(pause_menu->menu, pos_menu_pause);
+    sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
+    sfRenderWindow_drawSprite(window, pause_menu->menu, NULL);
+}
+
+void display_settings_pause(sfRenderWindow *window, game *game, sfView *view)
+{
+    sfVector2u windowsize = sfRenderWindow_getSize(window);
+    sfVector2f scale = {0.6f, 0.6f};
+    sfSprite_setScale(game->settings->parchment, scale);
+    sfVector2f pos_parchment = {(windowsize.x / 2) - 300,
+    (windowsize.y / 2) - 350};
+    sfSprite_setPosition(game->settings->parchment, pos_parchment);
+    sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
+    sfRenderWindow_drawSprite(window, game->settings->parchment, NULL);
 }
