@@ -8,7 +8,6 @@
 #include "../../include/main.h"
 #include "../../include/ui.h"
 #include "../../include/map.h"
-#include <SFML/System/Vector2.h>
 
 void refresh_view(sfRenderWindow *window, game *game)
 {
