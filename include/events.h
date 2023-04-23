@@ -21,6 +21,7 @@
     void settings_event(sfRenderWindow *window, sfEvent *event, game *game);
     void inventory_event(sfRenderWindow *window, sfEvent *event, game *game);
     void battle_event(sfRenderWindow *window, sfEvent *event, game *game);
-    void is_interection(game *game);
+    void is_interaction(game *game);
+    void level_up(player *player);
 
 #endif /* !EVENT_H_ */

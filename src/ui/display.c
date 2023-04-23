@@ -27,7 +27,7 @@ void display(sfRenderWindow *window, game *game)
             break;
         case SETTINGS: display_settings(window, game->settings, game->splash);
             break;
-        case INVENTORY: display_inventory(window, game->player->inventory);
+        case INVENTORY: display_inventory(window, game, game->view);
             break;
         case BATTLE: display_battle(window, game);
             break;

@@ -7,24 +7,36 @@
 
 #ifndef DATA_H_
     #define DATA_H_
+<<<<<<< HEAD
     #include <SFML/Graphics.h>
     #include <SFML/Graphics/Types.h>
     #include <SFML/Audio.h>
     #include <SFML/System/Vector2.h>
     #include <SFML/System/Vector3.h>
+=======
+    #include "main.h"
+>>>>>>> main
     #pragma once
 
 // Battle:
     typedef struct battle_t {
         sfSprite *background;
+        sfSprite *player;
+        sfTexture *text_player;
         sfTexture *texture;
-        sfVector2f position;
+        sfVector2f pos_ennemy;
+        sfVector2f pos_player;
         sfIntRect rect;
+        sfTexture *cyclope;
+        sfSprite *ennemy_sprite;
         int special_attack;
         int ennemy_type;
         int ennemy_hp;
         int ennemy_attack;
         int ennemy_xp;
+        sfBool disp_help;
+        sfSprite *help_sprite;
+        sfTexture *help_texture;
     } battle;
 
 // Button:
@@ -159,6 +171,14 @@
         sfVector2f cloud_pos;
         sfVector2f rain_pos;
         sfBool is_raining;
+        sfSprite *L_fog_sprite;
+        sfSprite *R_fog_sprite;
+        sfSprite *U_fog_sprite;
+        sfSprite *D_fog_sprite;
+        sfVector2f L_fog_pos;
+        sfVector2f R_fog_pos;
+        sfVector2f U_fog_pos;
+        sfVector2f D_fog_pos;
     } weather;
     typedef struct textures_t {
         sfTexture *grass;
@@ -189,6 +209,9 @@
         int num_pnjs;
         weather *weather;
         infos *infos;
+        sfBool disp_help;
+        sfSprite *help_sprite;
+        sfTexture *help_texture;
     } map;
 
 // Inventory:

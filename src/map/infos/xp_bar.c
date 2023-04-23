@@ -38,14 +38,14 @@ static void high_xp_switch(sfRenderWindow *window,
 xp_bar *xp_bar, player *player, int level)
 {
     switch (level) {
-        case (3): sfSprite_setPosition(xp_bar->xp_bar_sprite3,
-        (sfVector2f) {xp_bar->xp_bar_pos.x, xp_bar->xp_bar_pos.y});
-        sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite3, NULL);
-        break;
-        case (4): sfSprite_setPosition(xp_bar->xp_bar_sprite4,
-        (sfVector2f) {xp_bar->xp_bar_pos.x, xp_bar->xp_bar_pos.y});
-        sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite4, NULL);
-        break;
+        case (3):
+            sfSprite_setPosition(xp_bar->xp_bar_sprite3, xp_bar->xp_bar_pos);
+            sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite3, NULL);
+            break;
+        case (4):
+            sfSprite_setPosition(xp_bar->xp_bar_sprite4, xp_bar->xp_bar_pos);
+            sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite4, NULL);
+            break;
     }
 }
 
@@ -53,18 +53,17 @@ static void low_xp_switch(sfRenderWindow *window,
 xp_bar *xp_bar, player *player, int level)
 {
     switch (level) {
-        case (0): sfSprite_setPosition(xp_bar->xp_bar_sprite0,
-        (sfVector2f) {xp_bar->xp_bar_pos.x, xp_bar->xp_bar_pos.y});
-        sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite0, NULL);
-        break;
-        case (1): sfSprite_setPosition(xp_bar->xp_bar_sprite1,
-        (sfVector2f) {xp_bar->xp_bar_pos.x, xp_bar->xp_bar_pos.y});
-        sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite1, NULL);
-        break;
-        case (2): sfSprite_setPosition(xp_bar->xp_bar_sprite2,
-        (sfVector2f) {xp_bar->xp_bar_pos.x, xp_bar->xp_bar_pos.y});
-        sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite2, NULL);
-        break;
+        case (0):
+            sfSprite_setPosition(xp_bar->xp_bar_sprite0, xp_bar->xp_bar_pos);
+            sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite0, NULL);
+        case (1):
+            sfSprite_setPosition(xp_bar->xp_bar_sprite1, xp_bar->xp_bar_pos);
+            sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite1, NULL);
+            break;
+        case (2):
+            sfSprite_setPosition(xp_bar->xp_bar_sprite2, xp_bar->xp_bar_pos);
+            sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite2, NULL);
+            break;
     }
 }
 
