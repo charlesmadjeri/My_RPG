@@ -204,10 +204,7 @@
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
-        sfTexture *u_fog_texture;
-        sfTexture *d_fog_texture;
-        sfTexture *l_fog_texture;
-        sfTexture *r_fog_texture;
+        sfTexture *fog_texture;
         sfSprite *U_fog_sprite;
         sfSprite *D_fog_sprite;
         sfSprite *L_fog_sprite;
