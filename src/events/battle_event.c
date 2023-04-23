@@ -50,6 +50,11 @@ void battle_event(sfRenderWindow *window, sfEvent *event, game *game)
             game->state->current_state = PAUSE;
             game->state->previous_state = BATTLE;
         }
+        if (event->key.code == sfKeyT) {
+            (game->battle->disp_help == sfFalse) ?
+            (game->battle->disp_help = sfTrue) :
+            (game->battle->disp_help = sfFalse);
+        }
         combat_event(window, game, game->battle, event);
     }
 }

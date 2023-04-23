@@ -36,8 +36,9 @@ battle *init_battle(void)
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);
     battle->special_attack = 0;
+    battle->disp_help = sfTrue;
     battle->help_sprite = sfSprite_create();
-    battle->help_texture = sfTexture_createFromFile(HELP_PATH, NULL);
+    battle->help_texture = sfTexture_createFromFile(HELP_B_PATH, NULL);
     sfSprite_setTexture(battle->help_sprite, battle->help_texture, sfFalse);
 
     return battle;
@@ -69,6 +70,7 @@ void display_battle(sfRenderWindow *window, game *game)
     sfRenderWindow_drawSprite(window, game->battle->ennemy_sprite, NULL);
     sfRenderWindow_drawSprite(window, game->battle->player, NULL);
     display_infos(window, game);
+    display_help(window, game);
     if (game->battle->ennemy_hp < 0) {
         game->player->xp += game->battle->ennemy_xp;
         game->state->current_state = MAP;
@@ -79,6 +81,4 @@ void display_battle(sfRenderWindow *window, game *game)
         game->state->current_state = MAP;
         game->state->previous_state = SPLASH;
     }
-    if (game->battle->disp_help == sfTrue)
-        sfRenderWindow_drawSprite(window, game->battle->help_sprite, NULL);
 }
