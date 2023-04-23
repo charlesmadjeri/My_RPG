@@ -9,8 +9,6 @@
 #include "../../include/ui.h"
 #include "../../include/map.h"
 #include "../../include/events.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Types.h>
 #include <stdbool.h>
 
 void refresh_view(sfRenderWindow *window, game *game)
