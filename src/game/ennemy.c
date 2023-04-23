@@ -14,11 +14,13 @@
 void init_ennemy(battle *battle)
 {
     if (battle->ennemy_type == MONSTER_T) {
+        sfSprite_setTexture(battle->ennemy_sprite, battle->monst, sfFalse);
         battle->ennemy_attack = MONSTER_ATK;
         battle->ennemy_max_hp = MONSTER_HP;
         battle->ennemy_hp = MONSTER_HP;
         battle->ennemy_xp = MONSTER_XP;
     } if (battle->ennemy_type == MINOTAURE_T) {
+        sfSprite_setTexture(battle->ennemy_sprite, battle->mino, sfFalse);
         battle->ennemy_max_hp = MINOTAURE_HP;
         battle->ennemy_attack = MINOTAURE_ATK;
         battle->ennemy_hp = MINOTAURE_HP;

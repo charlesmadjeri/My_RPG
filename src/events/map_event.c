@@ -15,7 +15,7 @@ static void entering_battle(sfRenderWindow *window, game *game, sfEvent *event)
 {
     if (event->key.code == sfKeyEnter
     && game->state->current_state != BATTLE) {
-        game->battle->ennemy_type = CYCLOPE_T;
+        game->battle->ennemy_type = MINOTAURE_T;
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;

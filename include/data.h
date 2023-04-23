@@ -20,6 +20,8 @@
         sfVector2f pos_player;
         sfIntRect rect;
         sfTexture *cyclope;
+        sfTexture *mino;
+        sfTexture *monst;
         sfSprite *ennemy_sprite;
         int special_attack;
         int ennemy_type;

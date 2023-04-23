@@ -10,6 +10,7 @@
 #include "../../include/battle.h"
 #include "../../include/map.h"
 #include "../../include/ui.h"
+#include "../../include/minotaure.h"
 
 static void get_battle_pos(sfView *view, battle *battle)
 {
@@ -40,16 +41,8 @@ static void display_ennemy_bar(sfRenderWindow *window, battle *battle)
     sfRenderWindow_drawSprite(window, battle->ennemy_bar, NULL);
 }
 
-battle *init_battle(void)
+static battle *second_part_init(battle *battle)
 {
-    sfIntRect area; battle *battle = malloc(sizeof(*battle));
-    area.height = 77; area.width = 77; area.left = 231; area.top = 160;
-    battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
-    battle->background = sfSprite_create(); battle->player = sfSprite_create();
-    battle->text_player = sfTexture_createFromFile(PL_PATH, &area);
-    battle->ennemy_sprite = sfSprite_create();
-    battle->help_sprite = sfSprite_create();
-    battle->cyclope = sfTexture_createFromFile(C_PATH, NULL);
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);
     battle->special_attack = 0; battle->disp_help = sfTrue;
@@ -62,6 +55,22 @@ battle *init_battle(void)
     battle->bar_ennemy_4 = sfTexture_createFromFile(E_BAR_PATH_4, NULL);
     battle->ennemy_bar = sfSprite_create();
     sfSprite_scale(battle->ennemy_bar, (sfVector2f) {3,3});
+}
+
+battle *init_battle(void)
+{
+    sfIntRect area; battle *battle = malloc(sizeof(*battle));
+    sfIntRect a_mino;
+    area.height = 77; area.width = 77; area.left = 231; area.top = 160;
+    a_mino.height = 77; a_mino.width = 77; a_mino.left = 370; a_mino.top = 160;
+    battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
+    battle->background = sfSprite_create(); battle->player = sfSprite_create();
+    battle->text_player = sfTexture_createFromFile(PL_PATH, &area);
+    battle->ennemy_sprite = sfSprite_create();
+    battle->help_sprite = sfSprite_create();
+    battle->cyclope = sfTexture_createFromFile(C_PATH, NULL);
+    battle->mino = sfTexture_createFromFile(MINO_SPRITE_PATH, &a_mino);
+    second_part_init(battle);
     return battle;
 }
 
