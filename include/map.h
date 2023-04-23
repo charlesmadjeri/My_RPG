@@ -20,6 +20,7 @@
     #define TILE_SIZE_X 150 // in pixels
     #define TILE_SIZE_Y 150 // in pixels
 
+    #define HELP_PATH "ressources/maps/help.png"
     #define CLOUDS_PATH "ressources/maps/weather/clouds.png"
     #define RAINDROP_PATH "ressources/maps/weather/rain.png"
     #define NB_CLOUDS 50

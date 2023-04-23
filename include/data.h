@@ -7,10 +7,7 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-    #include <SFML/Graphics.h>
-    #include <SFML/Graphics/Types.h>
-    #include <SFML/Audio.h>
-    #include <SFML/System/Vector2.h>
+    #include "main.h"
     #pragma once
 
 // Battle:
@@ -29,6 +26,9 @@
         int ennemy_hp;
         int ennemy_attack;
         int ennemy_xp;
+        sfBool disp_help;
+        sfSprite *help_sprite;
+        sfTexture *help_texture;
     } battle;
 
 // Button:
@@ -193,6 +193,9 @@
         int num_pnjs;
         weather *weather;
         infos *infos;
+        sfBool disp_help;
+        sfSprite *help_sprite;
+        sfTexture *help_texture;
     } map;
 
 // Inventory:

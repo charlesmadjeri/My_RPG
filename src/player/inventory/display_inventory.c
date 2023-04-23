@@ -48,7 +48,6 @@ void display_items(sfRenderWindow *window, inventory *inventory)
 void display_inv_player(sfRenderWindow *window, player *player)
 {
     sfSprite *big_player = sfSprite_copy(player->sprite);
-    //sfIntRect rect = {0, 0, 77, 77};
     sfSprite_setTextureRect(big_player, player->area);
     sfSprite_setScale(big_player, (sfVector2f){5, 5});
     sfSprite_setPosition(big_player, (sfVector2f){410, 350});

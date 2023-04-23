@@ -26,6 +26,7 @@ battle *init_battle(void)
     sfIntRect area;
     area.height = 77; area.width = 77; area.left = 231; area.top = 160;
     battle *battle = malloc(sizeof(*battle));
+
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create();
     battle->player = sfSprite_create();
@@ -35,6 +36,10 @@ battle *init_battle(void)
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);
     battle->special_attack = 0;
+    battle->help_sprite = sfSprite_create();
+    battle->help_texture = sfTexture_createFromFile(HELP_PATH, NULL);
+    sfSprite_setTexture(battle->help_sprite, battle->help_texture, sfFalse);
+
     return battle;
 }
 
@@ -74,4 +79,6 @@ void display_battle(sfRenderWindow *window, game *game)
         game->state->current_state = MAP;
         game->state->previous_state = SPLASH;
     }
+    if (game->battle->disp_help == sfTrue)
+        sfRenderWindow_drawSprite(window, game->battle->help_sprite, NULL);
 }
