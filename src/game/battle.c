@@ -19,14 +19,14 @@ static void get_battle_pos(sfView *view, battle *battle)
     battle->pos_player.x = (sfView_getCenter(view).x + - 300);
     battle->pos_player.y = (sfView_getCenter(view).y + 200);
     sfSprite_setPosition(battle->player, battle->pos_player);
-    battle->pos_bar.x = (sfView_getCenter(view).x + 300);
-    battle->pos_bar.y = (sfView_getCenter(view).y - 300);
+    battle->pos_bar.x = (sfView_getCenter(view).x + 350);
+    battle->pos_bar.y = (sfView_getCenter(view).y - 375);
     sfSprite_setPosition(battle->ennemy_bar, battle->pos_bar);
 }
 
 static void display_ennemy_bar(sfRenderWindow *window, battle *battle)
 {
-    int ratio = (battle->ennemy_hp / battle->ennemy_max_hp) * 100;
+    float ratio = (battle->ennemy_hp * 100) / (battle->ennemy_max_hp);
     if (ratio >= 80)
         sfSprite_setTexture(battle->ennemy_bar, battle->bar_ennemy_4, sfFalse);
     if (ratio >= 60 && ratio < 80)
@@ -61,28 +61,8 @@ battle *init_battle(void)
     battle->bar_ennemy_3 = sfTexture_createFromFile(E_BAR_PATH_3, NULL);
     battle->bar_ennemy_4 = sfTexture_createFromFile(E_BAR_PATH_4, NULL);
     battle->ennemy_bar = sfSprite_create();
+    sfSprite_scale(battle->ennemy_bar, (sfVector2f) {3,3});
     return battle;
-}
-
-void init_ennemy(battle *battle)
-{
-    if (battle->ennemy_type == MONSTER_T) {
-        battle->ennemy_attack = MONSTER_ATK;
-        battle->ennemy_max_hp = MONSTER_HP;
-        battle->ennemy_hp = MONSTER_HP;
-        battle->ennemy_xp = MONSTER_XP;
-    } if (battle->ennemy_type == MINOTAURE_T) {
-        battle->ennemy_max_hp = MINOTAURE_HP;
-        battle->ennemy_attack = MINOTAURE_ATK;
-        battle->ennemy_hp = MINOTAURE_HP;
-        battle->ennemy_xp = MINOTAURE_XP;
-    } if (battle->ennemy_type == CYCLOPE_T) {
-        sfSprite_setTexture(battle->ennemy_sprite, battle->cyclope, sfFalse);
-        battle->ennemy_attack = CYCLOPE_ATK;
-        battle->ennemy_max_hp = CYCLOPE_HP;
-        battle->ennemy_hp = CYCLOPE_HP;
-        battle->ennemy_xp = CYCLOPE_XP;
-    }
 }
 
 void display_battle(sfRenderWindow *window, game *game)
