@@ -7,7 +7,6 @@
 
 #include "../../include/main.h"
 #include "../../include/map.h"
-#include "../../include/enemy.h"
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
 

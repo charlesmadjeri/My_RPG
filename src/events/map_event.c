@@ -30,6 +30,12 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
         else
             game->map->weather->is_raining = sfFalse;
     }
+    if (event->key.code == sfKeyT) {
+        if (game->map->disp_help == sfFalse)
+            game->map->disp_help = sfTrue;
+        else
+            game->map->disp_help = sfFalse;
+    }
     if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->player)) > 0.1) {
         player_move(game, event); sfClock_restart(game->clocks->player);
     }

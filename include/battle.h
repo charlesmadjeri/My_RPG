@@ -12,6 +12,7 @@
     #include "destroy.h"
     #pragma once
     #define BG_PATH "ressources/battle/bg.png"
+    #define HELP_PATH "ressources/battle/help.png"
     #define MINOTAURE 1
     #define CYCLOPE 2
     #define MONSTER 0
