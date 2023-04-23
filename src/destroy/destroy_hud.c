@@ -53,6 +53,5 @@ void destroy_info(infos *infos)
     destroy_level_nb(infos->level_nb);
     destroy_spell_bar(infos->spell_bar);
     destroy_xp_bar(infos->xp_bar);
-    destroy_life_bar(infos->life_bar);
     free(infos);
 }

@@ -49,5 +49,4 @@ void destroy_menus(game *game)
 {
     destroy_splash_screen(game->splash);
     destroy_pause_menu(game->pause_menu);
-    destroy_settings(game->settings);
 }

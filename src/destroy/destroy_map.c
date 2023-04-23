@@ -56,11 +56,8 @@ void destroy_map(map *map)
     sfSprite_destroy(map->map_sprite);
     sfSprite_destroy(map->help_sprite);
     sfTexture_destroy(map->help_texture);
-    destroy_map_data(map->map_data);
-    destroy_monster(map->monster);
     destroy_weather(map->weather);
     destroy_info(map->infos);
 
-    destroy_pnjs(map->pnjs, map->num_pnjs);
     free(map);
 }
