@@ -10,12 +10,11 @@
 #include "../../include/battle.h"
 #include "../../include/ui.h"
 
-static void entering_battle(game *game, sfEvent *event)
+static void entering_battle(sfRenderWindow *window, game *game, sfEvent *event)
 {
     if (event->key.code == sfKeyEnter
     && game->state->current_state != BATTLE) {
         game->battle->ennemy_type = CYCLOPE_T;
-        get_battle_pos(game->view, game->battle);
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
@@ -43,7 +42,7 @@ void map_event(sfRenderWindow *window, sfEvent *event, game *game)
             game->state->previous_state = MAP;
             return;
         }
-        entering_battle(game, event);
+        entering_battle(window, game, event);
         if (event->key.code == sfKeyI) {
             game->state->current_state = INVENTORY;
             game->state->previous_state = MAP;

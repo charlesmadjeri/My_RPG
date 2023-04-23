@@ -16,9 +16,11 @@
 // Battle:
     typedef struct battle_t {
         sfSprite *background;
+        sfSprite *player;
+        sfTexture *text_player;
         sfTexture *texture;
         sfVector2f pos_ennemy;
-        sfVector2f pos_bg;
+        sfVector2f pos_player;
         sfIntRect rect;
         sfTexture *cyclope;
         sfSprite *ennemy_sprite;
