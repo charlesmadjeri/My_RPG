@@ -20,15 +20,25 @@
         sfVector2f pos_player;
         sfIntRect rect;
         sfTexture *cyclope;
+        sfTexture *mino;
+        sfTexture *monst;
         sfSprite *ennemy_sprite;
         int special_attack;
         int ennemy_type;
+        int ennemy_max_hp;
         int ennemy_hp;
         int ennemy_attack;
         int ennemy_xp;
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
+        sfSprite *ennemy_bar;
+        sfVector2f pos_bar;
+        sfTexture *bar_ennemy_0;
+        sfTexture *bar_ennemy_1;
+        sfTexture *bar_ennemy_2;
+        sfTexture *bar_ennemy_3;
+        sfTexture *bar_ennemy_4;
     } battle;
 
 // Button:

@@ -15,6 +15,11 @@
     #define C_PATH "ressources/sprites/cyclope.png"
     #define PL_PATH "ressources/sprites/SpriteHero.png"
     #define HELP_B_PATH "ressources/battle/help.png"
+    #define E_BAR_PATH_0 "ressources/maps/infos/Barre_de_vie_mechant-1.png"
+    #define E_BAR_PATH_1 "ressources/maps/infos/Barre_de_vie_mechant-2.png"
+    #define E_BAR_PATH_2 "ressources/maps/infos/Barre_de_vie_mechant-3.png"
+    #define E_BAR_PATH_3 "ressources/maps/infos/Barre_de_vie_mechant-4.png"
+    #define E_BAR_PATH_4 "ressources/maps/infos/Barre_de_vie_mechant-5.png"
     #define MINOTAURE_T 1
     #define CYCLOPE_T 2
     #define MONSTER_T 0
