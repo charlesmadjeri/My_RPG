@@ -31,8 +31,10 @@
     #define CLOUDS_WIDTH 564
     #define RAINDROP_HEIGHT 603
 
-    #define V_FOG_PATH "ressources/maps/vectors/v_fog.png"
-    #define H_FOG_PATH "ressources/maps/vectors/h_fog.png"
+    #define U_FOG_PATH "ressources/maps/vectors/u_fog.png"
+    #define D_FOG_PATH "ressources/maps/vectors/d_fog.png"
+    #define L_FOG_PATH "ressources/maps/vectors/l_fog.png"
+    #define R_FOG_PATH "ressources/maps/vectors/r_fog.png"
 
     #define G_PATH "ressources/maps/textures/grass.png"
     #define P_PATH "ressources/maps/textures/path.png"
