@@ -8,6 +8,8 @@
 #include "../../include/main.h"
 #include "../../include/battle.h"
 #include "../../include/ui.h"
+#include <SFML/Graphics/View.h>
+#include <SFML/System/Vector2.h>
 
 static void atk_animation(sfRenderWindow *window, game *game, battle *battle)
 {
@@ -20,8 +22,9 @@ static void atk_animation(sfRenderWindow *window, game *game, battle *battle)
             moko = sfSprite_getPosition(battle->player);
 
             set_view_to_center(window, battle->background, game->view);
-            
-            battle->pos_player = (sfVector2f) {0,0};
+            sfVector2f view_pos = sfView_getCenter(game->view);
+            battle->pos_player = (sfVector2f) {view_pos.x, view_pos.y};
+
             sfSprite_setPosition(battle->player, battle->pos_player);
             printf("%.1f\t%.1f\t\t\t%.1f\t%.1f\n", battle->pos_player.x, battle->pos_ennemy.y, moko.x, moko.y);
             sfRenderWindow_drawSprite(window, battle->player, NULL);
