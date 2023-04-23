@@ -270,9 +270,11 @@
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
+        sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
         sfTexture *texture_resolutions;
+        sfSprite *parchment;
         sfSprite *music;
         sfSprite *sound;
         sfSprite *resolutions;
