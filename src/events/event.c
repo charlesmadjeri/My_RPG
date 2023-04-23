@@ -10,6 +10,7 @@
 #include "../../include/battle.h"
 #include "../../include/events.h"
 #include "../../include/ui.h"
+#include "../../include/settings.h"
 
 void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
 {

@@ -27,5 +27,6 @@
     sfIntRect move_pnjs(game* game, pnjs* pnjs, sfIntRect rect);
     void is_interaction(game *game);
     void level_up(player *player);
+    void settings_pause_event(sfRenderWindow *window, sfEvent *event, game *game);
 
 #endif /* !EVENT_H_ */

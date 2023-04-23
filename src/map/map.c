@@ -22,14 +22,6 @@ sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
     return map_sprite;
 }
 
-void display_fog(sfRenderWindow *window, game *game)
-{
-    sfRenderWindow_drawSprite(window, game->map->U_fog_sprite, NULL);
-    sfRenderWindow_drawSprite(window, game->map->D_fog_sprite, NULL);
-    sfRenderWindow_drawSprite(window, game->map->L_fog_sprite, NULL);
-    sfRenderWindow_drawSprite(window, game->map->R_fog_sprite, NULL);
-}
-
 void display_map(sfRenderWindow *window, game *game)
 {
     set_view_to_center(window, game->player->sprite, game->view);
