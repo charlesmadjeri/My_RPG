@@ -18,6 +18,7 @@ void destroy_clocks(clocks *clocks)
 void destroy_all(game *game)
 {
     //destroy_menus(game);
+    destroy_hud(game->map->infos);
     destroy_map(game->map);
     destroy_player(game->player);
     destroy_clocks(game->clocks);

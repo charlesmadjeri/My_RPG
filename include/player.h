@@ -20,6 +20,10 @@
     #define LEFT 77
     #define RIGHT 154
     #define BOTTOM 0
+    #define ATHENA 1
+    #define PNJ 2
+    #define MINOTAURE 3
+    #define DOOR 4
 
 // Fonctions:
     player *init_player(char **config_buf);

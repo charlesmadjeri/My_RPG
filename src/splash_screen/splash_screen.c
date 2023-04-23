@@ -13,10 +13,14 @@
 
 void set_texture_and_sprite(splash_screen *splash)
 {
-    sfSprite_setTexture(splash->start, splash->start_tex, sfTrue);
-    sfSprite_setTexture(splash->continued, splash->continued_tex, sfTrue);
-    sfSprite_setTexture(splash->help, splash->help_tex, sfTrue);
-    sfSprite_setTexture(splash->quit, splash->quit_tex, sfTrue);
+    sfSprite_setTexture(splash->start, splash->start_tex,
+    sfTrue);
+    sfSprite_setTexture(splash->continued, splash->continued_tex,
+    sfTrue);
+    sfSprite_setTexture(splash->help, splash->help_tex,
+    sfTrue);
+    sfSprite_setTexture(splash->quit, splash->quit_tex,
+    sfTrue);
 }
 
 void init_splash_button(splash_screen *splash)

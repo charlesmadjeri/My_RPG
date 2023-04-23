@@ -20,6 +20,11 @@
         sfTexture *texture;
         sfVector2f position;
         sfIntRect rect;
+        int special_attack;
+        int ennemy_type;
+        int ennemy_hp;
+        int ennemy_attack;
+        int ennemy_xp;
     } battle;
 
 // Button:
@@ -52,13 +57,13 @@
     } buttons;
 
 // Enemy:
-    typedef struct enemy_t {
+    typedef struct monster {
         char *name;
-        int level;
-        int health;
-        int max_health;
-        int strength;
-    } enemy;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
+        char stat;
+    } monster;
 
 // Events:
     enum state_type_e {
@@ -98,6 +103,17 @@
         char stat;
     } athena;
 
+    typedef struct minotaure_t {
+        char *name;
+        sfTexture* message;
+        sfVector2f pos;
+        sfSprite *sprite;
+        sfIntRect area;
+        char **dialog;
+        int stat_num;
+        char stat;
+    } minotaure;
+
 // Map:
     typedef struct life_bar_t {
         sfSprite *life_bar_sprite0;
@@ -118,6 +134,13 @@
         sfSprite *xp_bar_sprite4;
         sfVector2f xp_bar_pos;
     } xp_bar;
+    typedef struct spell_bar_t {
+        sfSprite *sprite0;
+        sfSprite *sprite1;
+        sfSprite *sprite2;
+        sfSprite *sprite3;
+        sfVector2f pos;
+    } spell_bar;
     typedef struct level_nb_t {
         sfSprite *level_1_sprite;
         sfSprite *level_2_sprite;
@@ -126,6 +149,7 @@
     } level_nb;
     typedef struct infos_t {
         life_bar *life_bar;
+        spell_bar *spell_bar;
         xp_bar *xp_bar;
         level_nb *level_nb;
     } infos;
@@ -159,7 +183,7 @@
     typedef struct map_t {
         sfSprite *map_sprite;
         map_data *map_data;
-        enemy *enemies;
+        monster *monster;
         int num_enemies;
         pnjs *pnjs;
         int num_pnjs;
@@ -201,6 +225,8 @@
         int health;
         int max_health;
         int strength;
+        int intersection;
+        int game_len;
         sfClock* clock;
         inventory *inventory;
         sfVector2f pos;
@@ -281,6 +307,9 @@
         sfClock *rain_clock;
         sfClock* pnj;
         sfClock* athena;
+        sfClock* minotaure;
+        sfClock* player;
+        sfClock* view;
     } clocks;
 
 // Game:
@@ -295,6 +324,7 @@
         player *player;
         pnjs *pnjs;
         athena *athena;
+        minotaure *minotaure;
         int num_pnjs;
         clocks *clocks;
         sfMusic *music;

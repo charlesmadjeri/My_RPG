@@ -8,6 +8,7 @@
 #include "../../include/main.h"
 #include "../../include/athena.h"
 #include "../../include/data.h"
+#include "../../include/player.h"
 
 athena *init_athena(void)
 {
@@ -44,6 +45,8 @@ void athena_move(game *game)
 void display_athena(sfRenderWindow *window, game* game)
 {
     athena_move(game);
+    if (game->player->intersection == ATHENA && game->player->game_len < 1)
+        game->player->game_len = 1;
     sfRenderWindow_drawSprite(window, game->athena->sprite, NULL);
 }
 

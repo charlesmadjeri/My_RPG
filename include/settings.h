@@ -16,7 +16,8 @@
 
 // Functions :
     settings *init_settings(void);
-    void display_settings(sfRenderWindow *window, settings *settings, splash_screen *splash);
+    void display_settings(sfRenderWindow *window, settings *settings,
+    splash_screen *splash);
     void destroy_settings(settings *settings);
 
 #endif /* !SETTINGS_H_ */

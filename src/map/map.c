@@ -7,10 +7,14 @@
 
 #include "../../include/main.h"
 #include "../../include/map.h"
+#include "../../include/events.h"
 #include "../../include/enemy.h"
 #include "../../include/pnjs.h"
 #include "../../include/player.h"
 #include "../../include/athena.h"
+#include "../../include/minotaure.h"
+#include "../../include/events.h"
+#include "../../include/events.h"
 
 sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
 {
@@ -23,10 +27,13 @@ sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex)
 
 void display_map(sfRenderWindow *window, game *game)
 {
+    set_view_to_center(window, game->player->sprite, game->view);
     sfRenderWindow_drawSprite(window, game->map->map_sprite, NULL);
     display_player(window, game->player);
     display_athena(window, game);
     display_pnjs(window, game);
+    display_minotaure(window, game);
     display_weather(window, game);
     display_infos(window, game);
+    is_interaction(game);
 }

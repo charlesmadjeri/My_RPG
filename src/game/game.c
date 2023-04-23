@@ -17,6 +17,7 @@
 #include "../../include/settings.h"
 #include "../../include/athena.h"
 #include "../../include/pause_menu.h"
+#include "../../include/minotaure.h"
 
 game *init_game(void)
 {
@@ -30,10 +31,11 @@ game *init_game(void)
     game->player = init_player(config_buf);
     game->pnjs = init_pnjs();
     game->athena = init_athena();
+    game->minotaure = init_minotaure();
     game->num_pnjs = 0;
     game->view = init_view();
     game->music = init_music();
-    //game->battle = init_battle();
+    game->battle = init_battle();
     game->clocks = init_clocks();
     return game;
 }

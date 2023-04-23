@@ -17,7 +17,6 @@ void center_button_text(button *button)
     button->position.y + (button->size.y - text_bounds.height) / 2};
     sfText_setPosition(button->text, text_position);
 }
-
 // button *init_button(sfVector2f position, sfVector2f size, char *text)
 // {
 //     button *button = malloc(sizeof(*button));
