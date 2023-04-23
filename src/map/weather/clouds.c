@@ -17,8 +17,6 @@ sfRenderTexture *generate_cloud_texture(void)
     sfColor color = sfSprite_getColor(cloud_sprite);
     color.a = 255;
     sfSprite_setColor(cloud_sprite, color);
-    sfVector2f sprite_size = {(float)sfTexture_getSize(cloud_texture).x,
-    (float)sfTexture_getSize(cloud_texture).y};
     sfRenderTexture *render_texture =
     sfRenderTexture_create(MAP_WIDTH_PX * 2, MAP_HEIGHT_PX, sfFalse);
     for (int i = 0, j = 0, nb = 0; nb < NB_CLOUDS; nb++) {

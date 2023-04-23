@@ -11,7 +11,6 @@
 
 void set_view_to_center(sfRenderWindow *window, sfSprite *sprite, sfView *view)
 {
-    sfVector2f pos = sfSprite_getPosition(sprite);
     sfFloatRect rect = sfSprite_getGlobalBounds(sprite);
     sfVector2f center =
     {rect.left + rect.width / 2.f, rect.top + rect.height / 2.f};

@@ -10,6 +10,7 @@
 #include "../../include/battle.h"
 #include "../../include/events.h"
 #include "../../include/ui.h"
+#include "../../include/settings.h"
 
 void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
@@ -22,12 +23,13 @@ void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
             break;
         case PAUSE: pause_event(window, event, game);
             break;
-        case SETTINGS: settings_event(window, event, game);
+        case SETTINGS: pause_event(window, event, game);
             break;
         case INVENTORY: inventory_event(window, event, game);
             break;
         case BATTLE: battle_event(window, event, game);
             break;
+        case SETTINGS_PAUSE: settings_pause_event(window, event, game);
         default:
             break;
     }

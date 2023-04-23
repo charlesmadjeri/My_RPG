@@ -24,6 +24,7 @@
     #define PNJ 2
     #define MINOTAURE 3
     #define DOOR 4
+    #define MONSTER 5
 
 // Fonctions:
     player *init_player(char **config_buf);

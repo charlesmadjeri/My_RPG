@@ -8,18 +8,30 @@
 #include "../../include/main.h"
 #include "../../include/game.h"
 #include "../../include/battle.h"
+#include "../../include/player.h"
 #include "../../include/pause_menu.h"
 #include "../../include/ui.h"
 
 static void entering_battle(sfRenderWindow *window, game *game, sfEvent *event)
 {
-    if (event->key.code == sfKeyEnter
+    if (game->player->intersection = MINOTAURE
     && game->state->current_state != BATTLE) {
-        game->battle->ennemy_type = CYCLOPE_T;
         init_ennemy(game->battle);
+        game->battle->ennemy_type = MINOTAURE_T;
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
-        return;
+    } if (game->player->intersection = DOOR
+    && game->state->current_state != BATTLE) {
+        init_ennemy(game->battle);
+        game->battle->ennemy_type = CYCLOPE_T;
+        game->state->current_state = BATTLE;
+        game->state->previous_state = MAP;
+    } if (game->player->intersection = MONSTER
+    && game->state->current_state != BATTLE) {
+        init_ennemy(game->battle);
+        game->battle->ennemy_type = MONSTER_T;
+        game->state->current_state = BATTLE;
+        game->state->previous_state = MAP;
     }
 }
 

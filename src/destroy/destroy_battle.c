@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/destroy.h"
+#include <SFML/Graphics/Sprite.h>
 
 void destroy_battle(battle *battle)
 {
@@ -17,4 +18,10 @@ void destroy_battle(battle *battle)
     sfSprite_destroy(battle->background);
     sfTexture_destroy(battle->texture);
     free(battle);
+}
+
+void destroy_monster(monster *monster)
+{
+    sfSprite_destroy(monster->sprite);
+    free(monster);
 }

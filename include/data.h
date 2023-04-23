@@ -16,19 +16,31 @@
         sfSprite *player;
         sfTexture *text_player;
         sfTexture *texture;
-        sfVector2f pos_ennemy;
+        sfVector2f pos_cyclope;
         sfVector2f pos_player;
         sfIntRect rect;
         sfTexture *cyclope;
+        sfTexture *mino;
+        sfTexture *monst;
         sfSprite *ennemy_sprite;
         int special_attack;
         int ennemy_type;
+        int ennemy_max_hp;
         int ennemy_hp;
         int ennemy_attack;
         int ennemy_xp;
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
+        sfSprite *ennemy_bar;
+        sfVector2f pos_bar;
+        sfVector2f pos_monst;
+        sfVector2f pos_mino;
+        sfTexture *bar_ennemy_0;
+        sfTexture *bar_ennemy_1;
+        sfTexture *bar_ennemy_2;
+        sfTexture *bar_ennemy_3;
+        sfTexture *bar_ennemy_4;
     } battle;
 
 // Button:
@@ -74,6 +86,7 @@
         NONE,
         SPLASH,
         SETTINGS,
+        SETTINGS_PAUSE,
         PAUSE,
         BATTLE,
         MAP,
@@ -163,14 +176,6 @@
         sfVector2f cloud_pos;
         sfVector2f rain_pos;
         sfBool is_raining;
-        sfSprite *L_fog_sprite;
-        sfSprite *R_fog_sprite;
-        sfSprite *U_fog_sprite;
-        sfSprite *D_fog_sprite;
-        sfVector2f L_fog_pos;
-        sfVector2f R_fog_pos;
-        sfVector2f U_fog_pos;
-        sfVector2f D_fog_pos;
     } weather;
     typedef struct textures_t {
         sfTexture *grass;
@@ -204,14 +209,6 @@
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
-        sfTexture *u_fog_texture;
-        sfTexture *d_fog_texture;
-        sfTexture *l_fog_texture;
-        sfTexture *r_fog_texture;
-        sfSprite *U_fog_sprite;
-        sfSprite *D_fog_sprite;
-        sfSprite *L_fog_sprite;
-        sfSprite *R_fog_sprite;
     } map;
 
 // Inventory:
@@ -259,9 +256,8 @@
 
 // Settings:
     typedef struct settings_t {
-        int music_volume;
-        int sound_volume;
-        sfBool fullscreen;
+        // int music_volume;
+        // int sound_volume;
         sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
@@ -273,7 +269,7 @@
         sfVector2f pos_music;
         sfVector2f pos_sound;
         sfVector2f pos_resolutions;
-        int fps;
+        // int fps;
     } settings;
 
 // Splash_screen:
@@ -323,8 +319,15 @@
 // Pause_menu:
     typedef struct pause_menu_t {
         sfSprite *menu;
+        sfSprite *return_button;
+        sfTexture *text_return;
         sfTexture *text_menu;
     } pause_menu;
+
+    typedef struct settings_pause_t {
+        sfSprite *background;
+        sfSprite *settings_parch;
+    } settings_pause;
 
 // Clocks:
     typedef struct clocks_t {

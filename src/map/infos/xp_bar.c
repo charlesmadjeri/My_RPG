@@ -56,6 +56,7 @@ xp_bar *xp_bar, player *player, int level)
         case (0):
             sfSprite_setPosition(xp_bar->xp_bar_sprite0, xp_bar->xp_bar_pos);
             sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite0, NULL);
+            break;
         case (1):
             sfSprite_setPosition(xp_bar->xp_bar_sprite1, xp_bar->xp_bar_pos);
             sfRenderWindow_drawSprite(window, xp_bar->xp_bar_sprite1, NULL);
