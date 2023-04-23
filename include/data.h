@@ -204,6 +204,11 @@
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
+        sfTexture *fog_texture;
+        sfSprite *U_fog_sprite;
+        sfSprite *D_fog_sprite;
+        sfSprite *L_fog_sprite;
+        sfSprite *R_fog_sprite;
     } map;
 
 // Inventory:
@@ -254,9 +259,11 @@
         int music_volume;
         int sound_volume;
         sfBool fullscreen;
+        sfTexture *texture_parchment;
         sfTexture *texture_music;
         sfTexture *texture_sound;
         sfTexture *texture_resolutions;
+        sfSprite *parchment;
         sfSprite *music;
         sfSprite *sound;
         sfSprite *resolutions;
@@ -273,6 +280,11 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
+        sfTexture *background_texture;
+        sfTexture *start_tex;
+        sfTexture *continued_tex;
+        sfTexture *help_tex;
+        sfTexture *quit_tex;
     } splash_screen;
 
 // Text:
@@ -305,11 +317,8 @@
 
 // Pause_menu:
     typedef struct pause_menu_t {
-        button *resume_button;
-        button *quit_button;
-        button *settings_button;
-        button *load_button;
-        button *save_button;
+        sfSprite *menu;
+        sfTexture *text_menu;
     } pause_menu;
 
 // Clocks:

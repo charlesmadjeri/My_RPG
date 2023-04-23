@@ -31,8 +31,7 @@
     #define CLOUDS_WIDTH 564
     #define RAINDROP_HEIGHT 603
 
-    #define V_FOG_PATH "ressources/maps/vectors/v_fog.png"
-    #define H_FOG_PATH "ressources/maps/vectors/h_fog.png"
+    #define FOG_PATH "ressources/maps/vectors/fog.png"
 
     #define G_PATH "ressources/maps/textures/grass.png"
     #define P_PATH "ressources/maps/textures/path.png"
@@ -92,5 +91,6 @@
     void display_spell_bar(sfRenderWindow *window, battle *battle,
     spell_bar *spell_bar);
     void display_infos(sfRenderWindow *window, game *game);
+    void init_fog(map *map);
 
 #endif /* !MAP_H_ */

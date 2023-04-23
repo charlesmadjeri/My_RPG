@@ -8,6 +8,8 @@
 #include "../../include/main.h"
 #include "../../include/ui.h"
 #include "../../include/map.h"
+#include "../../include/events.h"
+#include <stdbool.h>
 
 void refresh_view(sfRenderWindow *window, game *game)
 {
@@ -21,17 +23,13 @@ void refresh_view(sfRenderWindow *window, game *game)
 void move_view(game *game, sfEvent *event, sfRenderWindow *window)
 {
     sfVector2f pos = sfSprite_getPosition(game->player->sprite);
-    if ((event->key.code == sfKeyQ) &&
-    ((pos.x - 10) > (int)(WINDOW_WIDTH / 2)))
+    if (event->key.code == sfKeyQ && gest_col(game, (pos.x - 10), pos.y))
         pos.x -= 10;
-    if ((event->key.code == sfKeyD) &&
-    ((pos.x + 10) < (MAP_WIDTH_PX - (int)(WINDOW_WIDTH / 2))))
+    if (event->key.code == sfKeyD && gest_col(game, (pos.x + 10), pos.y))
         pos.x += 10;
-    if ((event->key.code == sfKeyZ) &&
-    ((pos.y - 10) > (int)(WINDOW_HEIGHT / 2)))
+    if (event->key.code == sfKeyZ && gest_col(game, pos.x, (pos.y - 10)))
         pos.y -= 10;
-    if ((event->key.code == sfKeyS) &&
-    ((pos.y + 10) < (MAP_HEIGHT_PX - (int)(WINDOW_HEIGHT / 2))))
+    if (event->key.code == sfKeyS && gest_col(game, pos.x, (pos.y + 10)))
         pos.y += 10;
     game->player->pos = pos;
     sfSprite_setPosition(game->player->sprite, pos);

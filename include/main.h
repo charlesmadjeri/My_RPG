@@ -23,5 +23,6 @@
     #include <SFML/System.h>
     #include <SFML/Audio.h>
     #include <sys/stat.h>
+    #include <stdbool.h>
 
 #endif /* !MAIN_H_ */
