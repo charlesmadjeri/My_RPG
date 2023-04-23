@@ -7,12 +7,7 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-    #include <SFML/Graphics.h>
-    #include <SFML/Graphics/Types.h>
-    #include <SFML/Audio.h>
-    #include <SFML/System/Vector2.h>
-    #include <SFML/System/Vector3.h>
-    #include <SFML/Graphics/Types.h>
+    #include "main.h"
     #pragma once
 
 // Battle:
