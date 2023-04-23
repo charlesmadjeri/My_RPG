@@ -45,31 +45,33 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
     }
 }
 
+void handle_pause_menu_for_the_fucking_codn_style(sfRenderWindow *window,
+sfEvent *event, game *game)
+{
+        if (event->key.code == sfKeySpace) {
+            game->state->current_state = PAUSE;
+            game->state->previous_state = MAP;
+            return;
+        }
+}
+
 void map_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
     if (event->type == sfEvtKeyPressed) {
-<<<<<<< HEAD
-        entering_battle(game, event);
-=======
+        entering_battle(window, game, event);
         if (event->key.code == sfKeyEscape) {
             game->state->current_state = PAUSE;
             game->state->previous_state = MAP;
             return;
         }
-        entering_battle(window, game, event);
->>>>>>> main
         if (event->key.code == sfKeyI) {
             game->state->current_state = INVENTORY;
             game->state->previous_state = MAP;
             return;
         }
-        if (event->key.code == sfKeySpace) {
-            game->state->current_state = PAUSE;
-            game->state->previous_state = MAP;
-            return;
+        handle_pause_menu_for_the_fucking_codn_style(window, event, game);
         } else {
             handle_regular_events(window, event, game);
             return;
         }
-    }
 }

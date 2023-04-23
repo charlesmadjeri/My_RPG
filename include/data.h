@@ -7,15 +7,11 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-<<<<<<< HEAD
     #include <SFML/Graphics.h>
     #include <SFML/Graphics/Types.h>
     #include <SFML/Audio.h>
     #include <SFML/System/Vector2.h>
     #include <SFML/System/Vector3.h>
-=======
-    #include "main.h"
->>>>>>> main
     #pragma once
 
 // Battle:
