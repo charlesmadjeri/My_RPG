@@ -8,8 +8,7 @@
 #include "../../include/main.h"
 #include "../../include/ui.h"
 #include "../../include/map.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Types.h>
+#include <SFML/System/Vector2.h>
 
 void refresh_view(sfRenderWindow *window, game *game)
 {
@@ -23,13 +22,17 @@ void refresh_view(sfRenderWindow *window, game *game)
 void move_view(game *game, sfEvent *event, sfRenderWindow *window)
 {
     sfVector2f pos = sfSprite_getPosition(game->player->sprite);
-    if (event->key.code == sfKeyQ)
+    if ((event->key.code == sfKeyQ) &&
+    ((pos.x - 10) > (int)(WINDOW_WIDTH / 2)))
         pos.x -= 10;
-    if (event->key.code == sfKeyD)
+    if ((event->key.code == sfKeyD) &&
+    ((pos.x + 10) < (MAP_WIDTH_PX - (int)(WINDOW_WIDTH / 2))))
         pos.x += 10;
-    if (event->key.code == sfKeyZ)
+    if ((event->key.code == sfKeyZ) &&
+    ((pos.y - 10) > (int)(WINDOW_HEIGHT / 2)))
         pos.y -= 10;
-    if (event->key.code == sfKeyS)
+    if ((event->key.code == sfKeyS) &&
+    ((pos.y + 10) < (MAP_HEIGHT_PX - (int)(WINDOW_HEIGHT / 2))))
         pos.y += 10;
     game->player->pos = pos;
     sfSprite_setPosition(game->player->sprite, pos);

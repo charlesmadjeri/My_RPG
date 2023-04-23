@@ -15,8 +15,8 @@
     #define MATRICE_PATH "ressources/maps/map.txt"
     #define MAP_WIDTH 36 // in tiles
     #define MAP_HEIGHT 21 // in tiles
-    #define MAP_WIDTH_PX 5400 // in pixels
-    #define MAP_HEIGHT_PX 3150 // in pixels
+    #define MAP_WIDTH_PX 5400 - 30 // in pixels
+    #define MAP_HEIGHT_PX 3150 - 30 // in pixels
     #define TILE_SIZE_X 150 // in pixels
     #define TILE_SIZE_Y 150 // in pixels
 
