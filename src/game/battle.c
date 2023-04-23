@@ -57,7 +57,8 @@ battle *init_battle(void)
     sfIntRect a_mino; sfIntRect a_monst;
     area.height = 77; area.width = 77; area.left = 231; area.top = 160;
     a_monst.height = 77; a_monst.width = 77; a_monst.left = 0; a_monst.top = 0;
-    a_mino.height = 330; a_mino.width = 200; a_mino.left = 450; a_mino.top = 780;
+    a_mino.height = 330; a_mino.width = 200; a_mino.left = 450;
+    a_mino.top = 780;
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create(); battle->player = sfSprite_create();
     battle->text_player = sfTexture_createFromFile(PL_PATH, &area);
