@@ -31,6 +31,7 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
         else
             game->map->weather->is_raining = sfFalse;
     }
+    sfVector2f p_player = sfSprite_getPosition(game->player->sprite);
     if (event->key.code == sfKeyT) {
         if (game->map->disp_help == sfFalse)
             game->map->disp_help = sfTrue;
@@ -38,7 +39,8 @@ void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
             game->map->disp_help = sfFalse;
     }
     if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->player)) > 0.1) {
-        player_move(game, event); sfClock_restart(game->clocks->player);
+        player_move(game, event, p_player);
+        sfClock_restart(game->clocks->player);
     }
     if (sfTime_asSeconds(sfClock_getElapsedTime(game->clocks->view)) > 0.01) {
         move_view(game, event, window); sfClock_restart(game->clocks->view);

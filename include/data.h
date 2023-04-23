@@ -7,11 +7,7 @@
 
 #ifndef DATA_H_
     #define DATA_H_
-    #include <SFML/Graphics.h>
-    #include <SFML/Graphics/Types.h>
-    #include <SFML/Audio.h>
-    #include <SFML/System/Vector2.h>
-    #include <SFML/System/Vector3.h>
+    #include "main.h"
     #pragma once
 
 // Battle:
@@ -209,6 +205,11 @@
         sfBool disp_help;
         sfSprite *help_sprite;
         sfTexture *help_texture;
+        sfTexture *fog_texture;
+        sfSprite *U_fog_sprite;
+        sfSprite *D_fog_sprite;
+        sfSprite *L_fog_sprite;
+        sfSprite *R_fog_sprite;
     } map;
 
 // Inventory:
