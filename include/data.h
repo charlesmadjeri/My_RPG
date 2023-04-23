@@ -289,6 +289,11 @@
         sfSprite *continued;
         sfSprite *help;
         sfSprite *quit;
+        sfTexture *background_texture;
+        sfTexture *start_tex;
+        sfTexture *continued_tex;
+        sfTexture *help_tex;
+        sfTexture *quit_tex;
     } splash_screen;
 
 // Text:
@@ -321,11 +326,8 @@
 
 // Pause_menu:
     typedef struct pause_menu_t {
-        button *resume_button;
-        button *quit_button;
-        button *settings_button;
-        button *load_button;
-        button *save_button;
+        sfSprite *menu;
+        sfTexture *text_menu;
     } pause_menu;
 
 // Clocks:
