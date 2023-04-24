@@ -8,6 +8,7 @@
 #include "../../include/main.h"
 #include "../../include/data.h"
 #include "../../include/ui.h"
+#include "../../include/player.h"
 #define PATH_SPRITE1 "ressources/text/text1.png"
 #define PATH_SPRITE2 "ressources/text/text2.png"
 #define PATH_SPRITE3 "ressources/text/text3.png"
@@ -47,6 +48,7 @@ void place_text(text* text, game* game, sfRenderWindow* win, sfSprite* sprite)
 
 void display_text(game* game, sfRenderWindow *window, text* text)
 {
+    sfVector2f pos = sfSprite_getPosition(game->player->sprite);
     if (text->len == 1) {
         place_text(text, game, window, text->sprite1);
         sfRenderWindow_drawSprite(window, text->sprite1, NULL);
@@ -59,7 +61,8 @@ void display_text(game* game, sfRenderWindow *window, text* text)
         place_text(text, game, window, text->sprite3);
         sfRenderWindow_drawSprite(window, text->sprite3, NULL);
     }
-    if (game->player->intersection && game->player->game_len == 3) {
+    if (game->player->intersection == DOOR && game->player->game_len < 2
+    && pos.x > 4450 && pos.x < 4600 && pos.y > 400 && pos.y < 550) {
         place_text(text, game, window, text->sprite4);
         sfRenderWindow_drawSprite(window, text->sprite4, NULL);
     }

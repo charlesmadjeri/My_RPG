@@ -45,7 +45,8 @@ void athena_move(game *game)
 void display_athena(sfRenderWindow *window, game* game)
 {
     athena_move(game);
-    if (game->player->intersection == ATHENA && game->player->game_len <= 1) {
+    if (game->player->intersection == ATHENA && game->player->game_len == 0
+    || game->player->game_len == 1) {
         game->player->game_len = 1;
         game->text->len = 2;
     }
