@@ -27,7 +27,7 @@ void destroy_all(game *game, sfRenderWindow *window)
     if (game == NULL || window == NULL)
         return;
     destroy_menus(game);
-    destroy_map(game->map);
+    //destroy_map(game->map);
     destroy_clocks(game->clocks);
     destroy_battle(game->battle);
     destroy_player(game->player);
