@@ -55,9 +55,10 @@ void is_interaction(sfRenderWindow *window, game *game)
         if (player_pos.y > pnj_pos.y - 77 && player_pos.y < pnj_pos.y + 77) {
             game->player->intersection = PNJ; return;
         }
-    if (player_pos.x == 4520 && player_pos.y == 500) {
+    if (player_pos.x >= 4470 && player_pos.x <= 4570)
+        if (player_pos.y >= 450 && player_pos.y <= 550) {
             game->player->intersection = DOOR;return;
-    }
+        }
     game->player->intersection = 0;
     return;
 }
