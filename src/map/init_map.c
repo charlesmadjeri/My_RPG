@@ -17,6 +17,7 @@ static weather *init_weather(void)
     weather->cloud_pos = (sfVector2f) {0, 0};
     weather->rain_pos = (sfVector2f) {0, 0};
     weather->rain_sprite = create_rain_sprite();
+    weather->is_raining = sfFalse;
 
     return weather;
 }

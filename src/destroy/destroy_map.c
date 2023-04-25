@@ -8,8 +8,6 @@
 #include "../../include/main.h"
 #include "../../include/destroy.h"
 #include "../../include/map.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Texture.h>
 
 void destroy_pnjs(pnjs *pnjs)
 {
