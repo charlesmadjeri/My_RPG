@@ -13,10 +13,11 @@
 static weather *init_weather(void)
 {
     weather *weather = malloc(sizeof(*weather));
-    weather->cloud_sprite = create_cloud_sprite();
-    weather->cloud_pos = (sfVector2f) {0, 0};
+
+    create_cloud_sprite(weather);
+    create_rain_sprite(weather);
+    weather->clouds_pos = (sfVector2f) {0, 0};
     weather->rain_pos = (sfVector2f) {0, 0};
-    weather->rain_sprite = create_rain_sprite();
     weather->is_raining = sfFalse;
 
     return weather;
@@ -32,14 +33,14 @@ static map_data *init_map_data(void)
     return map_data;
 }
 
-static infos *init_infos(void)
+static infos *init_infos()
 {
     infos *infos = malloc(sizeof(*infos));
 
-    infos->level_nb = init_level_nb();
-    infos->spell_bar = init_spell_bar();
-    infos->life_bar = init_life_bar();
-    infos->xp_bar = init_xp_bar();
+    init_level_nb(infos);
+    init_spell_bar(infos);
+    init_life_bar(infos);
+    init_xp_bar(infos);
 
     return infos;
 }

@@ -7,10 +7,12 @@
 
 #include "../../include/main.h"
 #include "../../include/destroy.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Text.h>
-#include <SFML/Graphics/Texture.h>
-#include <SFML/System/Clock.h>
+
+void destroy_pnjs(pnjs *pnjs)
+{
+    sfSprite_destroy(pnjs->sprite);
+    free(pnjs);
+}
 
 void destroy_item(item *item)
 {

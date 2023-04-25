@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/destroy.h"
+#include <SFML/Graphics/Texture.h>
 
 static void destroy_level_nb(level_nb *level_nb)
 {
@@ -44,7 +45,6 @@ static void destroy_life_bar(life_bar *life_bar)
     sfSprite_destroy(life_bar->life_bar_sprite4);
     sfSprite_destroy(life_bar->life_bar_sprite5);
     sfSprite_destroy(life_bar->life_bar_sprite6);
-    sfSprite_destroy(life_bar->life_bar_sprite7);
     free(life_bar);
 }
 
@@ -52,6 +52,7 @@ void destroy_info(infos *infos)
 {
     destroy_level_nb(infos->level_nb);
     destroy_spell_bar(infos->spell_bar);
+    destroy_life_bar(infos->life_bar);
     destroy_xp_bar(infos->xp_bar);
     free(infos);
 }

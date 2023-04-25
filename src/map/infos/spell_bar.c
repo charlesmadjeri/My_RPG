@@ -20,17 +20,15 @@ static sfSprite *create_spell_sprite(char *path)
     return sprite;
 }
 
-spell_bar *init_spell_bar(void)
+void init_spell_bar(infos *infos)
 {
-    spell_bar *spell_bar = malloc(sizeof(*spell_bar));
+    infos->spell_bar = malloc(sizeof(*infos->spell_bar));
 
-    spell_bar->sprite0 = create_spell_sprite(SPELL_BAR_0_PATH);
-    spell_bar->sprite1 = create_spell_sprite(SPELL_BAR_1_PATH);
-    spell_bar->sprite2 = create_spell_sprite(SPELL_BAR_2_PATH);
-    spell_bar->sprite3 = create_spell_sprite(SPELL_BAR_3_PATH);
-    spell_bar->pos = (sfVector2f){0, 0};
-
-    return spell_bar;
+    infos->spell_bar->sprite0 = create_spell_sprite(SPELL_BAR_0_PATH);
+    infos->spell_bar->sprite1 = create_spell_sprite(SPELL_BAR_1_PATH);
+    infos->spell_bar->sprite2 = create_spell_sprite(SPELL_BAR_2_PATH);
+    infos->spell_bar->sprite3 = create_spell_sprite(SPELL_BAR_3_PATH);
+    infos->spell_bar->pos = (sfVector2f){0, 0};
 }
 
 void display_spell_bar(sfRenderWindow *window, battle *battle,

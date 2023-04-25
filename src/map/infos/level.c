@@ -8,6 +8,7 @@
 #include "../../../include/main.h"
 #include "../../../include/map.h"
 #include "../../../include/events.h"
+#include "../../../include/data.h"
 
 static sfSprite *create_level_sprite(char *path)
 {
@@ -21,16 +22,14 @@ static sfSprite *create_level_sprite(char *path)
     return sprite;
 }
 
-level_nb *init_level_nb(void)
+void init_level_nb(infos *infos)
 {
-    level_nb *level_nb = malloc(sizeof(*level_nb));
+    infos->level_nb = malloc(sizeof(*infos->level_nb));
 
-    level_nb->level_1_sprite = create_level_sprite(LEVEL_1_PATH);
-    level_nb->level_2_sprite = create_level_sprite(LEVEL_2_PATH);
-    level_nb->level_3_sprite = create_level_sprite(LEVEL_3_PATH);
-    level_nb->level_nb_pos = (sfVector2f){0, 0};
-
-    return level_nb;
+    infos->level_nb->level_1_sprite = create_level_sprite(LEVEL_1_PATH);
+    infos->level_nb->level_2_sprite = create_level_sprite(LEVEL_2_PATH);
+    infos->level_nb->level_3_sprite = create_level_sprite(LEVEL_3_PATH);
+    infos->level_nb->level_nb_pos = (sfVector2f){0, 0};
 }
 
 void display_level(sfRenderWindow *window, player *player, level_nb *level_nb)

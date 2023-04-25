@@ -9,16 +9,16 @@
 #include "../../include/destroy.h"
 #include "../../include/map.h"
 
-void destroy_pnjs(pnjs *pnjs)
-{
-    sfSprite_destroy(pnjs->sprite);
-    free(pnjs);
-}
-
 void destroy_weather(weather *weather)
 {
     sfSprite_destroy(weather->cloud_sprite);
+    sfSprite_destroy(weather->clouds_sprite);
+    sfSprite_destroy(weather->raindrop_sprite);
     sfSprite_destroy(weather->rain_sprite);
+    sfTexture_destroy(weather->cloud_texture);
+    sfTexture_destroy(weather->clouds_texture);
+    sfTexture_destroy(weather->raindrop_texture);
+    sfTexture_destroy(weather->rain_texture);
     free (weather);
 }
 

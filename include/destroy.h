@@ -21,5 +21,6 @@
     void destroy_athena(athena *athena);
     void destroy_minotaure(minotaure *minotaure);
     void destroy_text(text *text);
+    void destroy_pnjs(pnjs *pnjs);
 
 #endif /* !DESTROY_H_ */
