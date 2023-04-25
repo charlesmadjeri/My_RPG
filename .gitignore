@@ -73,3 +73,4 @@ coding-style*
 .vscode
 .vgcore*
 my_rpg
+valgrind*

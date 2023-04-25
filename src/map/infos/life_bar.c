@@ -7,17 +7,18 @@
 
 #include "../../../include/map.h"
 #include "../../../include/main.h"
+#include <SFML/Graphics/Texture.h>
 
 sfSprite *create_life_bar_sprite(char *path)
 {
     sfTexture *texture = sfTexture_createFromFile(path, NULL);
     sfSprite *sprite = sfSprite_create();
     sfSprite_setTexture(sprite, texture, sfTrue);
-
+    sfTexture_destroy(texture);
     sfVector2f scale = {3, 3};
     sfSprite_setScale(sprite, scale);
 
-    return (sprite);
+    return sprite;
 }
 
 life_bar *init_life_bar(void)

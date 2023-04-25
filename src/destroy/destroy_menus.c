@@ -12,13 +12,7 @@
 
 void destroy_settings(settings *settings)
 {
-    sfTexture_destroy(settings->texture_music);
-    sfTexture_destroy(settings->texture_sound);
-    sfTexture_destroy(settings->texture_resolutions);
     sfTexture_destroy(settings->texture_parchment);
-    sfSprite_destroy(settings->music);
-    sfSprite_destroy(settings->sound);
-    sfSprite_destroy(settings->resolutions);
     sfSprite_destroy(settings->parchment);
     free(settings);
 }
@@ -49,4 +43,5 @@ void destroy_menus(game *game)
 {
     destroy_splash_screen(game->splash);
     destroy_pause_menu(game->pause_menu);
+    destroy_settings(game->settings);
 }

@@ -10,7 +10,7 @@
 
 clocks *init_clocks(void)
 {
-    clocks *clocks = malloc(sizeof(*clocks));
+    clocks *clocks = malloc(sizeof(sfClock *) * 8);
 
     clocks->cloud_clock = sfClock_create();
     clocks->rain_clock = sfClock_create();
