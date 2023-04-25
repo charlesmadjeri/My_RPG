@@ -22,7 +22,9 @@
         sfTexture *cyclope;
         sfTexture *mino;
         sfTexture *monst;
-        sfSprite *ennemy_sprite;
+        sfSprite *mino_sp;
+        sfSprite *cyclo_sp;
+        sfSprite *monst_sp;
         int special_attack;
         int ennemy_type;
         int ennemy_max_hp;
