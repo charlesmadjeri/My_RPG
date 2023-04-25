@@ -12,7 +12,18 @@
 #include "../../include/events.h"
 #include "../../include/ui.h"
 
-static is_interaction_ennemy(sfRenderWindow *window, game* game, sfVector2f player_pos)
+static void ennemy_interaction_end(sfRenderWindow *window, game* game,
+sfVector2f player_pos)
+{
+    if (player_pos.x > 1410 - 77 && player_pos.x < 1410 + 77) {
+        if (player_pos.y > 2460 - 77 && player_pos.y < 2460 + 77) {
+            game->player->intersection = MONSTER; return;
+        }
+    }
+}
+
+static void is_interaction_ennemy(sfRenderWindow *window, game* game,
+sfVector2f player_pos)
 {
     if (player_pos.x > 760 && player_pos.x < 950) {
         if (player_pos.y > 1490 && player_pos.y < 1620
@@ -27,14 +38,8 @@ static is_interaction_ennemy(sfRenderWindow *window, game* game, sfVector2f play
         if (player_pos.y > 500 - 77 && player_pos.y < 500 + 77) {
             game->player->intersection = DOOR; return;
         }
-    } else
-        game->player->intersection = 8; return;
-    if (player_pos.x > 1410 - 77 && player_pos.x < 1410 + 77) {
-        if (player_pos.y > 2460 - 77 && player_pos.y < 2460 + 77) {
-            game->player->intersection = MONSTER; return;
-        }
-    } else
-        game->player->intersection = 8; return;
+    }
+    ennemy_interaction_end(window, game, player_pos)
 }
 
 void is_interaction(sfRenderWindow *window, game *game)
