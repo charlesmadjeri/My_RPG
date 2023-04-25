@@ -14,8 +14,8 @@
 
 static is_interaction_ennemy(game* game, sfVector2f player_pos)
 {
-    if (player_pos.x > 860 - 77 && player_pos.x < 860 + 77)
-        if (player_pos.y > 1640 - 77 && player_pos.y < 1640 + 77) {
+    if (player_pos.x > 760 && player_pos.x < 950)
+        if (player_pos.y > 1490 && player_pos.y < 1620) {
             game->player->intersection = MINOTAURE; return;
         }
     if (player_pos.x > 4520 - 77 && player_pos.x < 4520 + 77)
@@ -41,9 +41,10 @@ void is_interaction(game *game)
         if (player_pos.y > pnj_pos.y - 77 && player_pos.y < pnj_pos.y + 77) {
             game->player->intersection = PNJ; return;
         }
-    if (player_pos.x == 4520 && player_pos.y == 500) {
+    if (player_pos.x >= 4470 && player_pos.x <= 4570)
+        if (player_pos.y >= 450 && player_pos.y <= 550) {
             game->player->intersection = DOOR;return;
-    }
+        }
     game->player->intersection = 0;
     return;
 }
