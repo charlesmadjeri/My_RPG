@@ -6,9 +6,10 @@
 */
 
 #include "../../include/main.h"
+#include "../../include/game.h"
 #include "../../include/splash_screen.h"
+#include "../../include/destroy.h"
 #include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Window/Event.h>
 
 void handle_quit_and_settings_for_the_fucking_codn_style(sfRenderWindow *window,
 sfMouseButtonEvent event_mouse, game *game)

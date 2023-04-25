@@ -7,6 +7,9 @@
 
 #include "../../../include/main.h"
 #include "../../../include/map.h"
+#include <SFML/Graphics/RenderTexture.h>
+#include <SFML/Graphics/Sprite.h>
+#include <SFML/Graphics/Texture.h>
 
 sfRenderTexture *generate_cloud_texture(void)
 {
@@ -17,8 +20,6 @@ sfRenderTexture *generate_cloud_texture(void)
     sfColor color = sfSprite_getColor(cloud_sprite);
     color.a = 255;
     sfSprite_setColor(cloud_sprite, color);
-    sfVector2f sprite_size = {(float)sfTexture_getSize(cloud_texture).x,
-    (float)sfTexture_getSize(cloud_texture).y};
     sfRenderTexture *render_texture =
     sfRenderTexture_create(MAP_WIDTH_PX * 2, MAP_HEIGHT_PX, sfFalse);
     for (int i = 0, j = 0, nb = 0; nb < NB_CLOUDS; nb++) {
@@ -27,6 +28,8 @@ sfRenderTexture *generate_cloud_texture(void)
         sfSprite_setPosition(cloud_sprite, (sfVector2f){i, j});
         sfRenderTexture_drawSprite(render_texture, cloud_sprite, NULL);
     }
+    sfTexture_destroy(cloud_texture);
+    sfSprite_destroy(cloud_sprite);
     return render_texture;
 }
 
@@ -38,6 +41,6 @@ sfSprite *create_cloud_sprite(void)
     const sfTexture *cloud_full_texture =
     sfRenderTexture_getTexture(render_texture);
     sfSprite_setTexture(cloud_sprite, cloud_full_texture, sfTrue);
-
+    sfRenderTexture_destroy(render_texture);
     return cloud_sprite;
 }

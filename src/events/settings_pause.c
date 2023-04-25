@@ -1,14 +1,14 @@
 /*
-** EPITECH PROJECT, 2023
-** Epitech
+** EPITECH PROJECT, 2022
+** repo
 ** File description:
-** settings_event
+** settings_pause.c
 */
 
 #include "../../include/main.h"
 #include "../../include/settings.h"
 
-void settings_event(sfRenderWindow *window, sfEvent *event, game *game)
+void settings_pause_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
     if (event->type == sfEvtKeyPressed) {
         if (event->key.code == sfKeyEscape)

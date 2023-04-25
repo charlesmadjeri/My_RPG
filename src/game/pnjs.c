@@ -10,6 +10,7 @@
 #include "../../include/data.h"
 #include "../../include/player.h"
 #include "../../include/events.h"
+#include <SFML/Graphics/Texture.h>
 
 pnjs *init_pnjs(void)
 {
@@ -20,9 +21,9 @@ pnjs *init_pnjs(void)
     pnjs->area = rect;
     pnjs->stat = 'L';
     pnjs->stat_num = 1;
-    sfTexture *pnj_texture = sfTexture_createFromFile(VILLAGER_SPRITE_PATH,
+    pnjs->texture = sfTexture_createFromFile(VILLAGER_SPRITE_PATH,
     NULL);
-    sfSprite_setTexture(pnjs->sprite, pnj_texture, sfTrue);
+    sfSprite_setTexture(pnjs->sprite, pnjs->texture, sfTrue);
     sfSprite_setPosition(pnjs->sprite, pnjs->pos);
     sfSprite_setTextureRect(pnjs->sprite, pnjs->area);
     return pnjs;
@@ -62,9 +63,12 @@ void display_pnjs(sfRenderWindow *window, game* game)
 {
     if (game->player->intersection != PNJ)
         pnj_move(game);
-    if (game->player->intersection == PNJ && game->player->game_len == 1)
+    if (game->player->intersection == PNJ && game->player->game_len == 1
+    || game->player->game_len == 2) {
         game->player->game_len = 2;
+        game->text->len = 3;
+    }
+    if (game->player->game_len == 2 && game->player->intersection != PNJ)
+        game->text->len = 0;
     sfRenderWindow_drawSprite(window, game->pnjs->sprite, NULL);
 }
-
-void destroy_pnjs(pnjs *pnjs);

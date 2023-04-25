@@ -72,3 +72,5 @@ coding-style*
 .git
 .vscode
 .vgcore*
+my_rpg
+valgrind*

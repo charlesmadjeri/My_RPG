@@ -8,9 +8,15 @@
 #include "../../include/main.h"
 #include "../../include/destroy.h"
 
-void destroy_text(text *text)
+void destroy_text(text* txt)
 {
-    sfText_destroy(text->text);
-    sfFont_destroy(text->font);
-    free(text);
+    sfSprite_destroy(txt->sprite1);
+    sfSprite_destroy(txt->sprite2);
+    sfSprite_destroy(txt->sprite3);
+    sfSprite_destroy(txt->sprite4);
+    sfTexture_destroy(txt->texture1);
+    sfTexture_destroy(txt->texture2);
+    sfTexture_destroy(txt->texture3);
+    sfTexture_destroy(txt->texture4);
+    free(txt);
 }

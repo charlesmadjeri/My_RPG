@@ -12,6 +12,7 @@
     #include "destroy.h"
     #pragma once
     #define BG_PATH "ressources/battle/bg.png"
+    #define MON_PATH "ressources/sprites/monster.png"
     #define C_PATH "ressources/sprites/cyclope.png"
     #define PL_PATH "ressources/sprites/SpriteHero.png"
     #define HELP_B_PATH "ressources/battle/help.png"
@@ -35,6 +36,8 @@
 
 // Functions :
     battle *init_battle(void);
+    void entering_battle(sfRenderWindow *window, game *game);
     void init_ennemy(battle *battle);
     void display_battle(sfRenderWindow *window, game *game);
+    void display_ennemy_bar(sfRenderWindow *window, battle *battle);
 #endif /* !BATTLE_H_ */

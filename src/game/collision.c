@@ -40,6 +40,6 @@ bool gest_col(game* game, int pos_x, int pos_y)
             return false;
     }
     if (pos.x <= 0 || pos.x >= 5323 || pos.y <= 0 || pos.y >= 3073)
-        ret = false;
+        return false;
     return true;
 }

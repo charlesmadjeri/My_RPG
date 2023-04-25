@@ -8,18 +8,28 @@
 #include "../../include/main.h"
 #include "../../include/game.h"
 #include "../../include/battle.h"
+#include "../../include/player.h"
 #include "../../include/pause_menu.h"
 #include "../../include/ui.h"
 
-static void entering_battle(sfRenderWindow *window, game *game, sfEvent *event)
+void entering_battle(sfRenderWindow *window, game *game)
 {
-    if (event->key.code == sfKeyEnter
-    && game->state->current_state != BATTLE) {
-        game->battle->ennemy_type = MINOTAURE_T;
+    if ((game->battle->ennemy_type == MINOTAURE_T)
+    && (game->state->current_state != BATTLE)) {
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
-        return;
+    } else if ((game->battle->ennemy_type == CYCLOPE_T)
+    && (game->state->current_state != BATTLE)) {
+        init_ennemy(game->battle);
+        game->state->current_state = BATTLE;
+        game->state->previous_state = MAP;
+    } else if ((game->player->intersection = MONSTER)
+    && (game->state->current_state != BATTLE)) {
+        game->battle->ennemy_type = MONSTER_T;
+        init_ennemy(game->battle);
+        game->state->current_state = BATTLE;
+        game->state->previous_state = MAP;
     }
 }
 
@@ -60,7 +70,6 @@ sfEvent *event, game *game)
 void map_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
     if (event->type == sfEvtKeyPressed) {
-        entering_battle(window, game, event);
         if (event->key.code == sfKeyEscape) {
             game->state->current_state = PAUSE;
             game->state->previous_state = MAP;

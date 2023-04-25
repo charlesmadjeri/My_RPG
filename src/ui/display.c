@@ -19,7 +19,8 @@
 void display(sfRenderWindow *window, game *game)
 {
     switch (game->state->current_state) {
-        case SPLASH: display_splash_screen(window, game->splash);
+        case SPLASH: display_splash_screen(window, game);
+            game->state->current_state = MAP;
             break;
         case MAP: display_map(window, game);
             break;
@@ -31,6 +32,7 @@ void display(sfRenderWindow *window, game *game)
             break;
         case BATTLE: display_battle(window, game);
             break;
+        case SETTINGS_PAUSE: display_settings_pause(window, game, game->view);
         default:
             break;
     }

@@ -10,7 +10,7 @@
 
 clocks *init_clocks(void)
 {
-    clocks *clocks = malloc(sizeof(*clocks));
+    clocks *clocks = malloc(sizeof(sfClock *) * 8);
 
     clocks->cloud_clock = sfClock_create();
     clocks->rain_clock = sfClock_create();
@@ -19,5 +19,6 @@ clocks *init_clocks(void)
     clocks->minotaure = sfClock_create();
     clocks->player = sfClock_create();
     clocks->view = sfClock_create();
+    clocks->text = sfClock_create();
     return clocks;
 }

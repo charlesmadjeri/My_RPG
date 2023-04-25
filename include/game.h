@@ -22,6 +22,9 @@
 
     void player_move(game *game, sfEvent *event, sfVector2f pos);
 
+    void display_text(game* game, sfRenderWindow *window, text* text);
+    text* init_text(game* game);
+
     clocks *init_clocks(void);
     clocks *init_clock(void);
 

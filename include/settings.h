@@ -19,5 +19,10 @@
     void display_settings(sfRenderWindow *window, settings *settings,
     splash_screen *splash);
     void destroy_settings(settings *settings);
+    void set_view_to_center(sfRenderWindow *window, sfSprite *sprite,
+    sfView *view);
+    void display_settings_pause(sfRenderWindow *window, game *game,
+    sfView *view);
+
 
 #endif /* !SETTINGS_H_ */

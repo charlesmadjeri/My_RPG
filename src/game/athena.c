@@ -19,9 +19,9 @@ athena *init_athena(void)
     athena->area = rect;
     athena->stat = 'L';
     athena->stat_num = 1;
-    sfTexture *athena_texture = sfTexture_createFromFile(ATHENA_SPRITE_PATH,
+    athena->texture = sfTexture_createFromFile(ATHENA_SPRITE_PATH,
     NULL);
-    sfSprite_setTexture(athena->sprite, athena_texture, sfTrue);
+    sfSprite_setTexture(athena->sprite, athena->texture, sfTrue);
     sfSprite_setPosition(athena->sprite, athena->pos);
     sfSprite_setTextureRect(athena->sprite, athena->area);
     return athena;
@@ -45,9 +45,12 @@ void athena_move(game *game)
 void display_athena(sfRenderWindow *window, game* game)
 {
     athena_move(game);
-    if (game->player->intersection == ATHENA && game->player->game_len < 1)
+    if (game->player->intersection == ATHENA && game->player->game_len == 0
+    || game->player->game_len == 1) {
         game->player->game_len = 1;
+        game->text->len = 2;
+    }
+    if (game->player->game_len == 1 && game->player->intersection != ATHENA)
+        game->text->len = 0;
     sfRenderWindow_drawSprite(window, game->athena->sprite, NULL);
 }
-
-void destroy_athena(athena *athena);
