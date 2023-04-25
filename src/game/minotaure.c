@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/minotaure.h"
+#include "../../include/battle.h"
 #include "../../include/data.h"
 #include "../../include/player.h"
 

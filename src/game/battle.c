@@ -76,7 +76,7 @@ static void win_or_lose(game *game)
     if (game->battle->ennemy_hp < 0) {
         game->player->xp += game->battle->ennemy_xp;
         game->state->current_state = MAP;
-        game->state->previous_state = SPLASH;
+        game->state->previous_state = BATTLE;
         if (game->battle->ennemy_type = MONSTER_T) {
             game->player->inventory->items->potion->quantity += 20;
             game->player->inventory->items->shield->quantity ++;
@@ -88,7 +88,7 @@ static void win_or_lose(game *game)
     if (game->player->health < 0) {
         game->player->health = game->player->max_health;
         game->state->current_state = MAP;
-        game->state->previous_state = SPLASH;
+        game->state->previous_state = BATTLE;
     }
 }
 

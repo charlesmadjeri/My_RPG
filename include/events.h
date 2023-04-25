@@ -25,7 +25,7 @@
     void is_interection(game *game);
     bool gest_col(game* game, int pos_x, int pos_y);
     sfIntRect move_pnjs(game* game, pnjs* pnjs, sfIntRect rect);
-    void is_interaction(game *game);
+    void is_interaction(sfRenderWindow *window, game *game);
     void level_up(player *player);
     void settings_pause_event(sfRenderWindow *window,
     sfEvent *event, game *game);
