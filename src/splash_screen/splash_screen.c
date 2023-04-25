@@ -9,7 +9,9 @@
 #include "../../include/game.h"
 #include "../../include/splash_screen.h"
 #include "../../include/data.h"
+#include "../../include/ui.h"
 #include <SFML/Graphics/RenderWindow.h>
+#include <SFML/System/Vector2.h>
 
 void set_texture_and_sprite(splash_screen *splash)
 {
@@ -52,22 +54,21 @@ splash_screen *init_splash_screen(void)
 }
 
 void display_splash_screen(sfRenderWindow *window,
-splash_screen *splash)
+game *game)
 {
-    sfVector2u windowsize = sfRenderWindow_getSize(window);
-    sfVector2f start_pos = {windowsize.x - 1700, windowsize.y - 600};
-    sfVector2f continued_pos = {windowsize.x - 1700, windowsize.y - 500};
-    sfVector2f help_pos = {windowsize.x - 1700, windowsize.y - 400};
-    sfVector2f quit_pos = {windowsize.x - 235, windowsize.y - 100};
-    sfSprite_setPosition(splash->start, start_pos);
-    sfSprite_setPosition(splash->continued, continued_pos);
-    sfSprite_setPosition(splash->help, help_pos);
-    sfSprite_setPosition(splash->quit, quit_pos);
-    sfRenderWindow_drawSprite(window, splash->background, NULL);
-    sfRenderWindow_drawSprite(window, splash->start, NULL);
-    sfRenderWindow_drawSprite(window, splash->continued, NULL);
-    sfRenderWindow_drawSprite(window, splash->help, NULL);
-    sfRenderWindow_drawSprite(window, splash->quit, NULL);
+    set_view_to_center(window, game->splash->background, game->view);
+    sfVector2f pos = sfView_getCenter(game->view);
+    sfVector2f start_pos = {pos.x - 1700, pos.y - 600};
+    sfVector2f continued_pos = {pos.x - 1700, pos.y - 500};
+    sfVector2f help_pos = {pos.x - 1700, pos.y - 400};
+    sfVector2f quit_pos = {pos.x - 235, pos.y - 100};
+    sfSprite_setPosition(game->splash->start, start_pos);
+    sfSprite_setPosition(game->splash->continued, continued_pos);
+    sfSprite_setPosition(game->splash->help, help_pos);
+    sfSprite_setPosition(game->splash->quit, quit_pos);
+    sfRenderWindow_drawSprite(window, game->splash->background, NULL);
+    sfRenderWindow_drawSprite(window, game->splash->start, NULL);
+    sfRenderWindow_drawSprite(window, game->splash->continued, NULL);
+    sfRenderWindow_drawSprite(window, game->splash->help, NULL);
+    sfRenderWindow_drawSprite(window, game->splash->quit, NULL);
 }
-
-void destroy_splash_screen(splash_screen *splash);
