@@ -14,7 +14,7 @@
 // Functions :
     splash_screen *init_splash_screen(void);
     void display_splash_screen(sfRenderWindow *window,
-    splash_screen *splash);
+    game *game);
     void destroy_splash_screen(splash_screen *splash);
 
 #endif /* !SPLASH_SCREEN_H_ */

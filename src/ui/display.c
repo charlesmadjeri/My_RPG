@@ -19,7 +19,7 @@
 void display(sfRenderWindow *window, game *game)
 {
     switch (game->state->current_state) {
-        case SPLASH: display_splash_screen(window, game->splash);
+        case SPLASH: display_splash_screen(window, game);
             break;
         case MAP: display_map(window, game);
             break;
