@@ -12,37 +12,28 @@
 #include "../../include/pause_menu.h"
 #include "../../include/ui.h"
 
-static void entering_battle_step(sfRenderWindow *window,
-game* game, sfEvent *event)
-{
-    if ((game->player->intersection = MONSTER)
-    && (game->state->current_state != BATTLE)
-    && (event->key.code == sfKeyEnter)) {
-        init_ennemy(game->battle);
-        game->battle->ennemy_type = MONSTER_T;
-        game->state->current_state = BATTLE;
-        game->state->previous_state = MAP;
-    }
-}
-
-static void entering_battle(sfRenderWindow *window, game *game, sfEvent *event)
+void entering_battle(sfRenderWindow *window, game *game)
 {
     if ((game->player->intersection = MINOTAURE)
-    && (game->state->current_state != BATTLE)
-    && (event->key.code == sfKeyEnter)) {
-        init_ennemy(game->battle);
+    && (game->state->current_state != BATTLE)) {
         game->battle->ennemy_type = MINOTAURE_T;
+        init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
     } if ((game->player->intersection = DOOR)
-    && (game->state->current_state != BATTLE)
-    && (event->key.code == sfKeyEnter)) {
-        init_ennemy(game->battle);
+    && (game->state->current_state != BATTLE)) {
         game->battle->ennemy_type = CYCLOPE_T;
+        init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
     }
-    entering_battle_step(window, game, event);
+    if ((game->player->intersection = MONSTER)
+    && (game->state->current_state != BATTLE)) {
+        game->battle->ennemy_type = MONSTER_T;
+        init_ennemy(game->battle);
+        game->state->current_state = BATTLE;
+        game->state->previous_state = MAP;
+    }
 }
 
 void handle_regular_events(sfRenderWindow *window, sfEvent *event, game *game)
@@ -82,7 +73,6 @@ sfEvent *event, game *game)
 void map_event(sfRenderWindow *window, sfEvent *event, game *game)
 {
     if (event->type == sfEvtKeyPressed) {
-        entering_battle(window, game, event);
         if (event->key.code == sfKeyEscape) {
             game->state->current_state = PAUSE;
             game->state->previous_state = MAP;

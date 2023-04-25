@@ -12,23 +12,32 @@
 #include "../../include/events.h"
 #include "../../include/ui.h"
 
-static is_interaction_ennemy(game* game, sfVector2f player_pos)
+static is_interaction_ennemy(sfRenderWindow *window, game* game, sfVector2f player_pos)
 {
-    if (player_pos.x > 860 - 77 && player_pos.x < 860 + 77)
-        if (player_pos.y > 1640 - 77 && player_pos.y < 1640 + 77) {
-            game->player->intersection = MINOTAURE; return;
+    if (player_pos.x > 760 && player_pos.x < 950) {
+        if (player_pos.y > 1490 && player_pos.y < 1620
+        && game->player->game_len == 2) {
+            game->player->intersection = MINOTAURE;
+            game->player->game_len = 3;
+            game->text->len = 4;
+            entering_battle(window, game);
         }
-    if (player_pos.x > 4520 - 77 && player_pos.x < 4520 + 77)
+    }
+    if (player_pos.x > 4520 - 77 && player_pos.x < 4520 + 77) {
         if (player_pos.y > 500 - 77 && player_pos.y < 500 + 77) {
             game->player->intersection = DOOR; return;
         }
-    if (player_pos.x > 1410 - 77 && player_pos.x < 1410 + 77)
+    } else
+        game->player->intersection = 8; return;
+    if (player_pos.x > 1410 - 77 && player_pos.x < 1410 + 77) {
         if (player_pos.y > 2460 - 77 && player_pos.y < 2460 + 77) {
             game->player->intersection = MONSTER; return;
         }
+    } else
+        game->player->intersection = 8; return;
 }
 
-void is_interaction(game *game)
+void is_interaction(sfRenderWindow *window, game *game)
 {
     sfVector2f player_pos = sfSprite_getPosition(game->player->sprite);
     sfVector2f pnj_pos = sfSprite_getPosition(game->pnjs->sprite);
@@ -36,7 +45,7 @@ void is_interaction(game *game)
         if (player_pos.y > 2440 - 77 && player_pos.y < 2440 + 77) {
             game->player->intersection = ATHENA; return;
         }
-    is_interaction_ennemy(game, player_pos);
+    is_interaction_ennemy(window, game, player_pos);
     if (player_pos.x > pnj_pos.x - 77 && player_pos.x < pnj_pos.x + 77)
         if (player_pos.y > pnj_pos.y - 77 && player_pos.y < pnj_pos.y + 77) {
             game->player->intersection = PNJ; return;

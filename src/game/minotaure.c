@@ -7,6 +7,7 @@
 
 #include "../../include/main.h"
 #include "../../include/minotaure.h"
+#include "../../include/battle.h"
 #include "../../include/data.h"
 #include "../../include/player.h"
 
@@ -44,11 +45,7 @@ void minotaure_move(game *game)
 void display_minotaure(sfRenderWindow *window, game* game)
 {
     minotaure_move(game);
-    if (game->player->intersection == MINOTAURE
-    && game->player->game_len == 2) {
-        game->player->game_len = 3;
-        game->text->len = 4;
-    } else if (game->player->game_len == 3 &&
+    if (game->player->game_len == 3 &&
     game->player->intersection != MINOTAURE) {
         game->text->len = 0;
     }

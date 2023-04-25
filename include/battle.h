@@ -36,6 +36,7 @@
 
 // Functions :
     battle *init_battle(void);
+    void entering_battle(sfRenderWindow *window, game *game);
     void init_ennemy(battle *battle);
     void display_battle(sfRenderWindow *window, game *game);
     void display_ennemy_bar(sfRenderWindow *window, battle *battle);
