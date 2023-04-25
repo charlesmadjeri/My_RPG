@@ -14,20 +14,17 @@
 
 void entering_battle(sfRenderWindow *window, game *game)
 {
-    if ((game->player->intersection = MINOTAURE)
+    if ((game->battle->ennemy_type == MINOTAURE_T)
     && (game->state->current_state != BATTLE)) {
-        game->battle->ennemy_type = MINOTAURE_T;
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
-    } if ((game->player->intersection = DOOR)
+    } else if ((game->battle->ennemy_type == CYCLOPE_T)
     && (game->state->current_state != BATTLE)) {
-        game->battle->ennemy_type = CYCLOPE_T;
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;
         game->state->previous_state = MAP;
-    }
-    if ((game->player->intersection = MONSTER)
+    } else if ((game->player->intersection = MONSTER)
     && (game->state->current_state != BATTLE)) {
         game->battle->ennemy_type = MONSTER_T;
         init_ennemy(game->battle);
