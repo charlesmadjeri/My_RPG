@@ -77,6 +77,7 @@
         char *name;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char stat;
     } monster;
@@ -103,6 +104,7 @@
         sfTexture* message;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char **dialog;
         int stat_num;
@@ -114,6 +116,7 @@
         sfTexture* message;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char **dialog;
         int stat_num;
@@ -125,6 +128,7 @@
         sfTexture* message;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char **dialog;
         int stat_num;
@@ -251,6 +255,7 @@
         inventory *inventory;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
     } player;
 
@@ -292,6 +297,10 @@
         sfSprite *sprite2;
         sfSprite *sprite3;
         sfSprite *sprite4;
+        sfTexture *texture1;
+        sfTexture *texture2;
+        sfTexture *texture3;
+        sfTexture *texture4;
         sfVector2f pos;
         int len;
         int size;

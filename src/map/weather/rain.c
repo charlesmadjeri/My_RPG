@@ -7,6 +7,10 @@
 
 #include "../../../include/main.h"
 #include "../../../include/map.h"
+#include <SFML/Graphics/RenderTexture.h>
+#include <SFML/Graphics/Sprite.h>
+#include <SFML/Graphics/Texture.h>
+#include <SFML/Graphics/Types.h>
 
 sfRenderTexture *generate_rain_texture(void)
 {
@@ -27,6 +31,8 @@ sfRenderTexture *generate_rain_texture(void)
             sfRenderTexture_drawSprite(render_texture, raindrop_sprite, NULL);
         }
     }
+    sfSprite_destroy(raindrop_sprite);
+    sfTexture_destroy(rain_texture);
     return render_texture;
 }
 
@@ -38,6 +44,7 @@ sfSprite *create_rain_sprite(void)
     const sfTexture *rain_full_texture =
     sfRenderTexture_getTexture(render_texture);
     sfSprite_setTexture(rain_sprite, rain_full_texture, sfTrue);
+    sfRenderTexture_destroy(render_texture);
 
     return rain_sprite;
 }

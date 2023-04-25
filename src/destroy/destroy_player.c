@@ -39,7 +39,7 @@ void destroy_inventory(inventory *inventory)
 void destroy_player(player *player)
 {
     sfSprite_destroy(player->sprite);
-    sfClock_destroy(player->clock);
+    sfTexture_destroy(player->texture);
     destroy_inventory(player->inventory);
     free(player);
 }
