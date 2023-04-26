@@ -8,7 +8,7 @@
 #ifndef DATA_H_
     #define DATA_H_
     #include "main.h"
-#include <SFML/Graphics/Types.h>
+    #include <SFML/Graphics/Types.h>
     #pragma once
 
 // Battle:
@@ -36,6 +36,7 @@
         sfSprite *help_sprite;
         sfTexture *help_texture;
         sfSprite *ennemy_bar;
+        sfSprite *map_monster;
         sfVector2f pos_bar;
         sfVector2f pos_monst;
         sfVector2f pos_mino;

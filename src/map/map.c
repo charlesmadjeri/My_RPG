@@ -31,6 +31,7 @@ void display_map(sfRenderWindow *window, game *game)
     display_athena(window, game);
     display_pnjs(window, game);
     display_minotaure(window, game);
+    display_monster(window, game);
     display_weather(window, game);
     display_text(game, window, game->text);
     display_infos(window, game);

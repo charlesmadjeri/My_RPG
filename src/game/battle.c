@@ -38,9 +38,6 @@ static void get_battle_pos(sfView *view, battle *battle)
 static battle *second_part_init(battle *battle)
 {
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
-    sfSprite_setTexture(battle->cyclo_sp, battle->cyclope, sfFalse);
-    sfSprite_setTexture(battle->mino_sp, battle->mino, sfFalse);
-    sfSprite_setTexture(battle->monst_sp, battle->monst, sfFalse);
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);
     battle->special_attack = 0; battle->disp_help = sfTrue;
     battle->help_texture = sfTexture_createFromFile(HELP_B_PATH, NULL);
@@ -51,6 +48,8 @@ static battle *second_part_init(battle *battle)
     battle->bar_ennemy_3 = sfTexture_createFromFile(E_BAR_PATH_3, NULL);
     battle->bar_ennemy_4 = sfTexture_createFromFile(E_BAR_PATH_4, NULL);
     battle->ennemy_bar = sfSprite_create();
+    battle->map_monster = sfSprite_create();
+    sfSprite_setTexture(battle->map_monster, battle->monst, sfFalse);
     sfSprite_scale(battle->ennemy_bar, (sfVector2f) {3,3});
 }
 
@@ -78,7 +77,7 @@ battle *init_battle(void)
 
 static void win_or_lose(game *game)
 {
-    if (game->battle->ennemy_hp < 0) {
+    if (game->battle->ennemy_hp <= 0) {
         game->player->xp += game->battle->ennemy_xp;
         game->state->current_state = MAP;
         game->state->previous_state = BATTLE;
@@ -102,11 +101,11 @@ void display_battle(sfRenderWindow *window, game *game)
     set_view_to_center(window, game->battle->background, game->view);
     get_battle_pos(game->view, game->battle);
     sfRenderWindow_drawSprite(window, game->battle->background, NULL);
-    if (game->battle->ennemy_type = CYCLOPE_T)
+    if (game->battle->ennemy_type == CYCLOPE_T)
         sfRenderWindow_drawSprite(window, game->battle->cyclo_sp, NULL);
-    if (game->battle->ennemy_type = MINOTAURE_T)
+    if (game->battle->ennemy_type == MINOTAURE_T)
         sfRenderWindow_drawSprite(window, game->battle->mino_sp, NULL);
-    if (game->battle->ennemy_type = MONSTER_T)
+    if (game->battle->ennemy_type == MONSTER_T)
         sfRenderWindow_drawSprite(window, game->battle->monst_sp, NULL);
     sfRenderWindow_drawSprite(window, game->battle->player, NULL);
     display_ennemy_bar(window, game->battle);

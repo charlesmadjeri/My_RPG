@@ -33,7 +33,7 @@ static map_data *init_map_data(void)
     return map_data;
 }
 
-static infos *init_infos()
+static infos *init_infos(void)
 {
     infos *infos = malloc(sizeof(*infos));
 

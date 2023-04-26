@@ -25,19 +25,20 @@
     #define CYCLOPE_T 2
     #define MONSTER_T 0
     #define MINOTAURE_HP 200
-    #define CYCLOPE_HP 250
-    #define MONSTER_HP 75
+    #define CYCLOPE_HP 320
+    #define MONSTER_HP 60
     #define MINOTAURE_ATK 40
     #define CYCLOPE_ATK 55
-    #define MONSTER_ATK 20
-    #define MINOTAURE_XP 90
+    #define MONSTER_ATK 10
+    #define MINOTAURE_XP 100
     #define CYCLOPE_XP 120
-    #define MONSTER_XP 50
+    #define MONSTER_XP 100
 
 // Functions :
     battle *init_battle(void);
     void entering_battle(sfRenderWindow *window, game *game);
     void init_ennemy(battle *battle);
     void display_battle(sfRenderWindow *window, game *game);
+    void display_monster(sfRenderWindow *window, game *game);
     void display_ennemy_bar(sfRenderWindow *window, battle *battle);
 #endif /* !BATTLE_H_ */

@@ -16,8 +16,11 @@ static void ennemy_interaction_end(sfRenderWindow *window, game* game,
 sfVector2f player_pos)
 {
     if (player_pos.x > 1410 - 77 && player_pos.x < 1410 + 77) {
-        if (player_pos.y > 2460 - 77 && player_pos.y < 2460 + 77) {
-            game->player->intersection = MONSTER; return;
+        if (player_pos.y > 2460 - 77 && player_pos.y < 2460 + 77
+        && game->player->level == 1) {
+            game->battle->ennemy_type = MONSTER_T;
+            game->player->intersection = MONSTER;
+            entering_battle(window, game);
         }
     }
 }
@@ -36,7 +39,7 @@ sfVector2f player_pos)
         }
     } if (player_pos.x > 4520 - 77 && player_pos.x < 4520 + 77) {
         if (player_pos.y > 500 - 77 && player_pos.y < 500 + 77
-        && game->player->game_len == 1) {
+        && game->player->game_len == 3) {
             game->battle->ennemy_type = CYCLOPE_T;
             game->player->intersection = DOOR;
             game->player->game_len = 4;
