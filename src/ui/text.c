@@ -13,6 +13,7 @@
 #define PATH_SPRITE2 "ressources/text/text2.png"
 #define PATH_SPRITE3 "ressources/text/text3.png"
 #define PATH_SPRITE4 "ressources/text/text4.png"
+#define PATH_WIN "ressources/sprites/youwin.png"
 
 text* init_text(game* game)
 {
@@ -23,14 +24,17 @@ text* init_text(game* game)
     text->sprite2 = sfSprite_create();
     text->sprite3 = sfSprite_create();
     text->sprite4 = sfSprite_create();
+    text->win = sfSprite_create();
     text->texture1 = sfTexture_createFromFile(PATH_SPRITE1, NULL);
     text->texture2 = sfTexture_createFromFile(PATH_SPRITE2, NULL);
     text->texture3 = sfTexture_createFromFile(PATH_SPRITE3, NULL);
     text->texture4 = sfTexture_createFromFile(PATH_SPRITE4, NULL);
+    sfTexture *texture = sfTexture_createFromFile(PATH_WIN, NULL);
     sfSprite_setTexture(text->sprite1, text->texture1, sfTrue);
     sfSprite_setTexture(text->sprite2, text->texture2, sfTrue);
     sfSprite_setTexture(text->sprite3, text->texture3, sfTrue);
     sfSprite_setTexture(text->sprite4, text->texture4, sfTrue);
+    sfSprite_setTexture(text->win, texture, sfTrue);
     return text;
 }
 
@@ -44,6 +48,14 @@ void place_text(text* text, game* game, sfRenderWindow* win, sfSprite* sprite)
     {rect.left + rect.width / 2.f, rect.top + rect.height - 500};
     sfView_setCenter(game->view, center);
     sfRenderWindow_setView(win, game->view);
+}
+
+void display_text2(game* game, sfRenderWindow * window, text* text)
+{
+    if (game->player->game_len == 4) {
+        place_text(text, game, window, text->win);
+        sfRenderWindow_drawSprite(window, text->win, NULL);
+    }
 }
 
 void display_text(game* game, sfRenderWindow *window, text* text)
@@ -66,4 +78,5 @@ void display_text(game* game, sfRenderWindow *window, text* text)
         place_text(text, game, window, text->sprite4);
         sfRenderWindow_drawSprite(window, text->sprite4, NULL);
     }
+    display_text2(game, window, text);
 }

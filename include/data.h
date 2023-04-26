@@ -326,6 +326,7 @@
         sfSprite *sprite2;
         sfSprite *sprite3;
         sfSprite *sprite4;
+        sfSprite *win;
         sfTexture *texture1;
         sfTexture *texture2;
         sfTexture *texture3;
