@@ -54,6 +54,8 @@ void display_text2(game* game, sfRenderWindow * window, text* text)
 {
     if (game->player->game_len == 4) {
         place_text(text, game, window, text->win);
+        sfVector2f scale = {2.0, 2.0};
+        sfSprite_setScale(text->win, scale);
         sfRenderWindow_drawSprite(window, text->win, NULL);
     }
 }

@@ -14,7 +14,7 @@ void destroy_text(text* txt)
     sfSprite_destroy(txt->sprite2);
     sfSprite_destroy(txt->sprite3);
     sfSprite_destroy(txt->sprite4);
-    sfSrpite_destroy(txt->win);
+    sfSprite_destroy(txt->win);
     sfTexture_destroy(txt->texture1);
     sfTexture_destroy(txt->texture2);
     sfTexture_destroy(txt->texture3);
