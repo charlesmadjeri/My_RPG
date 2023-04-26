@@ -23,7 +23,7 @@ void analyse_event(sfRenderWindow *window, sfEvent *event, game *game)
             break;
         case PAUSE: pause_event(window, event, game);
             break;
-        case SETTINGS: pause_event(window, event, game);
+        case SETTINGS: settings_event(window, event, game);
             break;
         case INVENTORY: inventory_event(window, event, game);
             break;
