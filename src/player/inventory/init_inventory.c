@@ -32,6 +32,8 @@ static items *init_items(void)
     items->sword = init_item(SWORD_PATH, "sword", (sfVector2f){1, 1});
     items->shield = init_item(SHIELD_PATH, "shield", (sfVector2f){1, 1});
 
+    items->potion->quantity = 2;
+    items->sword->quantity = 1;
     return items;
 }
 
