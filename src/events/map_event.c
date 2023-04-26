@@ -14,8 +14,8 @@
 
 void entering_battle(sfRenderWindow *window, game *game)
 {
-    if ((game->battle->ennemy_type == MINOTAURE_T)
-    || (game->battle->ennemy_type == CYCLOPE_T)
+    if (((game->battle->ennemy_type == MINOTAURE_T)
+    || (game->battle->ennemy_type == CYCLOPE_T))
     && (game->state->current_state != BATTLE)) {
         init_ennemy(game->battle);
         game->state->current_state = BATTLE;

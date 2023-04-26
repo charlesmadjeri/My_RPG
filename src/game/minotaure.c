@@ -52,5 +52,3 @@ void display_minotaure(sfRenderWindow *window, game* game)
     if (game->player->game_len >= 2)
         sfRenderWindow_drawSprite(window, game->minotaure->sprite, NULL);
 }
-
-void destroy_minotaure(minotaure *minotaure);

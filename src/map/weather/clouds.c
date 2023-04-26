@@ -23,7 +23,8 @@ void generate_cloud_texture(weather *weather)
         i = (rand() % ((MAP_WIDTH_PX * 2) - CLOUDS_WIDTH));
         j = (rand() % (MAP_HEIGHT_PX - CLOUDS_WIDTH));
         sfSprite_setPosition(weather->cloud_sprite, (sfVector2f){i, j});
-        sfRenderTexture_drawSprite(weather->clouds_render_tex, weather->cloud_sprite, NULL);
+        sfRenderTexture_drawSprite(weather->clouds_render_tex,
+        weather->cloud_sprite, NULL);
     }
 }
 

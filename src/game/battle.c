@@ -35,7 +35,7 @@ static void get_battle_pos(sfView *view, battle *battle)
     sfSprite_setPosition(battle->ennemy_bar, battle->pos_bar);
 }
 
-static battle *second_part_init(battle *battle)
+static void second_part_init(battle *battle)
 {
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);

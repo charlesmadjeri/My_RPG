@@ -18,7 +18,8 @@ void generate_rain_texture(weather *weather)
     sfColor color = sfSprite_getColor(weather->raindrop_sprite);
     color.a = 128;
     sfSprite_setColor(weather->raindrop_sprite, color);
-    sfVector2f sprite_size = {(float)sfTexture_getSize(weather->raindrop_texture).x,
+    sfVector2f sprite_size =
+    {(float)sfTexture_getSize(weather->raindrop_texture).x,
     (float)sfTexture_getSize(weather->raindrop_texture).y};
     weather->rain_render_tex =
     sfRenderTexture_create(MAP_WIDTH_PX, MAP_HEIGHT_PX * 4, sfFalse);
@@ -35,7 +36,8 @@ void create_rain_sprite(weather *weather)
 {
     generate_rain_texture(weather);
     weather->rain_sprite = sfSprite_create();
-    sfSprite_setPosition(weather->rain_sprite, (sfVector2f) { 0, -3 * MAP_HEIGHT_PX});
+    sfSprite_setPosition(weather->rain_sprite,
+    (sfVector2f) { 0, -3 * MAP_HEIGHT_PX});
     weather->rain_texture =
     sfRenderTexture_getTexture(weather->rain_render_tex);
     sfSprite_setTexture(weather->rain_sprite, weather->rain_texture, sfTrue);
