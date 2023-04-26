@@ -22,13 +22,10 @@ settings *init_settings(void)
     return settings;
 }
 
-void display_settings(sfRenderWindow *window, settings *settings,
-splash_screen *splash)
+void display_settings(sfRenderWindow *window, game *game)
 {
-    sfVector2u windowsize = sfRenderWindow_getSize(window);
-    sfVector2f pos_parchment = {(windowsize.x / 2) - 300,
-    (windowsize.y / 2) - 350};
-    sfSprite_setPosition(settings->parchment, pos_parchment);
-    sfRenderWindow_drawSprite(window, splash->background, NULL);
-    sfRenderWindow_drawSprite(window, settings->parchment, NULL);
+    set_view_to_center(window, game->splash->background, game->view);
+    sfRenderWindow_drawSprite(window, game->splash->background, NULL);
+    set_view_to_center(window, game->settings->parchment, game->view);
+    sfRenderWindow_drawSprite(window, game->settings->parchment, NULL);
 }

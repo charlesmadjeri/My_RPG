@@ -16,8 +16,7 @@
 
 // Functions :
     settings *init_settings(void);
-    void display_settings(sfRenderWindow *window, settings *settings,
-    splash_screen *splash);
+    void display_settings(sfRenderWindow *window, game *game);
     void destroy_settings(settings *settings);
     void set_view_to_center(sfRenderWindow *window, sfSprite *sprite,
     sfView *view);

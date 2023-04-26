@@ -20,13 +20,12 @@ void display(sfRenderWindow *window, game *game)
 {
     switch (game->state->current_state) {
         case SPLASH: display_splash_screen(window, game);
-            game->state->current_state = MAP;
             break;
         case MAP: display_map(window, game);
             break;
         case PAUSE: display_pause_menu(window, game->pause_menu, game);
             break;
-        case SETTINGS: display_settings(window, game->settings, game->splash);
+        case SETTINGS: display_settings(window, game);
             break;
         case INVENTORY: display_inventory(window, game, game->view);
             break;
