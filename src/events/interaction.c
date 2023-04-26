@@ -39,7 +39,7 @@ sfVector2f player_pos)
             game->player->intersection = DOOR; return;
         }
     }
-    ennemy_interaction_end(window, game, player_pos)
+    ennemy_interaction_end(window, game, player_pos);
 }
 
 void is_interaction(sfRenderWindow *window, game *game)
