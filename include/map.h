@@ -73,14 +73,14 @@
     void load_matrice(map_data *map_data);
     sfSprite *create_sprite_from_rend_tex(sfRenderTexture *map_render_tex);
 
-    sfSprite *create_rain_sprite(void);
-    sfSprite *create_cloud_sprite(void);
+    void create_rain_sprite(weather *weather);
+    void create_cloud_sprite(weather *weather);
     void display_weather(sfRenderWindow *window, game *game);
 
-    level_nb *init_level_nb(void);
-    life_bar *init_life_bar(void);
-    spell_bar *init_spell_bar(void);
-    xp_bar *init_xp_bar(void);
+    void init_level_nb(infos *infos);
+    void init_life_bar(infos *infos);
+    void init_spell_bar(infos *infos);
+    void init_xp_bar(infos *infos);
     sfSprite *create_life_bar_sprite(char *path);
     void display_level(sfRenderWindow *window,
     player *player, level_nb *level_nb);

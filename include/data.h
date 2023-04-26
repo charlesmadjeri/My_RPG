@@ -8,6 +8,7 @@
 #ifndef DATA_H_
     #define DATA_H_
     #include "main.h"
+#include <SFML/Graphics/Types.h>
     #pragma once
 
 // Battle:
@@ -22,7 +23,9 @@
         sfTexture *cyclope;
         sfTexture *mino;
         sfTexture *monst;
-        sfSprite *ennemy_sprite;
+        sfSprite *mino_sp;
+        sfSprite *cyclo_sp;
+        sfSprite *monst_sp;
         int special_attack;
         int ennemy_type;
         int ennemy_max_hp;
@@ -77,6 +80,7 @@
         char *name;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char stat;
     } monster;
@@ -103,6 +107,7 @@
         sfTexture* message;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char **dialog;
         int stat_num;
@@ -114,6 +119,7 @@
         sfTexture* message;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char **dialog;
         int stat_num;
@@ -125,6 +131,7 @@
         sfTexture* message;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
         char **dialog;
         int stat_num;
@@ -140,7 +147,13 @@
         sfSprite *life_bar_sprite4;
         sfSprite *life_bar_sprite5;
         sfSprite *life_bar_sprite6;
-        sfSprite *life_bar_sprite7;
+        sfTexture *life_bar_texture0;
+        sfTexture *life_bar_texture1;
+        sfTexture *life_bar_texture2;
+        sfTexture *life_bar_texture3;
+        sfTexture *life_bar_texture4;
+        sfTexture *life_bar_texture5;
+        sfTexture *life_bar_texture6;
         sfVector2f life_bar_pos;
     } life_bar;
     typedef struct xp_bar_t {
@@ -149,6 +162,11 @@
         sfSprite *xp_bar_sprite2;
         sfSprite *xp_bar_sprite3;
         sfSprite *xp_bar_sprite4;
+        sfTexture *xp_bar_texture0;
+        sfTexture *xp_bar_texture1;
+        sfTexture *xp_bar_texture2;
+        sfTexture *xp_bar_texture3;
+        sfTexture *xp_bar_texture4;
         sfVector2f xp_bar_pos;
     } xp_bar;
     typedef struct spell_bar_t {
@@ -156,12 +174,19 @@
         sfSprite *sprite1;
         sfSprite *sprite2;
         sfSprite *sprite3;
+        sfTexture *texture0;
+        sfTexture *texture1;
+        sfTexture *texture2;
+        sfTexture *texture3;
         sfVector2f pos;
     } spell_bar;
     typedef struct level_nb_t {
         sfSprite *level_1_sprite;
         sfSprite *level_2_sprite;
         sfSprite *level_3_sprite;
+        sfTexture *level_1_texture;
+        sfTexture *level_2_texture;
+        sfTexture *level_3_texture;
         sfVector2f level_nb_pos;
     } level_nb;
     typedef struct infos_t {
@@ -171,9 +196,17 @@
         level_nb *level_nb;
     } infos;
     typedef struct weather_t {
+        sfSprite *clouds_sprite;
         sfSprite *cloud_sprite;
         sfSprite *rain_sprite;
-        sfVector2f cloud_pos;
+        sfSprite *raindrop_sprite;
+        sfTexture *cloud_texture;
+        sfRenderTexture *clouds_render_tex;
+        sfTexture *clouds_texture;
+        sfTexture *raindrop_texture;
+        sfRenderTexture *rain_render_tex;
+        sfTexture *rain_texture;
+        sfVector2f clouds_pos;
         sfVector2f rain_pos;
         sfBool is_raining;
     } weather;
@@ -251,6 +284,7 @@
         inventory *inventory;
         sfVector2f pos;
         sfSprite *sprite;
+        sfTexture *texture;
         sfIntRect area;
     } player;
 
@@ -292,6 +326,10 @@
         sfSprite *sprite2;
         sfSprite *sprite3;
         sfSprite *sprite4;
+        sfTexture *texture1;
+        sfTexture *texture2;
+        sfTexture *texture3;
+        sfTexture *texture4;
         sfVector2f pos;
         int len;
         int size;

@@ -28,15 +28,19 @@ sfVector2f player_pos)
     if (player_pos.x > 760 && player_pos.x < 950) {
         if (player_pos.y > 1490 && player_pos.y < 1620
         && game->player->game_len == 2) {
+            game->battle->ennemy_type = MINOTAURE_T;
             game->player->intersection = MINOTAURE;
             game->player->game_len = 3;
             game->text->len = 4;
             entering_battle(window, game);
         }
-    }
-    if (player_pos.x > 4520 - 77 && player_pos.x < 4520 + 77) {
-        if (player_pos.y > 500 - 77 && player_pos.y < 500 + 77) {
-            game->player->intersection = DOOR; return;
+    } if (player_pos.x > 4520 - 77 && player_pos.x < 4520 + 77) {
+        if (player_pos.y > 500 - 77 && player_pos.y < 500 + 77
+        && game->player->game_len == 1) {
+            game->battle->ennemy_type = CYCLOPE_T;
+            game->player->intersection = DOOR;
+            game->player->game_len = 4;
+            entering_battle(window, game);
         }
     }
     ennemy_interaction_end(window, game, player_pos);

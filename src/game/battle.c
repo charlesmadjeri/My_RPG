@@ -17,15 +17,15 @@ static void get_battle_pos(sfView *view, battle *battle)
     if (battle->ennemy_type == CYCLOPE_T) {
         battle->pos_cyclope.x = (sfView_getCenter(view).x + 300);
         battle->pos_cyclope.y = (sfView_getCenter(view).y - 200);
-        sfSprite_setPosition(battle->ennemy_sprite, battle->pos_cyclope);
+        sfSprite_setPosition(battle->cyclo_sp, battle->pos_cyclope);
     } if (battle->ennemy_type == MINOTAURE_T) {
         battle->pos_mino.x = (sfView_getCenter(view).x + 450);
         battle->pos_mino.y = (sfView_getCenter(view).y - 50);
-        sfSprite_setPosition(battle->ennemy_sprite, battle->pos_mino);
+        sfSprite_setPosition(battle->mino_sp, battle->pos_mino);
     } if (battle->ennemy_type == MONSTER_T) {
         battle->pos_cyclope.x = (sfView_getCenter(view).x + 500);
         battle->pos_cyclope.y = (sfView_getCenter(view).y + 200);
-        sfSprite_setPosition(battle->ennemy_sprite, battle->pos_cyclope);
+        sfSprite_setPosition(battle->monst_sp, battle->pos_cyclope);
     }
     battle->pos_player.x = (sfView_getCenter(view).x - 300);
     battle->pos_player.y = (sfView_getCenter(view).y + 200);
@@ -38,6 +38,9 @@ static void get_battle_pos(sfView *view, battle *battle)
 static battle *second_part_init(battle *battle)
 {
     sfSprite_setTexture(battle->player, battle->text_player, sfFalse);
+    sfSprite_setTexture(battle->cyclo_sp, battle->cyclope, sfFalse);
+    sfSprite_setTexture(battle->mino_sp, battle->mino, sfFalse);
+    sfSprite_setTexture(battle->monst_sp, battle->monst, sfFalse);
     sfSprite_setTexture(battle->background, battle->texture, sfFalse);
     battle->special_attack = 0; battle->disp_help = sfTrue;
     battle->help_texture = sfTexture_createFromFile(HELP_B_PATH, NULL);
@@ -62,7 +65,9 @@ battle *init_battle(void)
     battle->texture = sfTexture_createFromFile(BG_PATH, NULL);
     battle->background = sfSprite_create(); battle->player = sfSprite_create();
     battle->text_player = sfTexture_createFromFile(PL_PATH, &area);
-    battle->ennemy_sprite = sfSprite_create();
+    battle->mino_sp = sfSprite_create();
+    battle->cyclo_sp = sfSprite_create();
+    battle->monst_sp = sfSprite_create();
     battle->help_sprite = sfSprite_create();
     battle->cyclope = sfTexture_createFromFile(C_PATH, NULL);
     battle->mino = sfTexture_createFromFile(MINO_SPRITE_PATH, &a_mino);
@@ -97,7 +102,12 @@ void display_battle(sfRenderWindow *window, game *game)
     set_view_to_center(window, game->battle->background, game->view);
     get_battle_pos(game->view, game->battle);
     sfRenderWindow_drawSprite(window, game->battle->background, NULL);
-    sfRenderWindow_drawSprite(window, game->battle->ennemy_sprite, NULL);
+    if (game->battle->ennemy_type = CYCLOPE_T)
+        sfRenderWindow_drawSprite(window, game->battle->cyclo_sp, NULL);
+    if (game->battle->ennemy_type = MINOTAURE_T)
+        sfRenderWindow_drawSprite(window, game->battle->mino_sp, NULL);
+    if (game->battle->ennemy_type = MONSTER_T)
+        sfRenderWindow_drawSprite(window, game->battle->monst_sp, NULL);
     sfRenderWindow_drawSprite(window, game->battle->player, NULL);
     display_ennemy_bar(window, game->battle);
     display_infos(window, game);

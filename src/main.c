@@ -11,7 +11,6 @@
 #include "../include/lib.h"
 #include "../include/events.h"
 #include "../include/destroy.h"
-#include <SFML/Graphics/Color.h>
 
 void disp_help(char *argv1)
 {
@@ -34,8 +33,9 @@ int launch(void)
         while (sfRenderWindow_pollEvent(window, &event))
             analyse_event(window, &event, game);
     }
+    sfRenderWindow_close(window);
+    destroy_all(game, window);
     sfRenderWindow_destroy(window);
-    destroy_all(game);
     return 0;
 }
 

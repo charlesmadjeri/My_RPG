@@ -8,20 +8,17 @@
 #include "../../include/main.h"
 #include "../../include/destroy.h"
 #include "../../include/map.h"
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Texture.h>
-
-void destroy_pnjs(pnjs *pnjs, int num_pnjs)
-{
-    sfTexture_destroy(pnjs->message);
-    sfSprite_destroy(pnjs->sprite);
-    free(pnjs);
-}
 
 void destroy_weather(weather *weather)
 {
     sfSprite_destroy(weather->cloud_sprite);
+    sfSprite_destroy(weather->clouds_sprite);
+    sfSprite_destroy(weather->raindrop_sprite);
     sfSprite_destroy(weather->rain_sprite);
+    sfTexture_destroy(weather->cloud_texture);
+    sfTexture_destroy(weather->clouds_texture);
+    sfTexture_destroy(weather->raindrop_texture);
+    sfTexture_destroy(weather->rain_texture);
     free (weather);
 }
 
@@ -46,7 +43,6 @@ void destroy_map_data(map_data *map_data)
         free(map_data->matrice[i]);
     free(map_data->matrice);
     sfRenderTexture_destroy(map_data->map_render_tex);
-    sfTexture_destroy(map_data->map_final_tex);
     destroy_textures(map_data->textures);
     free(map_data);
 }
@@ -56,8 +52,10 @@ void destroy_map(map *map)
     sfSprite_destroy(map->map_sprite);
     sfSprite_destroy(map->help_sprite);
     sfTexture_destroy(map->help_texture);
+    destroy_map_data(map->map_data);
     destroy_weather(map->weather);
     destroy_info(map->infos);
+    destroy_pnjs(map->pnjs);
 
     free(map);
 }

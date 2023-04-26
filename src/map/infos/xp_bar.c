@@ -21,17 +21,16 @@ static sfSprite *create_xp_bar_sprite(char *path)
     return (sprite);
 }
 
-xp_bar *init_xp_bar(void)
+void init_xp_bar(infos *infos)
 {
-    xp_bar *xp_bar = malloc(sizeof(*xp_bar));
+    infos->xp_bar = malloc(sizeof(*infos->xp_bar));
 
-    xp_bar->xp_bar_sprite0 = create_xp_bar_sprite(XP_BAR_0_PATH);
-    xp_bar->xp_bar_sprite1 = create_xp_bar_sprite(XP_BAR_1_PATH);
-    xp_bar->xp_bar_sprite2 = create_xp_bar_sprite(XP_BAR_2_PATH);
-    xp_bar->xp_bar_sprite3 = create_xp_bar_sprite(XP_BAR_3_PATH);
-    xp_bar->xp_bar_sprite4 = create_xp_bar_sprite(XP_BAR_4_PATH);
-
-    return xp_bar;
+    infos->xp_bar->xp_bar_sprite0 = create_xp_bar_sprite(XP_BAR_0_PATH);
+    infos->xp_bar->xp_bar_sprite1 = create_xp_bar_sprite(XP_BAR_1_PATH);
+    infos->xp_bar->xp_bar_sprite2 = create_xp_bar_sprite(XP_BAR_2_PATH);
+    infos->xp_bar->xp_bar_sprite3 = create_xp_bar_sprite(XP_BAR_3_PATH);
+    infos->xp_bar->xp_bar_sprite4 = create_xp_bar_sprite(XP_BAR_4_PATH);
+    infos->xp_bar->xp_bar_pos = (sfVector2f){0, 0};
 }
 
 static void high_xp_switch(sfRenderWindow *window,

@@ -24,5 +24,6 @@
     #include <SFML/Audio.h>
     #include <sys/stat.h>
     #include <stdbool.h>
+    #include <string.h>
 
 #endif /* !MAIN_H_ */

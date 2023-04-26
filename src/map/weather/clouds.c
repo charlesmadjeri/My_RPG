@@ -8,34 +8,32 @@
 #include "../../../include/main.h"
 #include "../../../include/map.h"
 
-sfRenderTexture *generate_cloud_texture(void)
+void generate_cloud_texture(weather *weather)
 {
-    sfTexture *cloud_texture = sfTexture_createFromFile(CLOUDS_PATH, NULL);
-    sfSprite *cloud_sprite = sfSprite_create();
-    sfSprite_setTexture(cloud_sprite, cloud_texture, sfTrue);
-    sfSprite_setPosition(cloud_sprite, (sfVector2f) {0, 0});
-    sfColor color = sfSprite_getColor(cloud_sprite);
+    weather->cloud_texture = sfTexture_createFromFile(CLOUDS_PATH, NULL);
+    weather->cloud_sprite = sfSprite_create();
+    sfSprite_setTexture(weather->cloud_sprite, weather->cloud_texture, sfTrue);
+    sfSprite_setPosition(weather->cloud_sprite, (sfVector2f) {0, 0});
+    sfColor color = sfSprite_getColor(weather->cloud_sprite);
     color.a = 255;
-    sfSprite_setColor(cloud_sprite, color);
-    sfRenderTexture *render_texture =
+    sfSprite_setColor(weather->cloud_sprite, color);
+    weather->clouds_render_tex =
     sfRenderTexture_create(MAP_WIDTH_PX * 2, MAP_HEIGHT_PX, sfFalse);
     for (int i = 0, j = 0, nb = 0; nb < NB_CLOUDS; nb++) {
         i = (rand() % ((MAP_WIDTH_PX * 2) - CLOUDS_WIDTH));
         j = (rand() % (MAP_HEIGHT_PX - CLOUDS_WIDTH));
-        sfSprite_setPosition(cloud_sprite, (sfVector2f){i, j});
-        sfRenderTexture_drawSprite(render_texture, cloud_sprite, NULL);
+        sfSprite_setPosition(weather->cloud_sprite, (sfVector2f){i, j});
+        sfRenderTexture_drawSprite(weather->clouds_render_tex, weather->cloud_sprite, NULL);
     }
-    return render_texture;
 }
 
-sfSprite *create_cloud_sprite(void)
+void create_cloud_sprite(weather *weather)
 {
-    sfRenderTexture *render_texture = generate_cloud_texture();
-    sfSprite *cloud_sprite = sfSprite_create();
-    sfSprite_setPosition(cloud_sprite, (sfVector2f) {0, 0});
-    const sfTexture *cloud_full_texture =
-    sfRenderTexture_getTexture(render_texture);
-    sfSprite_setTexture(cloud_sprite, cloud_full_texture, sfTrue);
-
-    return cloud_sprite;
+    generate_cloud_texture(weather);
+    weather->clouds_sprite = sfSprite_create();
+    sfSprite_setPosition(weather->clouds_sprite, (sfVector2f) {0, 0});
+    weather->clouds_texture =
+    sfRenderTexture_getTexture(weather->clouds_render_tex);
+    sfSprite_setTexture(weather->clouds_sprite,
+    weather->clouds_texture, sfTrue);
 }

@@ -12,11 +12,11 @@
 void move_clouds(game *game)
 {
     sfTime time = sfClock_getElapsedTime(game->clocks->cloud_clock);
-    float cloud_seconds = sfTime_asSeconds(time);
-    if (cloud_seconds > CLOUDS_SPEED) {
-        game->map->weather->cloud_pos.x += CLOUDS_MOVE_AMOUNT;
-        if (game->map->weather->cloud_pos.x > 0)
-            game->map->weather->cloud_pos.x = -MAP_WIDTH_PX;
+    float clouds_seconds = sfTime_asSeconds(time);
+    if (clouds_seconds > CLOUDS_SPEED) {
+        game->map->weather->clouds_pos.x += CLOUDS_MOVE_AMOUNT;
+        if (game->map->weather->clouds_pos.x > 0)
+            game->map->weather->clouds_pos.x = -MAP_WIDTH_PX;
         sfClock_restart(game->clocks->cloud_clock);
     }
 }
@@ -39,12 +39,12 @@ void display_weather(sfRenderWindow *window, game *game)
     move_clouds(game);
     move_rain(game);
 
-    sfSprite_setPosition(game->map->weather->cloud_sprite,
-    game->map->weather->cloud_pos);
+    sfSprite_setPosition(game->map->weather->clouds_sprite,
+    game->map->weather->clouds_pos);
     sfSprite_setPosition(game->map->weather->rain_sprite,
     game->map->weather->rain_pos);
     if (game->map->weather->is_raining == sfTrue)
         sfRenderWindow_drawSprite(window,
         game->map->weather->rain_sprite, NULL);
-    sfRenderWindow_drawSprite(window, game->map->weather->cloud_sprite, NULL);
+    sfRenderWindow_drawSprite(window, game->map->weather->clouds_sprite, NULL);
 }

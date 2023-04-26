@@ -23,14 +23,14 @@ text* init_text(game* game)
     text->sprite2 = sfSprite_create();
     text->sprite3 = sfSprite_create();
     text->sprite4 = sfSprite_create();
-    sfTexture *text_texture1 = sfTexture_createFromFile(PATH_SPRITE1, NULL);
-    sfTexture *text_texture2 = sfTexture_createFromFile(PATH_SPRITE2, NULL);
-    sfTexture *text_texture3 = sfTexture_createFromFile(PATH_SPRITE3, NULL);
-    sfTexture *text_texture4 = sfTexture_createFromFile(PATH_SPRITE4, NULL);
-    sfSprite_setTexture(text->sprite1, text_texture1, sfTrue);
-    sfSprite_setTexture(text->sprite2, text_texture2, sfTrue);
-    sfSprite_setTexture(text->sprite3, text_texture3, sfTrue);
-    sfSprite_setTexture(text->sprite4, text_texture4, sfTrue);
+    text->texture1 = sfTexture_createFromFile(PATH_SPRITE1, NULL);
+    text->texture2 = sfTexture_createFromFile(PATH_SPRITE2, NULL);
+    text->texture3 = sfTexture_createFromFile(PATH_SPRITE3, NULL);
+    text->texture4 = sfTexture_createFromFile(PATH_SPRITE4, NULL);
+    sfSprite_setTexture(text->sprite1, text->texture1, sfTrue);
+    sfSprite_setTexture(text->sprite2, text->texture2, sfTrue);
+    sfSprite_setTexture(text->sprite3, text->texture3, sfTrue);
+    sfSprite_setTexture(text->sprite4, text->texture4, sfTrue);
     return text;
 }
 

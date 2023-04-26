@@ -19,9 +19,9 @@ minotaure *init_minotaure(void)
     minotaure->sprite = sfSprite_create();
     minotaure->area = rect;
     minotaure->stat_num = 1;
-    sfTexture *minotaure_texture = sfTexture_createFromFile(MINO_SPRITE_PATH,
+    minotaure->texture = sfTexture_createFromFile(MINO_SPRITE_PATH,
     NULL);
-    sfSprite_setTexture(minotaure->sprite, minotaure_texture, sfTrue);
+    sfSprite_setTexture(minotaure->sprite, minotaure->texture, sfTrue);
     sfSprite_setPosition(minotaure->sprite, minotaure->pos);
     sfSprite_setTextureRect(minotaure->sprite, minotaure->area);
     return minotaure;
@@ -45,11 +45,7 @@ void minotaure_move(game *game)
 void display_minotaure(sfRenderWindow *window, game* game)
 {
     minotaure_move(game);
-    if (game->player->intersection == MINOTAURE && game->player->game_len == 2
-    || game->player->game_len == 3) {
-        game->player->game_len = 3;
-        game->text->len = 4;
-    } else if (game->player->game_len == 3 &&
+    if (game->player->game_len == 3 &&
     game->player->intersection != MINOTAURE) {
         game->text->len = 0;
     }
